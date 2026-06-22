@@ -1,0 +1,103 @@
+{
+ "description": "Marginal vs Mondrian (class-conditional) probability-threshold conformal on the exact published split (sort-by-time, stratified 60/20/20, seed 42); retrained core LightGBM reproduced the published 3 test errors and marginal coverages to 4 decimals.",
+ "gate_test_errors": 3,
+ "calibration_class_counts": {
+  "Allow": 160917,
+  "Deny": 2762,
+  "Drop": 46036
+ },
+ "marginal": [
+  {
+   "alpha": 0.01,
+   "coverage": 0.9897718819737168,
+   "empty_rate": 0.010223349672890958,
+   "singleton_rate": 0.989776650327109,
+   "avg_size": 0.989776650327109,
+   "qhat": 7.196089979455422e-08,
+   "coverage_Allow": 0.9888141786499957,
+   "avg_size_Allow": 0.9888203929951901,
+   "coverage_Deny": 0.9322954380883418,
+   "avg_size_Deny": 0.9322954380883418,
+   "coverage_Drop": 0.9965679033799635,
+   "avg_size_Drop": 0.9965679033799635
+  },
+  {
+   "alpha": 0.05,
+   "coverage": 0.9496509565316905,
+   "empty_rate": 0.05034427511491732,
+   "singleton_rate": 0.9496557248850827,
+   "avg_size": 0.9496557248850827,
+   "qhat": 4.742584547301476e-09,
+   "coverage_Allow": 0.9512671049851477,
+   "avg_size_Allow": 0.9512733193303422,
+   "coverage_Deny": 0.83454018826937,
+   "avg_size_Deny": 0.83454018826937,
+   "coverage_Drop": 0.9509079850551743,
+   "avg_size_Drop": 0.9509079850551743
+  },
+  {
+   "alpha": 0.1,
+   "coverage": 0.9018863606019569,
+   "empty_rate": 0.09811363939804307,
+   "singleton_rate": 0.9018863606019569,
+   "avg_size": 0.9018863606019569,
+   "qhat": 1.954739925480453e-09,
+   "coverage_Allow": 0.9045849438844629,
+   "avg_size_Allow": 0.9045849438844629,
+   "coverage_Deny": 0.5803765387400435,
+   "avg_size_Deny": 0.5803765387400435,
+   "coverage_Drop": 0.9117429837518464,
+   "avg_size_Drop": 0.9117429837518464
+  }
+ ],
+ "mondrian": [
+  {
+   "alpha": 0.01,
+   "coverage": 0.9905205134562933,
+   "empty_rate": 0.009474718190314521,
+   "singleton_rate": 0.9905252818096855,
+   "avg_size": 0.9905252818096855,
+   "qhat_Allow": 7.371275334566718e-08,
+   "qhat_Deny": 0.0003007258569668325,
+   "qhat_Drop": 1.9563456299387383e-08,
+   "coverage_Allow": 0.9895350426925514,
+   "avg_size_Allow": 0.989541257037746,
+   "coverage_Deny": 0.99637943519189,
+   "avg_size_Deny": 0.99637943519189,
+   "coverage_Drop": 0.9936136936310713,
+   "avg_size_Drop": 0.9936136936310713
+  },
+  {
+   "alpha": 0.05,
+   "coverage": 0.9497987754868489,
+   "empty_rate": 0.050196456159758915,
+   "singleton_rate": 0.9498035438402411,
+   "avg_size": 0.9498035438402411,
+   "qhat_Allow": 4.54784676584552e-09,
+   "qhat_Deny": 1.1893959872555371e-07,
+   "qhat_Drop": 4.5237038559520215e-09,
+   "coverage_Allow": 0.9497445904125082,
+   "avg_size_Allow": 0.9497508047577027,
+   "coverage_Deny": 0.9514844315713251,
+   "avg_size_Deny": 0.9514844315713251,
+   "coverage_Drop": 0.9498870449213659,
+   "avg_size_Drop": 0.9498870449213659
+  },
+  {
+   "alpha": 0.1,
+   "coverage": 0.9020055694367621,
+   "empty_rate": 0.0979896622098457,
+   "singleton_rate": 0.9020103377901543,
+   "avg_size": 0.9020103377901543,
+   "qhat_Allow": 1.8256447464892744e-09,
+   "qhat_Deny": 2.08360688702669e-08,
+   "qhat_Drop": 1.9379629012661326e-09,
+   "coverage_Allow": 0.9014653425968505,
+   "avg_size_Allow": 0.9014715569420451,
+   "coverage_Deny": 0.9073135409123824,
+   "avg_size_Deny": 0.9073135409123824,
+   "coverage_Drop": 0.9035754626813798,
+   "avg_size_Drop": 0.9035754626813798
+  }
+ ]
+}

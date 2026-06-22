@@ -1,0 +1,14 @@
+raw_action,raw_traffic_subtype,raw_session_end_reason,target,count
+allow,end,aged-out,Allow,537905
+drop,drop,policy-deny,Drop,230181
+allow,end,tcp-fin,Allow,152929
+allow,end,tcp-rst-from-client,Allow,77565
+allow,end,tcp-rst-from-server,Allow,26525
+allow,end,threat,Allow,9658
+drop,deny,policy-deny,Deny,8727
+allow,deny,auth-policy-redirect,Deny,3621
+drop,deny,<NA>,Deny,1121
+allow,deny,policy-deny,Deny,335
+allow,deny,auth-policy-deny,Deny,5
+allow,start,<NA>,Allow,3
+allow,end,tcp-reuse,Allow,1

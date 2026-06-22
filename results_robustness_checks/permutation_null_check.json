@@ -1,0 +1,30 @@
+{
+  "core_all_24_fields": {
+    "n_records": 1048576,
+    "n_contexts": 838202,
+    "observed_conflicted_contexts": 0,
+    "observed_conflict_rows": 0,
+    "n_permutations": 20,
+    "seed": 42,
+    "perm_conflicted_contexts_mean": 27694.15,
+    "perm_conflicted_contexts_min": 27413,
+    "perm_conflicted_contexts_max": 27927,
+    "perm_conflict_rows_mean": 193810.9,
+    "perm_conflict_rows_min": 193043,
+    "perm_conflict_rows_max": 194342
+  },
+  "key_outif_bytes_sp_dp": {
+    "n_records": 1048576,
+    "n_contexts": 816871,
+    "observed_conflicted_contexts": 0,
+    "observed_conflict_rows": 0,
+    "n_permutations": 20,
+    "seed": 42,
+    "perm_conflicted_contexts_mean": 31370.2,
+    "perm_conflicted_contexts_min": 31139,
+    "perm_conflicted_contexts_max": 31567,
+    "perm_conflict_rows_mean": 212715.95,
+    "perm_conflict_rows_min": 212041,
+    "perm_conflict_rows_max": 213349
+  }
+}

@@ -1,0 +1,9 @@
+view,n_features,distinct_contexts,conflict_contexts,conflict_rows,conflict_row_share,cond_entropy_bits,bayes_errors_insample,bayes_error_rate,test_exact_match,test_exact_match_share,lookup_test_errors
+core_all,24,838202,0,0,0.0,0.0,0,0.0,50980,0.243091,27590
+without_application_context,19,838195,0,0,0.0,0.0,0,0.0,50982,0.2431,27589
+without_volume_duration,17,504992,16,38,3.6e-05,3.4e-05,16,1.5e-05,132524,0.631921,26946
+transport_volume_only,10,830322,289,17711,0.016891,0.004659,1406,0.001341,52855,0.252031,26394
+only_application_context,5,342,20,346717,0.330655,0.04295,9472,0.009033,209704,0.999943,1904
+only_zone_interface,4,24,5,210002,0.200274,0.064523,13809,0.013169,209716,1.0,2762
+only_transport_ports,3,343554,17726,188287,0.179564,0.104918,32802,0.031282,167187,0.797207,30208
+only_volume_duration,7,162339,81,232648,0.22187,0.046926,11870,0.01132,181076,0.863434,2411

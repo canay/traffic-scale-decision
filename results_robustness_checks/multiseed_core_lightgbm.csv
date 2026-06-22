@@ -1,0 +1,4 @@
+seed,test_rows,accuracy,balanced_accuracy,macro_f1,errors,environment
+41,209716,0.999995,0.999879,0.999939,1,non-VPS sandbox check; scores only; chunked lgb.train equivalent to 300-round fit
+43,209716,0.99999,0.999996,0.999877,2,non-VPS sandbox check; scores only; chunked lgb.train equivalent to 300-round fit
+44,209716,1.0,1.0,1.0,0,non-VPS sandbox check; scores only; chunked lgb.train equivalent to 300-round fit

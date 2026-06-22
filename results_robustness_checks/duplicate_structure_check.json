@@ -1,0 +1,33 @@
+{
+  "rows_total": 1048576,
+  "core_feature_count": 24,
+  "unique_core_vectors": 838202,
+  "duplicate_rows": 210374,
+  "duplicate_row_share": 0.200628,
+  "singleton_vectors": 776640,
+  "label_conflict_vectors": 0,
+  "label_conflict_rows": 0,
+  "label_conflict_row_share": 0.0,
+  "split": "stratified 80/20, random_state=42 (benchmark parameters)",
+  "test_rows": 209716,
+  "test_rows_with_exact_train_match": 50980,
+  "test_exact_match_share": 0.243091,
+  "lookup_accuracy_on_matched": 1.0,
+  "lookup_overall_accuracy_with_majority_fallback": 0.868441,
+  "lookup_overall_macro_f1_with_majority_fallback": 0.590413,
+  "lookup_per_class_f1": {
+    "Allow": 0.921042,
+    "Deny": 0.226645,
+    "Drop": 0.623552
+  },
+  "test_class_totals": {
+    "Allow": 160918,
+    "Drop": 46036,
+    "Deny": 2762
+  },
+  "test_class_exact_match": {
+    "Allow": 29772,
+    "Drop": 20855,
+    "Deny": 353
+  }
+}

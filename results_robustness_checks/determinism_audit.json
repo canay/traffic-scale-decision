@@ -1,0 +1,156 @@
+{
+ "views": [
+  {
+   "view": "core_all",
+   "n_features": "24",
+   "distinct_contexts": "838202",
+   "conflict_contexts": "0",
+   "conflict_rows": "0",
+   "conflict_row_share": "0.0",
+   "cond_entropy_bits": "0.0",
+   "bayes_errors_insample": "0",
+   "bayes_error_rate": "0.0",
+   "test_exact_match": "50980",
+   "test_exact_match_share": "0.243091",
+   "lookup_test_errors": "27590"
+  },
+  {
+   "view": "without_application_context",
+   "n_features": "19",
+   "distinct_contexts": "838195",
+   "conflict_contexts": "0",
+   "conflict_rows": "0",
+   "conflict_row_share": "0.0",
+   "cond_entropy_bits": "0.0",
+   "bayes_errors_insample": "0",
+   "bayes_error_rate": "0.0",
+   "test_exact_match": "50982",
+   "test_exact_match_share": "0.2431",
+   "lookup_test_errors": "27589"
+  },
+  {
+   "view": "without_volume_duration",
+   "n_features": "17",
+   "distinct_contexts": "504992",
+   "conflict_contexts": "16",
+   "conflict_rows": "38",
+   "conflict_row_share": "3.6e-05",
+   "cond_entropy_bits": "3.4e-05",
+   "bayes_errors_insample": "16",
+   "bayes_error_rate": "1.5e-05",
+   "test_exact_match": "132524",
+   "test_exact_match_share": "0.631921",
+   "lookup_test_errors": "26946"
+  },
+  {
+   "view": "transport_volume_only",
+   "n_features": "10",
+   "distinct_contexts": "830322",
+   "conflict_contexts": "289",
+   "conflict_rows": "17711",
+   "conflict_row_share": "0.016891",
+   "cond_entropy_bits": "0.004659",
+   "bayes_errors_insample": "1406",
+   "bayes_error_rate": "0.001341",
+   "test_exact_match": "52855",
+   "test_exact_match_share": "0.252031",
+   "lookup_test_errors": "26394"
+  },
+  {
+   "view": "only_application_context",
+   "n_features": "5",
+   "distinct_contexts": "342",
+   "conflict_contexts": "20",
+   "conflict_rows": "346717",
+   "conflict_row_share": "0.330655",
+   "cond_entropy_bits": "0.04295",
+   "bayes_errors_insample": "9472",
+   "bayes_error_rate": "0.009033",
+   "test_exact_match": "209704",
+   "test_exact_match_share": "0.999943",
+   "lookup_test_errors": "1904"
+  },
+  {
+   "view": "only_zone_interface",
+   "n_features": "4",
+   "distinct_contexts": "24",
+   "conflict_contexts": "5",
+   "conflict_rows": "210002",
+   "conflict_row_share": "0.200274",
+   "cond_entropy_bits": "0.064523",
+   "bayes_errors_insample": "13809",
+   "bayes_error_rate": "0.013169",
+   "test_exact_match": "209716",
+   "test_exact_match_share": "1.0",
+   "lookup_test_errors": "2762"
+  },
+  {
+   "view": "only_transport_ports",
+   "n_features": "3",
+   "distinct_contexts": "343554",
+   "conflict_contexts": "17726",
+   "conflict_rows": "188287",
+   "conflict_row_share": "0.179564",
+   "cond_entropy_bits": "0.104918",
+   "bayes_errors_insample": "32802",
+   "bayes_error_rate": "0.031282",
+   "test_exact_match": "167187",
+   "test_exact_match_share": "0.797207",
+   "lookup_test_errors": "30208"
+  },
+  {
+   "view": "only_volume_duration",
+   "n_features": "7",
+   "distinct_contexts": "162339",
+   "conflict_contexts": "81",
+   "conflict_rows": "232648",
+   "conflict_row_share": "0.22187",
+   "cond_entropy_bits": "0.046926",
+   "bayes_errors_insample": "11870",
+   "bayes_error_rate": "0.01132",
+   "test_exact_match": "181076",
+   "test_exact_match_share": "0.863434",
+   "lookup_test_errors": "2411"
+  }
+ ],
+ "minimal_determining_sets": [
+  {
+   "name": "greedy_forward_all_features",
+   "fields": [
+    "Application",
+    "Bytes",
+    "Destination Country",
+    "Source Port"
+   ],
+   "conflict_rows": 0,
+   "bayes_errors": 0,
+   "minimal_by_inclusion": true,
+   "leave_one_out_bayes_errors": {
+    "Application": 1264,
+    "Bytes": 3252,
+    "Destination Country": 956,
+    "Source Port": 195
+   }
+  },
+  {
+   "name": "greedy_forward_no_application_family",
+   "fields": [
+    "Outbound Interface",
+    "Bytes",
+    "Source Port",
+    "Destination Port"
+   ],
+   "conflict_rows": 0,
+   "bayes_errors": 0,
+   "minimal_by_inclusion": true,
+   "leave_one_out_bayes_errors": {
+    "Outbound Interface": 1410,
+    "Bytes": 1567,
+    "Source Port": 358,
+    "Destination Port": 10
+   }
+  }
+ ],
+ "method_notes": "Greedy forward selection minimizing in-sample Bayes errors with 64-bit mixed hashing; final sets and all leave-one-out subsets re-verified with exact structured-array grouping. Minimal-by-inclusion, not claimed globally minimum. Split-independent in-sample quantities; lookup columns use the stratified 80/20 seed-42 split. Superseded for minimality scope by minimum_key_census.json: the exhaustive census over all subsets of size <= 4 establishes global minimum cardinality 4 and exactly seven keys.",
+ "environment": "sandbox recomputation from data/processed/traffic_three_class.csv; deterministic counting, model-free"
+}

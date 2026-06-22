@@ -1,0 +1,121 @@
+{
+ "description": "Exhaustive minimum-size determining-set census over the 24 core fields (exact grouping, full export n=1,048,576).",
+ "subsets_size_le3_checked": 2324,
+ "determining_size_le3": 0,
+ "four_field_subsets_checked": 10626,
+ "n_determining_four_field_sets": 7,
+ "shared_fields_in_all_keys": [
+  "Bytes",
+  "Source Port"
+ ],
+ "loo_insample_bayes_error_min": 10,
+ "loo_insample_bayes_error_max": 6903,
+ "pandas_reverification": "OK",
+ "determining_four_field_sets": [
+  {
+   "fields": [
+    "Application",
+    "Outbound Interface",
+    "Source Port",
+    "Bytes"
+   ],
+   "contexts": 756126,
+   "loo_insample_bayes_errors": {
+    "Application": 10,
+    "Outbound Interface": 956,
+    "Source Port": 483,
+    "Bytes": 2611
+   }
+  },
+  {
+   "fields": [
+    "Application",
+    "Source Port",
+    "Destination Country",
+    "Bytes"
+   ],
+   "contexts": 758146,
+   "loo_insample_bayes_errors": {
+    "Application": 1264,
+    "Source Port": 195,
+    "Destination Country": 956,
+    "Bytes": 3252
+   }
+  },
+  {
+   "fields": [
+    "Outbound Interface",
+    "Source Port",
+    "Destination Port",
+    "Bytes"
+   ],
+   "contexts": 816871,
+   "loo_insample_bayes_errors": {
+    "Outbound Interface": 1410,
+    "Source Port": 358,
+    "Destination Port": 10,
+    "Bytes": 1567
+   }
+  },
+  {
+   "fields": [
+    "Outbound Interface",
+    "Source Port",
+    "Bytes",
+    "Subcategory of app"
+   ],
+   "contexts": 756079,
+   "loo_insample_bayes_errors": {
+    "Outbound Interface": 2514,
+    "Source Port": 546,
+    "Bytes": 3789,
+    "Subcategory of app": 10
+   }
+  },
+  {
+   "fields": [
+    "Outbound Interface",
+    "Source Port",
+    "Bytes",
+    "Category of app"
+   ],
+   "contexts": 756068,
+   "loo_insample_bayes_errors": {
+    "Outbound Interface": 2526,
+    "Source Port": 968,
+    "Bytes": 5196,
+    "Category of app": 10
+   }
+  },
+  {
+   "fields": [
+    "Outbound Interface",
+    "Source Port",
+    "Bytes",
+    "Technology of app"
+   ],
+   "contexts": 755980,
+   "loo_insample_bayes_errors": {
+    "Outbound Interface": 2522,
+    "Source Port": 686,
+    "Bytes": 6580,
+    "Technology of app": 10
+   }
+  },
+  {
+   "fields": [
+    "Outbound Interface",
+    "Source Port",
+    "Bytes",
+    "Risk of app"
+   ],
+   "contexts": 756104,
+   "loo_insample_bayes_errors": {
+    "Outbound Interface": 2522,
+    "Source Port": 607,
+    "Bytes": 6903,
+    "Risk of app": 10
+   }
+  }
+ ]
+}

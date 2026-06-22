@@ -1,0 +1,1248 @@
+{
+  "metadata": {
+    "dataset": "C:\\DOCS\\AKADEMIK\\FAALIYETLER\\YAYIN_PIPELINE\\40_AKTIF_CALISMALAR\\fw2_traffic_scale_decision\\data\\processed\\traffic_three_class.csv",
+    "rows": 1048576,
+    "labels": [
+      "Allow",
+      "Deny",
+      "Drop"
+    ],
+    "class_counts": {
+      "Allow": 804586,
+      "Drop": 230181,
+      "Deny": 13809
+    },
+    "time_column": "High Res Timestamp",
+    "time_min": "2026-05-14T19:18:16.047000+03:00",
+    "time_max": "2026-05-14T20:04:50.373000+03:00",
+    "temporal_train_time_min": "2026-05-14T19:18:16.047000+03:00",
+    "temporal_train_time_max": "2026-05-14T19:55:59.138000+03:00",
+    "temporal_test_time_min": "2026-05-14T19:55:59.139000+03:00",
+    "temporal_test_time_max": "2026-05-14T20:04:50.373000+03:00",
+    "temporal_train_counts": {
+      "Allow": 647715,
+      "Drop": 179872,
+      "Deny": 11273
+    },
+    "temporal_test_counts": {
+      "Allow": 156871,
+      "Drop": 50309,
+      "Deny": 2536
+    },
+    "core_features": [
+      "Application",
+      "Source Zone",
+      "Destination Zone",
+      "Inbound Interface",
+      "Outbound Interface",
+      "IP Protocol",
+      "Source Port",
+      "Destination Port",
+      "Source Country",
+      "Destination Country",
+      "Category",
+      "Bytes",
+      "Bytes Sent",
+      "Bytes Received",
+      "Packets",
+      "Packets Sent",
+      "Packets Received",
+      "Elapsed Time (sec)",
+      "Subcategory of app",
+      "Category of app",
+      "Technology of app",
+      "Risk of app",
+      "SaaS of app",
+      "AI Traffic"
+    ],
+    "feature_families": {
+      "application_context": [
+        "Application",
+        "Category",
+        "Subcategory of app",
+        "Category of app",
+        "Technology of app"
+      ],
+      "zone_interface": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface"
+      ],
+      "transport_ports": [
+        "IP Protocol",
+        "Source Port",
+        "Destination Port"
+      ],
+      "country_context": [
+        "Source Country",
+        "Destination Country"
+      ],
+      "volume_duration": [
+        "Bytes",
+        "Bytes Sent",
+        "Bytes Received",
+        "Packets",
+        "Packets Sent",
+        "Packets Received",
+        "Elapsed Time (sec)"
+      ],
+      "risk_saas_ai": [
+        "Risk of app",
+        "SaaS of app",
+        "AI Traffic"
+      ]
+    },
+    "strict_minimal_keep": [
+      "IP Protocol",
+      "Source Port",
+      "Destination Port",
+      "Bytes",
+      "Bytes Sent",
+      "Bytes Received",
+      "Packets",
+      "Packets Sent",
+      "Packets Received",
+      "Elapsed Time (sec)"
+    ],
+    "runtime": {
+      "python": "3.12.12",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel"
+    },
+    "run_timing": {
+      "started_epoch": 1779042608.2103913,
+      "ended_epoch": 1779043121.475987,
+      "wall_seconds": 513.2655956745148
+    },
+    "note": "These diagnostics are designed for methodological stress testing. Timing-sensitive main benchmark results remain the VPS reports_vps outputs."
+  },
+  "results": [
+    {
+      "experiment": "temporal_80_20_core",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 24,
+      "fit_seconds": 57.43047390002175,
+      "predict_seconds": 3.8205089999828488,
+      "accuracy": 0.9999713898796467,
+      "balanced_accuracy": 0.9997286192695812,
+      "precision_weighted": 0.9999714047883294,
+      "recall_weighted": 0.9999713898796467,
+      "f1_weighted": 0.9999713954270294,
+      "f1_macro": 0.9995994589566354,
+      "classification_report": {
+        "Allow": {
+          "precision": 0.999987250508386,
+          "recall": 0.9999745013418669,
+          "f1-score": 0.9999808758844904,
+          "support": 156871.0
+        },
+        "Deny": {
+          "precision": 0.9984239558707644,
+          "recall": 0.999211356466877,
+          "f1-score": 0.9988175009854159,
+          "support": 2536.0
+        },
+        "Drop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 50309.0
+        },
+        "accuracy": 0.9999713898796467,
+        "macro avg": {
+          "precision": 0.9994704021263834,
+          "recall": 0.9997286192695812,
+          "f1-score": 0.9995994589566354,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9999714047883294,
+          "recall": 0.9999713898796467,
+          "f1-score": 0.9999713954270294,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          156867,
+          4,
+          0
+        ],
+        [
+          2,
+          2534,
+          0
+        ],
+        [
+          0,
+          0,
+          50309
+        ]
+      ]
+    },
+    {
+      "experiment": "random_80_20_core_recheck",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 24,
+      "fit_seconds": 53.333914800023194,
+      "predict_seconds": 3.6473242999927606,
+      "accuracy": 0.9999904632932156,
+      "balanced_accuracy": 0.9999958571032037,
+      "precision_weighted": 0.9999904701938718,
+      "recall_weighted": 0.9999904632932156,
+      "f1_weighted": 0.9999904649893716,
+      "f1_macro": 0.9998772867242761,
+      "classification_report": {
+        "Allow": {
+          "precision": 1.0,
+          "recall": 0.9999875713096111,
+          "f1-score": 0.9999937856161872,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9992764109985528,
+          "recall": 1.0,
+          "f1-score": 0.9996380745566413,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 46036.0
+        },
+        "accuracy": 0.9999904632932156,
+        "macro avg": {
+          "precision": 0.9997588036661842,
+          "recall": 0.9999958571032037,
+          "f1-score": 0.9998772867242761,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9999904701938718,
+          "recall": 0.9999904632932156,
+          "f1-score": 0.9999904649893716,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          160916,
+          2,
+          0
+        ],
+        [
+          0,
+          2762,
+          0
+        ],
+        [
+          0,
+          0,
+          46036
+        ]
+      ],
+      "feature_importance": [
+        {
+          "feature": "Bytes Received",
+          "importance": 0.37134286173211
+        },
+        {
+          "feature": "Packets",
+          "importance": 0.29185245959655387
+        },
+        {
+          "feature": "Outbound Interface",
+          "importance": 0.2758856628480809
+        },
+        {
+          "feature": "Application",
+          "importance": 0.018873434406284535
+        },
+        {
+          "feature": "Source Zone",
+          "importance": 0.011571821661541751
+        },
+        {
+          "feature": "Category of app",
+          "importance": 0.005410799211172471
+        },
+        {
+          "feature": "Risk of app",
+          "importance": 0.004574278220219907
+        },
+        {
+          "feature": "Category",
+          "importance": 0.004505861432757086
+        },
+        {
+          "feature": "Source Port",
+          "importance": 0.003692212890585948
+        },
+        {
+          "feature": "Bytes",
+          "importance": 0.0022468223445138683
+        },
+        {
+          "feature": "Subcategory of app",
+          "importance": 0.0019275427924666435
+        },
+        {
+          "feature": "Bytes Sent",
+          "importance": 0.001914094555069061
+        },
+        {
+          "feature": "Packets Sent",
+          "importance": 0.0014506083092035772
+        },
+        {
+          "feature": "Elapsed Time (sec)",
+          "importance": 0.0014192956851296823
+        },
+        {
+          "feature": "Destination Port",
+          "importance": 0.0013533355416132588
+        },
+        {
+          "feature": "Destination Country",
+          "importance": 0.0011325217651938727
+        },
+        {
+          "feature": "IP Protocol",
+          "importance": 0.0007111517113693943
+        },
+        {
+          "feature": "Source Country",
+          "importance": 5.6622482280300156e-05
+        },
+        {
+          "feature": "Packets Received",
+          "importance": 3.9705114828904144e-05
+        },
+        {
+          "feature": "Destination Zone",
+          "importance": 3.00494833024986e-05
+        },
+        {
+          "feature": "Technology of app",
+          "importance": 8.680799646500618e-06
+        },
+        {
+          "feature": "SaaS of app",
+          "importance": 1.755624459669849e-07
+        },
+        {
+          "feature": "Inbound Interface",
+          "importance": 1.8536299495650152e-09
+        },
+        {
+          "feature": "AI Traffic",
+          "importance": 0.0
+        }
+      ]
+    },
+    {
+      "experiment": "random_80_20_without_application_context",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 19,
+      "fit_seconds": 53.70836190000409,
+      "predict_seconds": 4.703068500006339,
+      "accuracy": 0.9999666215262546,
+      "balanced_accuracy": 0.9997379332472605,
+      "precision_weighted": 0.999966619917744,
+      "recall_weighted": 0.9999666215262546,
+      "f1_weighted": 0.9999666202830664,
+      "f1_macro": 0.999797207515233,
+      "classification_report": {
+        "Allow": {
+          "precision": 0.9999751427736936,
+          "recall": 0.9999813569644167,
+          "f1-score": 0.9999782498594009,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9996378123868164,
+          "recall": 0.999275887038378,
+          "f1-score": 0.9994568169473113,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 0.9999565557389869,
+          "recall": 0.9999565557389869,
+          "f1-score": 0.9999565557389869,
+          "support": 46036.0
+        },
+        "accuracy": 0.9999666215262546,
+        "macro avg": {
+          "precision": 0.9998565036331657,
+          "recall": 0.9997379332472605,
+          "f1-score": 0.999797207515233,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.999966619917744,
+          "recall": 0.9999666215262546,
+          "f1-score": 0.9999666202830664,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          160915,
+          1,
+          2
+        ],
+        [
+          2,
+          2760,
+          0
+        ],
+        [
+          2,
+          0,
+          46034
+        ]
+      ]
+    },
+    {
+      "experiment": "random_80_20_without_zone_interface",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 20,
+      "fit_seconds": 61.80483899998944,
+      "predict_seconds": 6.615434700011974,
+      "accuracy": 0.9999809265864312,
+      "balanced_accuracy": 0.9998731001612019,
+      "precision_weighted": 0.9999809368781502,
+      "recall_weighted": 0.9999809265864312,
+      "f1_weighted": 0.9999809299787432,
+      "f1_macro": 0.9997545734485523,
+      "classification_report": {
+        "Allow": {
+          "precision": 0.9999937855775685,
+          "recall": 0.9999813569644167,
+          "f1-score": 0.9999875712323745,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9989146164978292,
+          "recall": 0.999637943519189,
+          "f1-score": 0.9992761491132827,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 46036.0
+        },
+        "accuracy": 0.9999809265864312,
+        "macro avg": {
+          "precision": 0.9996361340251325,
+          "recall": 0.9998731001612019,
+          "f1-score": 0.9997545734485523,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9999809368781502,
+          "recall": 0.9999809265864312,
+          "f1-score": 0.9999809299787432,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          160915,
+          3,
+          0
+        ],
+        [
+          1,
+          2761,
+          0
+        ],
+        [
+          0,
+          0,
+          46036
+        ]
+      ]
+    },
+    {
+      "experiment": "random_80_20_without_transport_ports",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 21,
+      "fit_seconds": 45.528892400005134,
+      "predict_seconds": 4.056269699998666,
+      "accuracy": 0.9999952316466078,
+      "balanced_accuracy": 0.9999979285516019,
+      "precision_weighted": 0.9999952333723963,
+      "recall_weighted": 0.9999952316466078,
+      "f1_weighted": 0.9999952320707249,
+      "f1_macro": 0.9999386324475451,
+      "classification_report": {
+        "Allow": {
+          "precision": 1.0,
+          "recall": 0.9999937856548056,
+          "f1-score": 0.9999968928177482,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9996380745566413,
+          "recall": 1.0,
+          "f1-score": 0.9998190045248869,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 46036.0
+        },
+        "accuracy": 0.9999952316466078,
+        "macro avg": {
+          "precision": 0.9998793581855471,
+          "recall": 0.9999979285516019,
+          "f1-score": 0.9999386324475451,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9999952333723963,
+          "recall": 0.9999952316466078,
+          "f1-score": 0.9999952320707249,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          160917,
+          1,
+          0
+        ],
+        [
+          0,
+          2762,
+          0
+        ],
+        [
+          0,
+          0,
+          46036
+        ]
+      ]
+    },
+    {
+      "experiment": "random_80_20_without_country_context",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 22,
+      "fit_seconds": 54.20374650001759,
+      "predict_seconds": 3.6466173000226263,
+      "accuracy": 0.9999904632932156,
+      "balanced_accuracy": 0.9999958571032037,
+      "precision_weighted": 0.9999904701938718,
+      "recall_weighted": 0.9999904632932156,
+      "f1_weighted": 0.9999904649893716,
+      "f1_macro": 0.9998772867242761,
+      "classification_report": {
+        "Allow": {
+          "precision": 1.0,
+          "recall": 0.9999875713096111,
+          "f1-score": 0.9999937856161872,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9992764109985528,
+          "recall": 1.0,
+          "f1-score": 0.9996380745566413,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 46036.0
+        },
+        "accuracy": 0.9999904632932156,
+        "macro avg": {
+          "precision": 0.9997588036661842,
+          "recall": 0.9999958571032037,
+          "f1-score": 0.9998772867242761,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9999904701938718,
+          "recall": 0.9999904632932156,
+          "f1-score": 0.9999904649893716,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          160916,
+          2,
+          0
+        ],
+        [
+          0,
+          2762,
+          0
+        ],
+        [
+          0,
+          0,
+          46036
+        ]
+      ]
+    },
+    {
+      "experiment": "random_80_20_without_volume_duration",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 17,
+      "fit_seconds": 47.099131599999964,
+      "predict_seconds": 6.125688400003128,
+      "accuracy": 0.9997043620896832,
+      "balanced_accuracy": 0.9985668157020541,
+      "precision_weighted": 0.9997078206546003,
+      "recall_weighted": 0.9997043620896832,
+      "f1_weighted": 0.999705406396641,
+      "f1_macro": 0.9962214229359502,
+      "classification_report": {
+        "Allow": {
+          "precision": 0.9999316252066783,
+          "recall": 0.9996830683950833,
+          "f1-score": 0.9998073313527825,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9817987152034261,
+          "recall": 0.996017378711079,
+          "f1-score": 0.9888569374550683,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 46036.0
+        },
+        "accuracy": 0.9997043620896832,
+        "macro avg": {
+          "precision": 0.9939101134700348,
+          "recall": 0.9985668157020541,
+          "f1-score": 0.9962214229359502,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9997078206546003,
+          "recall": 0.9997043620896832,
+          "f1-score": 0.999705406396641,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          160867,
+          51,
+          0
+        ],
+        [
+          11,
+          2751,
+          0
+        ],
+        [
+          0,
+          0,
+          46036
+        ]
+      ]
+    },
+    {
+      "experiment": "random_80_20_without_risk_saas_ai",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 21,
+      "fit_seconds": 44.53043929999694,
+      "predict_seconds": 5.659858700004406,
+      "accuracy": 0.9999904632932156,
+      "balanced_accuracy": 0.9999958571032037,
+      "precision_weighted": 0.9999904701938718,
+      "recall_weighted": 0.9999904632932156,
+      "f1_weighted": 0.9999904649893716,
+      "f1_macro": 0.9998772867242761,
+      "classification_report": {
+        "Allow": {
+          "precision": 1.0,
+          "recall": 0.9999875713096111,
+          "f1-score": 0.9999937856161872,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9992764109985528,
+          "recall": 1.0,
+          "f1-score": 0.9996380745566413,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 46036.0
+        },
+        "accuracy": 0.9999904632932156,
+        "macro avg": {
+          "precision": 0.9997588036661842,
+          "recall": 0.9999958571032037,
+          "f1-score": 0.9998772867242761,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9999904701938718,
+          "recall": 0.9999904632932156,
+          "f1-score": 0.9999904649893716,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          160916,
+          2,
+          0
+        ],
+        [
+          0,
+          2762,
+          0
+        ],
+        [
+          0,
+          0,
+          46036
+        ]
+      ]
+    },
+    {
+      "experiment": "random_80_20_strict_transport_volume_only",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 10,
+      "fit_seconds": 39.18962459999602,
+      "predict_seconds": 3.1387540999858174,
+      "accuracy": 0.9944305632379027,
+      "balanced_accuracy": 0.9946029057886379,
+      "precision_weighted": 0.9945497522748648,
+      "recall_weighted": 0.9944305632379027,
+      "f1_weighted": 0.9944584774066881,
+      "f1_macro": 0.9833271847169834,
+      "classification_report": {
+        "Allow": {
+          "precision": 0.9996437232792459,
+          "recall": 0.993866441293081,
+          "f1-score": 0.9967467108748356,
+          "support": 160918.0
+        },
+        "Deny": {
+          "precision": 0.9381196581196581,
+          "recall": 0.9934829833454019,
+          "f1-score": 0.9650079127835414,
+          "support": 2762.0
+        },
+        "Drop": {
+          "precision": 0.980129478879559,
+          "recall": 0.9964592927274307,
+          "f1-score": 0.9882269304925732,
+          "support": 46036.0
+        },
+        "accuracy": 0.9944305632379027,
+        "macro avg": {
+          "precision": 0.9726309534261542,
+          "recall": 0.9946029057886379,
+          "f1-score": 0.9833271847169834,
+          "support": 209716.0
+        },
+        "weighted avg": {
+          "precision": 0.9945497522748648,
+          "recall": 0.9944305632379027,
+          "f1-score": 0.9944584774066881,
+          "support": 209716.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          159931,
+          70,
+          917
+        ],
+        [
+          5,
+          2744,
+          13
+        ],
+        [
+          52,
+          111,
+          45873
+        ]
+      ],
+      "feature_importance": [
+        {
+          "feature": "Bytes Received",
+          "importance": 0.43884298331438487
+        },
+        {
+          "feature": "Packets",
+          "importance": 0.30568871085653976
+        },
+        {
+          "feature": "Packets Sent",
+          "importance": 0.13980020148470576
+        },
+        {
+          "feature": "Destination Port",
+          "importance": 0.02964432380028434
+        },
+        {
+          "feature": "Bytes Sent",
+          "importance": 0.02784907269991869
+        },
+        {
+          "feature": "Source Port",
+          "importance": 0.027179459742381278
+        },
+        {
+          "feature": "Bytes",
+          "importance": 0.02100002709789594
+        },
+        {
+          "feature": "Elapsed Time (sec)",
+          "importance": 0.005095612282223478
+        },
+        {
+          "feature": "IP Protocol",
+          "importance": 0.004499756068917042
+        },
+        {
+          "feature": "Packets Received",
+          "importance": 0.00039985265274887445
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "experiment": "temporal_80_20_core",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 24,
+      "accuracy": 0.9999713898796467,
+      "balanced_accuracy": 0.9997286192695812,
+      "f1_macro": 0.9995994589566354,
+      "f1_weighted": 0.9999713954270294,
+      "fit_seconds": 57.43047390002175,
+      "predict_seconds": 3.8205089999828488
+    },
+    {
+      "experiment": "random_80_20_core_recheck",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 24,
+      "accuracy": 0.9999904632932156,
+      "balanced_accuracy": 0.9999958571032037,
+      "f1_macro": 0.9998772867242761,
+      "f1_weighted": 0.9999904649893716,
+      "fit_seconds": 53.333914800023194,
+      "predict_seconds": 3.6473242999927606
+    },
+    {
+      "experiment": "random_80_20_without_application_context",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 19,
+      "accuracy": 0.9999666215262546,
+      "balanced_accuracy": 0.9997379332472605,
+      "f1_macro": 0.999797207515233,
+      "f1_weighted": 0.9999666202830664,
+      "fit_seconds": 53.70836190000409,
+      "predict_seconds": 4.703068500006339
+    },
+    {
+      "experiment": "random_80_20_without_zone_interface",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 20,
+      "accuracy": 0.9999809265864312,
+      "balanced_accuracy": 0.9998731001612019,
+      "f1_macro": 0.9997545734485523,
+      "f1_weighted": 0.9999809299787432,
+      "fit_seconds": 61.80483899998944,
+      "predict_seconds": 6.615434700011974
+    },
+    {
+      "experiment": "random_80_20_without_transport_ports",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 21,
+      "accuracy": 0.9999952316466078,
+      "balanced_accuracy": 0.9999979285516019,
+      "f1_macro": 0.9999386324475451,
+      "f1_weighted": 0.9999952320707249,
+      "fit_seconds": 45.528892400005134,
+      "predict_seconds": 4.056269699998666
+    },
+    {
+      "experiment": "random_80_20_without_country_context",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 22,
+      "accuracy": 0.9999904632932156,
+      "balanced_accuracy": 0.9999958571032037,
+      "f1_macro": 0.9998772867242761,
+      "f1_weighted": 0.9999904649893716,
+      "fit_seconds": 54.20374650001759,
+      "predict_seconds": 3.6466173000226263
+    },
+    {
+      "experiment": "random_80_20_without_volume_duration",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 17,
+      "accuracy": 0.9997043620896832,
+      "balanced_accuracy": 0.9985668157020541,
+      "f1_macro": 0.9962214229359502,
+      "f1_weighted": 0.999705406396641,
+      "fit_seconds": 47.099131599999964,
+      "predict_seconds": 6.125688400003128
+    },
+    {
+      "experiment": "random_80_20_without_risk_saas_ai",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 21,
+      "accuracy": 0.9999904632932156,
+      "balanced_accuracy": 0.9999958571032037,
+      "f1_macro": 0.9998772867242761,
+      "f1_weighted": 0.9999904649893716,
+      "fit_seconds": 44.53043929999694,
+      "predict_seconds": 5.659858700004406
+    },
+    {
+      "experiment": "random_80_20_strict_transport_volume_only",
+      "model": "LightGBM",
+      "train_rows": 838860,
+      "test_rows": 209716,
+      "features": 10,
+      "accuracy": 0.9944305632379027,
+      "balanced_accuracy": 0.9946029057886379,
+      "f1_macro": 0.9833271847169834,
+      "f1_weighted": 0.9944584774066881,
+      "fit_seconds": 39.18962459999602,
+      "predict_seconds": 3.1387540999858174
+    }
+  ],
+  "top_feature_importance": [
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 1,
+      "feature": "Bytes Received",
+      "family": "volume_duration",
+      "importance": 0.37134286173211
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 2,
+      "feature": "Packets",
+      "family": "volume_duration",
+      "importance": 0.29185245959655387
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 3,
+      "feature": "Outbound Interface",
+      "family": "zone_interface",
+      "importance": 0.2758856628480809
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 4,
+      "feature": "Application",
+      "family": "application_context",
+      "importance": 0.018873434406284535
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 5,
+      "feature": "Source Zone",
+      "family": "zone_interface",
+      "importance": 0.011571821661541751
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 6,
+      "feature": "Category of app",
+      "family": "application_context",
+      "importance": 0.005410799211172471
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 7,
+      "feature": "Risk of app",
+      "family": "risk_saas_ai",
+      "importance": 0.004574278220219907
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 8,
+      "feature": "Category",
+      "family": "application_context",
+      "importance": 0.004505861432757086
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 9,
+      "feature": "Source Port",
+      "family": "transport_ports",
+      "importance": 0.003692212890585948
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 10,
+      "feature": "Bytes",
+      "family": "volume_duration",
+      "importance": 0.0022468223445138683
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 11,
+      "feature": "Subcategory of app",
+      "family": "application_context",
+      "importance": 0.0019275427924666435
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 12,
+      "feature": "Bytes Sent",
+      "family": "volume_duration",
+      "importance": 0.001914094555069061
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 13,
+      "feature": "Packets Sent",
+      "family": "volume_duration",
+      "importance": 0.0014506083092035772
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 14,
+      "feature": "Elapsed Time (sec)",
+      "family": "volume_duration",
+      "importance": 0.0014192956851296823
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 15,
+      "feature": "Destination Port",
+      "family": "transport_ports",
+      "importance": 0.0013533355416132588
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 16,
+      "feature": "Destination Country",
+      "family": "country_context",
+      "importance": 0.0011325217651938727
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 17,
+      "feature": "IP Protocol",
+      "family": "transport_ports",
+      "importance": 0.0007111517113693943
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 18,
+      "feature": "Source Country",
+      "family": "country_context",
+      "importance": 5.6622482280300156e-05
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 19,
+      "feature": "Packets Received",
+      "family": "volume_duration",
+      "importance": 3.9705114828904144e-05
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 20,
+      "feature": "Destination Zone",
+      "family": "zone_interface",
+      "importance": 3.00494833024986e-05
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 21,
+      "feature": "Technology of app",
+      "family": "application_context",
+      "importance": 8.680799646500618e-06
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 22,
+      "feature": "SaaS of app",
+      "family": "risk_saas_ai",
+      "importance": 1.755624459669849e-07
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 23,
+      "feature": "Inbound Interface",
+      "family": "zone_interface",
+      "importance": 1.8536299495650152e-09
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "rank": 24,
+      "feature": "AI Traffic",
+      "family": "risk_saas_ai",
+      "importance": 0.0
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 1,
+      "feature": "Bytes Received",
+      "family": "volume_duration",
+      "importance": 0.43884298331438487
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 2,
+      "feature": "Packets",
+      "family": "volume_duration",
+      "importance": 0.30568871085653976
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 3,
+      "feature": "Packets Sent",
+      "family": "volume_duration",
+      "importance": 0.13980020148470576
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 4,
+      "feature": "Destination Port",
+      "family": "transport_ports",
+      "importance": 0.02964432380028434
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 5,
+      "feature": "Bytes Sent",
+      "family": "volume_duration",
+      "importance": 0.02784907269991869
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 6,
+      "feature": "Source Port",
+      "family": "transport_ports",
+      "importance": 0.027179459742381278
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 7,
+      "feature": "Bytes",
+      "family": "volume_duration",
+      "importance": 0.02100002709789594
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 8,
+      "feature": "Elapsed Time (sec)",
+      "family": "volume_duration",
+      "importance": 0.005095612282223478
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 9,
+      "feature": "IP Protocol",
+      "family": "transport_ports",
+      "importance": 0.004499756068917042
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "rank": 10,
+      "feature": "Packets Received",
+      "family": "volume_duration",
+      "importance": 0.00039985265274887445
+    }
+  ],
+  "family_importance": [
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "family": "volume_duration",
+      "importance": 0.670265847337409
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "family": "zone_interface",
+      "importance": 0.2874875358465551
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "family": "application_context",
+      "importance": 0.03072631864232724
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "family": "transport_ports",
+      "importance": 0.0057567001435686015
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "family": "risk_saas_ai",
+      "importance": 0.004574453782665874
+    },
+    {
+      "experiment": "random_80_20_core_lightgbm",
+      "family": "country_context",
+      "importance": 0.001189144247474173
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "family": "volume_duration",
+      "importance": 0.9386764603884172
+    },
+    {
+      "experiment": "strict_transport_volume_only_lightgbm",
+      "family": "transport_ports",
+      "importance": 0.061323539611582656
+    }
+  ]
+}

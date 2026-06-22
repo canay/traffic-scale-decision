@@ -1,0 +1,8 @@
+field1,field2,field3,field4,distinct_contexts
+Application,Bytes,Outbound Interface,Source Port,756126
+Application,Bytes,Destination Country,Source Port,758146
+Bytes,Destination Port,Outbound Interface,Source Port,816871
+Bytes,Outbound Interface,Source Port,Subcategory of app,756079
+Bytes,Category of app,Outbound Interface,Source Port,756068
+Bytes,Outbound Interface,Source Port,Technology of app,755980
+Bytes,Outbound Interface,Risk of app,Source Port,756104

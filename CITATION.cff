@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Near-Deterministic Reconstruction of Enterprise Firewall Traffic Decisions: Proxy Structure, Ablation Evidence, and Operational Uncertainty Boundaries"
+message: "If you use this reproducibility package, please cite the associated paper and this repository."
+type: software
+authors:
+  - family-names: "Canay"
+    given-names: "Özkan"
+    orcid: "https://orcid.org/0000-0001-7539-6001"
+  - family-names: "Özkurt"
+    given-names: "Cem"
+    orcid: "https://orcid.org/0000-0002-1251-7715"
+  - family-names: "Garri"
+    given-names: "Fatmir"
+    orcid: "https://orcid.org/0009-0005-6762-6846"
+repository-code: "https://github.com/canay/traffic-scale-decision"
+version: "1.0.0"
+date-released: "2026-06-07"
+license: "MIT"

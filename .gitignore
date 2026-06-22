@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.env
+.DS_Store
+Thumbs.db
+data/raw/
+manuscript/
+docs/
+WRITING_STATUS*.md
+JOURNAL_TARGETS*.md
+*_draft*.md
+*_draft*.tex
+*_draft*.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+# Record-level data must never enter the public repository
+data/processed/*.csv
+*.pkl
+*.parquet
+.git_broken/

@@ -1,0 +1,35 @@
+experiment,rank,feature,family,importance
+random_80_20_core_lightgbm,1,Bytes Received,volume_duration,0.37134286173211
+random_80_20_core_lightgbm,2,Packets,volume_duration,0.29185245959655387
+random_80_20_core_lightgbm,3,Outbound Interface,zone_interface,0.2758856628480809
+random_80_20_core_lightgbm,4,Application,application_context,0.018873434406284535
+random_80_20_core_lightgbm,5,Source Zone,zone_interface,0.011571821661541751
+random_80_20_core_lightgbm,6,Category of app,application_context,0.005410799211172471
+random_80_20_core_lightgbm,7,Risk of app,risk_saas_ai,0.004574278220219907
+random_80_20_core_lightgbm,8,Category,application_context,0.004505861432757086
+random_80_20_core_lightgbm,9,Source Port,transport_ports,0.003692212890585948
+random_80_20_core_lightgbm,10,Bytes,volume_duration,0.0022468223445138683
+random_80_20_core_lightgbm,11,Subcategory of app,application_context,0.0019275427924666435
+random_80_20_core_lightgbm,12,Bytes Sent,volume_duration,0.001914094555069061
+random_80_20_core_lightgbm,13,Packets Sent,volume_duration,0.0014506083092035772
+random_80_20_core_lightgbm,14,Elapsed Time (sec),volume_duration,0.0014192956851296823
+random_80_20_core_lightgbm,15,Destination Port,transport_ports,0.0013533355416132588
+random_80_20_core_lightgbm,16,Destination Country,country_context,0.0011325217651938727
+random_80_20_core_lightgbm,17,IP Protocol,transport_ports,0.0007111517113693943
+random_80_20_core_lightgbm,18,Source Country,country_context,5.6622482280300156e-05
+random_80_20_core_lightgbm,19,Packets Received,volume_duration,3.9705114828904144e-05
+random_80_20_core_lightgbm,20,Destination Zone,zone_interface,3.00494833024986e-05
+random_80_20_core_lightgbm,21,Technology of app,application_context,8.680799646500618e-06
+random_80_20_core_lightgbm,22,SaaS of app,risk_saas_ai,1.755624459669849e-07
+random_80_20_core_lightgbm,23,Inbound Interface,zone_interface,1.8536299495650152e-09
+random_80_20_core_lightgbm,24,AI Traffic,risk_saas_ai,0.0
+strict_transport_volume_only_lightgbm,1,Bytes Received,volume_duration,0.43884298331438487
+strict_transport_volume_only_lightgbm,2,Packets,volume_duration,0.30568871085653976
+strict_transport_volume_only_lightgbm,3,Packets Sent,volume_duration,0.13980020148470576
+strict_transport_volume_only_lightgbm,4,Destination Port,transport_ports,0.02964432380028434
+strict_transport_volume_only_lightgbm,5,Bytes Sent,volume_duration,0.02784907269991869
+strict_transport_volume_only_lightgbm,6,Source Port,transport_ports,0.027179459742381278
+strict_transport_volume_only_lightgbm,7,Bytes,volume_duration,0.02100002709789594
+strict_transport_volume_only_lightgbm,8,Elapsed Time (sec),volume_duration,0.005095612282223478
+strict_transport_volume_only_lightgbm,9,IP Protocol,transport_ports,0.004499756068917042
+strict_transport_volume_only_lightgbm,10,Packets Received,volume_duration,0.00039985265274887445

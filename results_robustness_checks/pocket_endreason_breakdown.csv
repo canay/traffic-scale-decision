@@ -1,0 +1,11 @@
+pocket,breakdown_field,value,count,share_of_pocket
+Deny->Allow,raw_session_end_reason,auth-policy-redirect,3217,0.994436
+Deny->Allow,raw_session_end_reason,policy-deny,18,0.005564
+Deny->Allow,raw_action,allow,3217,0.994436
+Deny->Allow,raw_action,drop,18,0.005564
+Deny->Allow,Application,ms-update,3217,0.994436
+Deny->Allow,Application,google-base,18,0.005564
+Deny->Allow,Category,panw-auth-portal-exclude-list,3217,0.994436
+Deny->Allow,Category,search-engines,18,0.005564
+Deny->Allow,Application x raw_session_end_reason,ms-update x auth-policy-redirect,3217,0.994436
+Deny->Allow,Application x raw_session_end_reason,google-base x policy-deny,18,0.005564
