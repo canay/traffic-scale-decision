@@ -1,14 +1,15 @@
-# Exact versions captured from the experiment VPS environment (pip freeze, 2026-06).
-# NOTE: catboost was not present in the captured freeze even though the full-data
-# benchmark uses it. Confirm and pin the exact CatBoost version actually used
-# before the public release (replace the floor below).
-catboost>=1.2
+# Exact versions of the experiment VPS environment (.venv-ml, Python 3.12.3, Oracle
+# Cloud Ampere aarch64), verified 2026-07-02 two ways: the archived run-time install
+# logs of the reported benchmark runs and a live pip freeze on the same VPS venv
+# agree on every pin below. An earlier 2026-06 freeze capture had stale values for
+# numpy, scikit-learn, matplotlib, and shap; those were corrected from this evidence.
+catboost==1.2.10
 lightgbm==4.6.0
-matplotlib==3.11.0
-numpy==2.4.6
+matplotlib==3.10.9
+numpy==2.4.4
 pandas==3.0.3
-scikit-learn==1.9.0
+scikit-learn==1.8.0
 scipy==1.17.1
 seaborn==0.13.2
-shap==0.52.0
+shap==0.51.0
 xgboost==3.2.0

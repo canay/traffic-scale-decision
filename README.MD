@@ -223,20 +223,18 @@ python scripts/build_ijar_reviewer_diagnostics.py --uncertainty-dir results_ijar
 
 ## Submission And Public Release Checklist
 
-Before linking this repository in a manuscript submission:
+Current public-release status:
 
-- Replace the planned GitHub URL with the final public URL.
-- Update the paper title, author affiliations, ORCID/contact information, target journal, submission status, DOI if available, and citation text.
-- Confirm that `data/processed/` does not contain raw or record-level processed firewall logs.
-- Confirm that no raw enterprise logs, record-level processed data, manuscript drafts, private review notes, or local credentials are included.
-- Confirm that the manuscript data-availability statement says code and aggregate outputs are public, while full reproduction requires authorized data access.
-- Check whether the target journal requires a data availability statement, code availability statement, or repository DOI.
-- Consider archiving the final GitHub release on Zenodo and adding the DOI here.
+- Final public URL: `https://github.com/canay/traffic-scale-decision`.
+- Paper title, authors, ORCIDs, target journal, citation metadata, and MIT license are recorded.
+- `data/processed/` contains schema and data-withheld documentation only, not raw or record-level processed firewall logs.
+- The package contains code, aggregate outputs, diagnostic summaries, figures, and synthetic demo data; it should not contain manuscript drafts, private review notes, local credentials, or raw enterprise logs.
+- Full reproduction requires authorized access to the institutional data or an equivalently approved dataset.
+- A repository DOI can be added after Zenodo or another archive mints one.
 
 ## License
 
-No license has been assigned yet. Choose an appropriate code license before public release. Do not assign a public data license to the withheld record-level firewall logs.
-
+Code and public reproducibility materials are released under the MIT License. The withheld raw and record-level processed firewall logs are not redistributed and are not covered by this repository license.
 
 
 

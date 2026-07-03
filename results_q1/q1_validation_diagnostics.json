@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "dataset": "C:\\DOCS\\AKADEMIK\\FAALIYETLER\\YAYIN_PIPELINE\\40_AKTIF_CALISMALAR\\fw2_traffic_scale_decision\\data\\processed\\traffic_three_class.csv",
+    "dataset": "data/processed/traffic_three_class.csv",
     "rows": 1048576,
     "labels": [
       "Allow",
