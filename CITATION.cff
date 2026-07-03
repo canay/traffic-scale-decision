@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Near-Deterministic Reconstruction of Enterprise Firewall Traffic Decisions: Proxy Structure, Ablation Evidence, and Operational Uncertainty Boundaries"
+title: "Near-Deterministic Reconstruction of Enterprise Firewall Traffic Decisions through Proxy Structure and Uncertainty Boundaries"
 message: "If you use this reproducibility package, please cite the associated paper and this repository."
 type: software
 authors:

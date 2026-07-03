@@ -2,7 +2,7 @@
 
 Public reproducibility artifact for the manuscript:
 
-**Near-Deterministic Reconstruction of Enterprise Firewall Traffic Decisions: Proxy Structure, Ablation Evidence, and Operational Uncertainty Boundaries**
+**Near-Deterministic Reconstruction of Enterprise Firewall Traffic Decisions through Proxy Structure and Uncertainty Boundaries**
 
 Repository short name:
 
@@ -235,7 +235,6 @@ Current public-release status:
 ## License
 
 Code and public reproducibility materials are released under the MIT License. The withheld raw and record-level processed firewall logs are not redistributed and are not covered by this repository license.
-
 
 
 
