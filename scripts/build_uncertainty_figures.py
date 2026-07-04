@@ -6,10 +6,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_UNCERTAINTY_DIR = ROOT / "data" / "reports_ijar_uncertainty"
-DEFAULT_CONFORMAL_DIR = ROOT / "data" / "reports_ijar_conformal_selective"
-DEFAULT_OUTPUT_DIR = ROOT / "IJAR" / "manuscript_r0"
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_UNCERTAINTY_DIR = ROOT / "results_uncertainty"
+DEFAULT_CONFORMAL_DIR = ROOT / "results_conformal_selective"
+DEFAULT_OUTPUT_DIR = ROOT / "figures_diagnostics"
 SELECTED_EXPERIMENTS = [
     "random_core_all",
     "random_without_volume_duration",
@@ -99,7 +99,7 @@ def plot_entropy(summary: pd.DataFrame, output_dir: Path) -> Path:
     ax.set_xlabel("Mean predictive entropy (bits)")
     ax.grid(axis="x", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
     prepare_axis(ax)
-    path = output_dir / "fig_ijar_entropy_by_setting.png"
+    path = output_dir / "fig_entropy_by_setting.png"
     save(fig, path)
     return path
 def plot_conformal_sets(
@@ -130,7 +130,7 @@ def plot_conformal_sets(
     ax.legend(frameon=False, ncol=len(ax.get_legend_handles_labels()[0]), loc="lower left", bbox_to_anchor=(0, 1.02))
     ax.grid(axis="x", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
     prepare_axis(ax)
-    path = output_dir / f"fig_ijar_conformal_set_structure_{method}.png"
+    path = output_dir / f"fig_conformal_set_structure_{method}.png"
     save(fig, path)
     return path
 def plot_selective_risk(selective: pd.DataFrame, output_dir: Path) -> Path:
@@ -159,7 +159,7 @@ def plot_selective_risk(selective: pd.DataFrame, output_dir: Path) -> Path:
         prepare_axis(ax)
     axes[0].legend(frameon=False, fontsize=8)
     fig.subplots_adjust(bottom=0.22)
-    path = output_dir / "fig_ijar_selective_risk_tradeoff.png"
+    path = output_dir / "fig_selective_risk_tradeoff.png"
     save(fig, path)
     return path
 def plot_reliability(reliability: pd.DataFrame, summary: pd.DataFrame, output_dir: Path) -> Path:
@@ -200,7 +200,7 @@ def plot_reliability(reliability: pd.DataFrame, summary: pd.DataFrame, output_di
         ax.grid(axis="y", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
         prepare_axis(ax)
         fig.subplots_adjust(bottom=0.28)
-    path = output_dir / "fig_ijar_reliability.png"
+    path = output_dir / "fig_reliability.png"
     save(fig, path)
     return path
 def main() -> None:
@@ -213,10 +213,10 @@ def main() -> None:
     conformal_dir = Path(args.conformal_dir)
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    summary = read_csv(uncertainty_dir / "ijar_uncertainty_summary.csv")
-    reliability = read_csv(uncertainty_dir / "ijar_reliability_bins.csv")
-    conformal = read_csv(conformal_dir / "ijar_conformal_prediction_sets.csv")
-    selective = read_csv(conformal_dir / "ijar_selective_classification.csv")
+    summary = read_csv(uncertainty_dir / "uncertainty_summary.csv")
+    reliability = read_csv(uncertainty_dir / "reliability_bins.csv")
+    conformal = read_csv(conformal_dir / "conformal_prediction_sets.csv")
+    selective = read_csv(conformal_dir / "selective_classification.csv")
     generated = [
         plot_entropy(summary, output_dir),
         plot_conformal_sets(conformal, output_dir, method="probability_threshold"),
@@ -230,7 +230,7 @@ def main() -> None:
             "path": [str(path) for path in generated],
         }
     )
-    manifest.to_csv(output_dir / "ijar_figures_manifest.csv", index=False)
+    manifest.to_csv(output_dir / "figures_manifest.csv", index=False)
     for path in generated:
         print(path)
 if __name__ == "__main__":

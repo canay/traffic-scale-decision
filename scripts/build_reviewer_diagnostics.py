@@ -48,17 +48,17 @@ def existing_default(*candidates: Path) -> Path:
 
 
 DEFAULT_UNCERTAINTY_DIR = existing_default(
-    ROOT / "data" / "reports_ijar_uncertainty",
-    ROOT / "results_ijar_uncertainty",
+    ROOT / "data" / "reports_uncertainty",
+    ROOT / "results_uncertainty",
 )
 DEFAULT_CONFORMAL_DIR = existing_default(
-    ROOT / "data" / "reports_ijar_conformal_selective",
-    ROOT / "results_ijar_conformal_selective",
+    ROOT / "data" / "reports_conformal_selective",
+    ROOT / "results_conformal_selective",
 )
 DEFAULT_OUTPUT_DIR = (
-    ROOT / "data" / "reports_ijar_reviewer_diagnostics"
-    if (ROOT / "submission_ijar").exists()
-    else ROOT / "results_ijar_reviewer_diagnostics"
+    ROOT / "data" / "reports_reviewer_diagnostics"
+    if (ROOT / "submission_package").exists()
+    else ROOT / "results_reviewer_diagnostics"
 )
 
 
@@ -399,10 +399,10 @@ def build_notes(
         "confident_wrong_share_of_pair"
     ].map(lambda value: fmt_float(value))
 
-    return f"""# IJAR Reviewer-Facing Diagnostics - 2026-05-24
+    return f"""# Reviewer-Facing Diagnostics - 2026-05-24
 
 These notes summarize additional reviewer-facing diagnostics derived from the
-already completed IJAR uncertainty, conformal, and selective-classification
+already completed uncertainty, conformal, and selective-classification
 outputs. They do not introduce a new dataset or a new experimental claim. Their
 purpose is to turn the existing evidence into operationally readable tables for
 the manuscript, reviewer response, and public reproducibility package.
@@ -464,7 +464,7 @@ Drop-to-Allow transitions under held-out rule context.
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Build reviewer-facing IJAR diagnostic tables from existing outputs."
+        description="Build reviewer-facing diagnostic tables from existing outputs."
     )
     parser.add_argument("--uncertainty-dir", type=Path, default=DEFAULT_UNCERTAINTY_DIR)
     parser.add_argument("--conformal-dir", type=Path, default=DEFAULT_CONFORMAL_DIR)
@@ -476,18 +476,18 @@ def main() -> None:
     output_dir = args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    conformal = read_csv(conformal_dir / "ijar_conformal_prediction_sets.csv")
-    selective = read_csv(conformal_dir / "ijar_selective_classification.csv")
-    error_pairs = read_csv(uncertainty_dir / "ijar_error_pairs.csv")
+    conformal = read_csv(conformal_dir / "conformal_prediction_sets.csv")
+    selective = read_csv(conformal_dir / "selective_classification.csv")
+    error_pairs = read_csv(uncertainty_dir / "error_pairs.csv")
 
     classwise = build_classwise_conformal(conformal)
     review_queue = build_review_queue(selective, conformal, error_pairs)
     taxonomy = build_error_taxonomy(error_pairs)
 
-    classwise_path = output_dir / "ijar_classwise_conformal_summary.csv"
-    review_queue_path = output_dir / "ijar_operational_review_queue.csv"
-    taxonomy_path = output_dir / "ijar_error_pocket_taxonomy.csv"
-    notes_path = output_dir / "IJAR_REVIEWER_DIAGNOSTICS_2026-05-24.md"
+    classwise_path = output_dir / "classwise_conformal_summary.csv"
+    review_queue_path = output_dir / "operational_review_queue.csv"
+    taxonomy_path = output_dir / "error_pocket_taxonomy.csv"
+    notes_path = output_dir / "REVIEWER_DIAGNOSTICS_2026-05-24.md"
 
     classwise.to_csv(classwise_path, index=False)
     review_queue.to_csv(review_queue_path, index=False)
@@ -496,9 +496,9 @@ def main() -> None:
     notes = build_notes(classwise, review_queue, taxonomy, output_dir)
     notes_path.write_text(notes, encoding="utf-8", newline="\n")
 
-    submission_dir = ROOT / "submission_ijar"
+    submission_dir = ROOT / "submission_package"
     if submission_dir.exists():
-        (submission_dir / "IJAR_REVIEWER_DIAGNOSTICS_2026-05-24.md").write_text(
+        (submission_dir / "REVIEWER_DIAGNOSTICS_2026-05-24.md").write_text(
             notes, encoding="utf-8", newline="\n"
         )
 
@@ -507,7 +507,7 @@ def main() -> None:
     print(f"Wrote {taxonomy_path}")
     print(f"Wrote {notes_path}")
     if submission_dir.exists():
-        print(f"Wrote {submission_dir / 'IJAR_REVIEWER_DIAGNOSTICS_2026-05-24.md'}")
+        print(f"Wrote {submission_dir / 'REVIEWER_DIAGNOSTICS_2026-05-24.md'}")
 
 
 if __name__ == "__main__":

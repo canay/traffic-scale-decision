@@ -16,17 +16,6 @@ GitHub URL:
 
 This repository supports a paper on three-class firewall traffic decision reconstruction from real enterprise Palo Alto firewall traffic logs. The study focuses on uncertainty-aware reconstruction, proxy and policy structure, class imbalance, runtime behavior, and the risk that operational firewall labels can be nearly deterministic from structured log context.
 
-Primary target journal:
-
-- International Journal of Approximate Reasoning
-
-Current fallback order:
-
-1. Journal of Network and Systems Management
-2. Computing
-3. Computer Communications
-4. Telecommunication Systems
-
 Target classes:
 
 - Allow
@@ -68,7 +57,7 @@ GitHub:
 
 https://github.com/canay
 
-Status note (2026-06-07): affiliations, ORCIDs, the final submitted article title, and the target journal are current as listed; the article DOI will be added after acceptance.
+Status note (2026-07-05): affiliations, ORCIDs, and the final article title are current; the article DOI will be added after acceptance.
 
 ## Repository Contents
 
@@ -77,10 +66,10 @@ Status note (2026-06-07): affiliations, ORCIDs, the final submitted article titl
 - `data/processed/`: data-withheld notice and schema-level documentation
 - `results/`: CSV/JSON benchmark outputs and timing logs from the Oracle Cloud VPS runs
 - `results_q1/`: additional LightGBM temporal and feature-family diagnostic outputs
-- `results_ijar_uncertainty/`: uncertainty, calibration, entropy, class-wise, and confidence-band diagnostics
-- `results_ijar_conformal_selective/`: conformal prediction-set and selective-classification diagnostics
-- `results_ijar_reviewer_diagnostics/`: derived class-wise, review-queue, and error-pocket summaries
-- `figures_ijar/`: generated IJAR diagnostic figures and figure manifest
+- `results_uncertainty/`: uncertainty, calibration, entropy, class-wise, and confidence-band diagnostics
+- `results_conformal_selective/`: conformal prediction-set and selective-classification diagnostics
+- `results_reviewer_diagnostics/`: derived class-wise, review-queue, and error-pocket summaries
+- `figures_diagnostics/`: generated diagnostic figures and figure manifest
 - `results_robustness_checks/`: duplicate-structure, exact-match lookup, raw-field crosstab, and multi-seed robustness diagnostics
 - `requirements.txt`: Python dependencies used in the experiments
 - `CITATION.cff`: citation metadata for this artifact
@@ -152,11 +141,11 @@ Packaged output files:
 
 - `results/`: final VPS benchmark, ablation, cross-validation, and timing outputs used by the manuscript
 - `results_q1/`: additional LightGBM temporal and feature-family diagnostics used to interpret proxy structure
-- `results_ijar_uncertainty/`: uncertainty, calibration, entropy, confidence-band, class-wise, and error-pair diagnostics used by the IJAR framing
-- `results_ijar_conformal_selective/`: conformal prediction-set and selective-classification diagnostics used by the IJAR framing
-- `results_ijar_reviewer_diagnostics/`: derived summaries for operational review queues, class-wise conformal behavior, and residual error pockets
-- `figures_ijar/`: IJAR entropy, calibration, conformal-set, and selective-risk figures
-- `results/reports_ijar_diagnostics_timing.csv`: timing for the IJAR diagnostic pass and figure generation
+- `results_uncertainty/`: uncertainty, calibration, entropy, confidence-band, class-wise, and error-pair diagnostics used by the manuscript framing
+- `results_conformal_selective/`: conformal prediction-set and selective-classification diagnostics used by the manuscript framing
+- `results_reviewer_diagnostics/`: derived summaries for operational review queues, class-wise conformal behavior, and residual error pockets
+- `figures_diagnostics/`: Entropy, calibration, conformal-set, and selective-risk figures
+- `results/reports_diagnostics_timing.csv`: timing for the diagnostic pass and figure generation
 
 ## Reproducing With Authorized Local Data
 
@@ -171,7 +160,7 @@ Place authorized local copies of the processed files in `data/processed/` using 
 - `traffic_three_class.csv`
 - `traffic_three_class_capped_sample.csv`
 
-The commands below rerun the experiments only when those non-public files are available locally. Without authorized record-level data, use the packaged `results*/` folders and `figures_ijar/` to inspect the reported outputs.
+The commands below rerun the experiments only when those non-public files are available locally. Without authorized record-level data, use the packaged `results*/` folders and `figures_diagnostics/` to inspect the reported outputs.
 
 Run the full core benchmark:
 
@@ -197,28 +186,28 @@ Run the temporal and feature-family diagnostics:
 python scripts/run_q1_validation_diagnostics.py
 ```
 
-Run the IJAR uncertainty diagnostics:
+Run the uncertainty diagnostics:
 
 ```bash
-python scripts/run_ijar_uncertainty_diagnostics.py --output-dir results_ijar_uncertainty
+python scripts/run_uncertainty_diagnostics.py --output-dir results_uncertainty
 ```
 
-Run the IJAR conformal and selective-classification diagnostics:
+Run the conformal and selective-classification diagnostics:
 
 ```bash
-python scripts/run_ijar_conformal_selective_diagnostics.py --output-dir results_ijar_conformal_selective
+python scripts/run_conformal_selective_diagnostics.py --output-dir results_conformal_selective
 ```
 
-Regenerate the IJAR diagnostic figures from the packaged outputs:
+Regenerate the diagnostic figures from the packaged outputs:
 
 ```bash
-python scripts/build_ijar_uncertainty_figures.py --uncertainty-dir results_ijar_uncertainty --conformal-dir results_ijar_conformal_selective --output-dir figures_ijar
+python scripts/build_uncertainty_figures.py --uncertainty-dir results_uncertainty --conformal-dir results_conformal_selective --output-dir figures_diagnostics
 ```
 
-Build derived IJAR diagnostic summaries from the packaged outputs:
+Build derived diagnostic summaries from the packaged outputs:
 
 ```bash
-python scripts/build_ijar_reviewer_diagnostics.py --uncertainty-dir results_ijar_uncertainty --conformal-dir results_ijar_conformal_selective --output-dir results_ijar_reviewer_diagnostics
+python scripts/build_reviewer_diagnostics.py --uncertainty-dir results_uncertainty --conformal-dir results_conformal_selective --output-dir results_reviewer_diagnostics
 ```
 
 ## Submission And Public Release Checklist
@@ -226,7 +215,7 @@ python scripts/build_ijar_reviewer_diagnostics.py --uncertainty-dir results_ijar
 Current public-release status:
 
 - Final public URL: `https://github.com/canay/traffic-scale-decision`.
-- Paper title, authors, ORCIDs, target journal, citation metadata, and MIT license are recorded.
+- Paper title, authors, ORCIDs, citation metadata, and MIT license are recorded.
 - `data/processed/` contains schema and data-withheld documentation only, not raw or record-level processed firewall logs.
 - The package contains code, aggregate outputs, diagnostic summaries, figures, and synthetic demo data; it should not contain manuscript drafts, private review notes, local credentials, or raw enterprise logs.
 - Full reproduction requires authorized access to the institutional data or an equivalently approved dataset.
@@ -235,6 +224,5 @@ Current public-release status:
 ## License
 
 Code and public reproducibility materials are released under the MIT License. The withheld raw and record-level processed firewall logs are not redistributed and are not covered by this repository license.
-
 
 

@@ -1,7 +1,7 @@
 """Record-level breakdown of the dominant context-shift error pocket (R3-5b).
 
 Reproduces the 80/20 application/category group-held-out LightGBM fit exactly
-as in `run_ijar_uncertainty_diagnostics.py` (same GroupShuffleSplit with
+as in `run_uncertainty_diagnostics.py` (same GroupShuffleSplit with
 random_state=42, same core features, same pipeline and model settings, default
 test_size=0.2), then breaks the Deny->Allow error pocket (3,235 records in the
 reported run) down by raw session-end reason and application, answering
@@ -26,7 +26,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
-    "uncdiag", ROOT / "scripts" / "run_ijar_uncertainty_diagnostics.py"
+    "uncdiag", ROOT / "scripts" / "run_uncertainty_diagnostics.py"
 )
 uncdiag = importlib.util.module_from_spec(SPEC)
 sys.modules["uncdiag"] = uncdiag

@@ -1,0 +1,5 @@
+﻿"step","dataset","max_rows","started","ended","wall_seconds","output_dir"
+"uncertainty","full","","2026-05-24T13:21:04","2026-05-24T13:33:53","769.63","results_uncertainty"
+"conformal_selective_aps_rerun","full","","2026-05-24T13:50:02","2026-05-24T13:58:12","489.35","results_conformal_selective"
+"figures_latest","full","","","","3.80","figures_diagnostics"
+"total_effective_latest_outputs","full","","","","1262.78","public aggregate outputs"

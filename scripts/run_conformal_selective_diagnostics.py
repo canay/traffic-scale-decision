@@ -27,7 +27,7 @@ warnings.filterwarnings(
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
-REPORTS = ROOT / "data" / "reports_ijar_conformal_selective"
+REPORTS = ROOT / "data" / "reports_conformal_selective"
 REPORTS.mkdir(parents=True, exist_ok=True)
 
 TARGET = "target"
@@ -95,7 +95,7 @@ def log(message: str, output_dir: Path) -> None:
     stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{stamp}] {message}"
     print(line, flush=True)
-    with (output_dir / "ijar_conformal_progress.log").open("a", encoding="utf-8") as handle:
+    with (output_dir / "conformal_progress.log").open("a", encoding="utf-8") as handle:
         handle.write(line + "\n")
 
 
@@ -446,12 +446,12 @@ def main() -> None:
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    progress = output_dir / "ijar_conformal_progress.log"
+    progress = output_dir / "conformal_progress.log"
     if progress.exists():
         progress.unlink()
 
     started = time.time()
-    log("START IJAR conformal/selective diagnostics", output_dir)
+    log("START diagnostic conformal/selective diagnostics", output_dir)
     df = pd.read_csv(DATASETS[args.dataset], low_memory=False)
     df = maybe_stratified_sample(df, args.max_rows)
     if TIME_COL in df.columns:
@@ -603,13 +603,13 @@ def main() -> None:
         },
     }
     payload = {"metadata": metadata, "summary": summaries, "conformal": conformal, "selective": selective}
-    (output_dir / "ijar_conformal_selective_diagnostics.json").write_text(
+    (output_dir / "conformal_selective_diagnostics.json").write_text(
         json.dumps(payload, indent=2), encoding="utf-8"
     )
-    pd.DataFrame(summaries).to_csv(output_dir / "ijar_conformal_experiment_summary.csv", index=False)
-    pd.DataFrame(conformal).to_csv(output_dir / "ijar_conformal_prediction_sets.csv", index=False)
-    pd.DataFrame(selective).to_csv(output_dir / "ijar_selective_classification.csv", index=False)
-    log(f"FINISHED IJAR conformal/selective diagnostics | wall_seconds={metadata['run_timing']['wall_seconds']:.2f}", output_dir)
+    pd.DataFrame(summaries).to_csv(output_dir / "conformal_experiment_summary.csv", index=False)
+    pd.DataFrame(conformal).to_csv(output_dir / "conformal_prediction_sets.csv", index=False)
+    pd.DataFrame(selective).to_csv(output_dir / "selective_classification.csv", index=False)
+    log(f"FINISHED diagnostic conformal/selective diagnostics | wall_seconds={metadata['run_timing']['wall_seconds']:.2f}", output_dir)
     log(f"Wrote outputs to: {output_dir}", output_dir)
 
 

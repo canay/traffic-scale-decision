@@ -27,7 +27,7 @@ warnings.filterwarnings(
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
-REPORTS = ROOT / "data" / "reports_ijar_uncertainty"
+REPORTS = ROOT / "data" / "reports_uncertainty"
 REPORTS.mkdir(parents=True, exist_ok=True)
 
 TARGET = "target"
@@ -116,7 +116,7 @@ def log(message: str, output_dir: Path) -> None:
     stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{stamp}] {message}"
     print(line, flush=True)
-    with (output_dir / "ijar_uncertainty_progress.log").open("a", encoding="utf-8") as handle:
+    with (output_dir / "uncertainty_progress.log").open("a", encoding="utf-8") as handle:
         handle.write(line + "\n")
 
 
@@ -415,12 +415,12 @@ def main() -> None:
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    progress = output_dir / "ijar_uncertainty_progress.log"
+    progress = output_dir / "uncertainty_progress.log"
     if progress.exists():
         progress.unlink()
 
     started = time.time()
-    log("START IJAR uncertainty diagnostics", output_dir)
+    log("START diagnostic uncertainty diagnostics", output_dir)
     dataset_path = DATASETS[args.dataset]
     log(f"Loading dataset: {dataset_path}", output_dir)
     df = pd.read_csv(dataset_path, low_memory=False)
@@ -560,13 +560,13 @@ def main() -> None:
         "reliability": reliability,
     }
 
-    (output_dir / "ijar_uncertainty_diagnostics.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    pd.DataFrame(summaries).to_csv(output_dir / "ijar_uncertainty_summary.csv", index=False)
-    pd.DataFrame(confidence_bands).to_csv(output_dir / "ijar_confidence_bands.csv", index=False)
-    pd.DataFrame(class_uncertainty).to_csv(output_dir / "ijar_class_uncertainty.csv", index=False)
-    pd.DataFrame(error_pairs).to_csv(output_dir / "ijar_error_pairs.csv", index=False)
-    pd.DataFrame(reliability).to_csv(output_dir / "ijar_reliability_bins.csv", index=False)
-    log(f"FINISHED IJAR uncertainty diagnostics | wall_seconds={metadata['run_timing']['wall_seconds']:.2f}", output_dir)
+    (output_dir / "uncertainty_diagnostics.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    pd.DataFrame(summaries).to_csv(output_dir / "uncertainty_summary.csv", index=False)
+    pd.DataFrame(confidence_bands).to_csv(output_dir / "confidence_bands.csv", index=False)
+    pd.DataFrame(class_uncertainty).to_csv(output_dir / "class_uncertainty.csv", index=False)
+    pd.DataFrame(error_pairs).to_csv(output_dir / "error_pairs.csv", index=False)
+    pd.DataFrame(reliability).to_csv(output_dir / "reliability_bins.csv", index=False)
+    log(f"FINISHED diagnostic uncertainty diagnostics | wall_seconds={metadata['run_timing']['wall_seconds']:.2f}", output_dir)
     log(f"Wrote outputs to: {output_dir}", output_dir)
 
 

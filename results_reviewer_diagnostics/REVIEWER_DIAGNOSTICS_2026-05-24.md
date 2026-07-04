@@ -1,14 +1,14 @@
-# IJAR Reviewer-Facing Diagnostics - 2026-05-24
+# Reviewer-Facing Diagnostics - 2026-05-24
 
 These notes summarize additional reviewer-facing diagnostics derived from the
-already completed IJAR uncertainty, conformal, and selective-classification
+already completed uncertainty, conformal, and selective-classification
 outputs. They do not introduce a new dataset or a new experimental claim. Their
 purpose is to turn the existing evidence into operationally readable tables for
 the manuscript, reviewer response, and public reproducibility package.
 
 Generated source directory:
 
-- `results_ijar_reviewer_diagnostics`
+- `results_reviewer_diagnostics`
 
 ## Operational Review Queue
 
