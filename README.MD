@@ -2,7 +2,7 @@
 
 Public reproducibility artifact for the manuscript:
 
-**Near-Deterministic Reconstruction of Enterprise Firewall Traffic Decisions through Proxy Structure and Uncertainty Boundaries**
+**Near-Deterministic Reconstruction of Enterprise Firewall Decisions: Proxy Structure, Determinism Audit, and Uncertainty-Aware Review for Network Security Management**
 
 Repository short name:
 
@@ -70,7 +70,7 @@ Status note (2026-07-05): affiliations, ORCIDs, and the final article title are 
 - `results_conformal_selective/`: conformal prediction-set and selective-classification diagnostics
 - `results_reviewer_diagnostics/`: derived class-wise, review-queue, and error-pocket summaries
 - `figures_diagnostics/`: generated diagnostic figures and figure manifest
-- `results_robustness_checks/`: duplicate-structure, exact-match lookup, raw-field crosstab, and multi-seed robustness diagnostics
+- `results_robustness_checks/`: duplicate-structure, exact-match lookup, raw-field crosstab, multi-seed, and Deny-labeling sensitivity robustness diagnostics
 - `requirements.txt`: Python dependencies used in the experiments
 - `CITATION.cff`: citation metadata for this artifact
 

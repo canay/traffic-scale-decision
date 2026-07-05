@@ -1,0 +1,134 @@
+{
+  "seed": 42,
+  "baseline_rows": 1048576,
+  "variant_rows": 1044955,
+  "dropped_auth_redirect": 3621,
+  "baseline_redirects_in_deny": {
+    "classes": [
+      "Allow",
+      "Deny",
+      "Drop"
+    ],
+    "n_test": 209716,
+    "models": {
+      "XGBoost": {
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "errors": 0,
+        "fit_predict_sec": 26.8,
+        "per_class": {
+          "Allow": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 160918
+          },
+          "Deny": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2762
+          },
+          "Drop": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 46036
+          }
+        }
+      },
+      "LightGBM": {
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "errors": 0,
+        "fit_predict_sec": 30.5,
+        "per_class": {
+          "Allow": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 160918
+          },
+          "Deny": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2762
+          },
+          "Drop": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 46036
+          }
+        }
+      }
+    }
+  },
+  "sensitivity_redirects_excluded": {
+    "classes": [
+      "Allow",
+      "Deny",
+      "Drop"
+    ],
+    "n_test": 208991,
+    "models": {
+      "XGBoost": {
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "errors": 0,
+        "fit_predict_sec": 25.8,
+        "per_class": {
+          "Allow": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 160917
+          },
+          "Deny": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2038
+          },
+          "Drop": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 46036
+          }
+        }
+      },
+      "LightGBM": {
+        "accuracy": 0.999986,
+        "balanced_accuracy": 0.999832,
+        "macro_f1": 0.999752,
+        "errors": 3,
+        "fit_predict_sec": 28.9,
+        "per_class": {
+          "Allow": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 160917
+          },
+          "Deny": {
+            "precision": 0.999,
+            "recall": 0.9995,
+            "f1": 0.9993,
+            "support": 2038
+          },
+          "Drop": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 46036
+          }
+        }
+      }
+    }
+  }
+}
