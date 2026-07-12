@@ -1,0 +1,17 @@
+field1,field2,field3,field4,distinct_contexts
+Application,Inbound Interface,Source Port,Source Zone,850
+Application,Destination Port,Inbound Interface,Source Zone,849
+Application,IP Protocol,Source Port,Source Zone,848
+Application,Destination Port,IP Protocol,Source Zone,850
+Application,Destination Zone,Inbound Interface,Source Port,853
+Application,Destination Port,Destination Zone,Inbound Interface,848
+Application,Destination Zone,IP Protocol,Source Port,846
+Application,Destination Port,Destination Zone,IP Protocol,845
+Category,Inbound Interface,Source Port,Source Zone,573
+Category,Destination Port,Inbound Interface,Source Zone,571
+Category,IP Protocol,Source Port,Source Zone,570
+Category,Destination Port,IP Protocol,Source Zone,573
+Category,Destination Zone,Inbound Interface,Source Port,571
+Category,Destination Port,Destination Zone,Inbound Interface,573
+Category,Destination Zone,IP Protocol,Source Port,570
+Category,Destination Port,Destination Zone,IP Protocol,571

@@ -1,0 +1,677 @@
+{
+  "metadata": {
+    "data_path": "data/processed/traffic_three_class.csv (withheld; authorized local input)",
+    "rows": 1048576,
+    "labels": [
+      "Allow",
+      "Deny",
+      "Drop"
+    ],
+    "seeds": [
+      42,
+      7,
+      13,
+      29,
+      101
+    ],
+    "elapsed_seconds": 468.3800497299526,
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.17.0-1016-oracle-aarch64-with-glibc2.39",
+      "pandas": "3.0.3",
+      "numpy": "2.4.4"
+    }
+  },
+  "runs": [
+    {
+      "model": "LightGBM",
+      "seed": 42,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.9890518606114936,
+      "balanced_accuracy": 0.9883126472382228,
+      "f1_macro": 0.8990671359523609,
+      "errors": 2296,
+      "fit_seconds": 16.002284050919116,
+      "predict_seconds": 4.901640743948519,
+      "confusion_matrix": [
+        [
+          158690,
+          2207,
+          21
+        ],
+        [
+          58,
+          2704,
+          0
+        ],
+        [
+          9,
+          1,
+          46026
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 7,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.9896431364321273,
+      "balanced_accuracy": 0.9887036286701109,
+      "f1_macro": 0.9030217938262534,
+      "errors": 2172,
+      "fit_seconds": 16.02426440618001,
+      "predict_seconds": 4.64276517694816,
+      "confusion_matrix": [
+        [
+          158810,
+          2085,
+          23
+        ],
+        [
+          57,
+          2705,
+          0
+        ],
+        [
+          5,
+          2,
+          46029
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 13,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.5442550878330695,
+      "balanced_accuracy": 0.6367468515262039,
+      "f1_macro": 0.4246428358933397,
+      "errors": 95577,
+      "fit_seconds": 15.636581660946831,
+      "predict_seconds": 4.24580978997983,
+      "confusion_matrix": [
+        [
+          79317,
+          10348,
+          71253
+        ],
+        [
+          245,
+          1942,
+          575
+        ],
+        [
+          8953,
+          4203,
+          32880
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 29,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.9894285605294779,
+      "balanced_accuracy": 0.9890641926259335,
+      "f1_macro": 0.9016670101980849,
+      "errors": 2217,
+      "fit_seconds": 15.967688385862857,
+      "predict_seconds": 4.818948172964156,
+      "confusion_matrix": [
+        [
+          158765,
+          2136,
+          17
+        ],
+        [
+          53,
+          2709,
+          0
+        ],
+        [
+          11,
+          0,
+          46025
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 101,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.9883366076026626,
+      "balanced_accuracy": 0.9894304677827374,
+      "f1_macro": 0.8947746957454646,
+      "errors": 2446,
+      "fit_seconds": 15.836197304073721,
+      "predict_seconds": 4.821682117180899,
+      "confusion_matrix": [
+        [
+          158527,
+          2368,
+          23
+        ],
+        [
+          46,
+          2716,
+          0
+        ],
+        [
+          9,
+          0,
+          46027
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 42,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.9960422666844685,
+      "balanced_accuracy": 0.9509123396983683,
+      "f1_macro": 0.9506311617417503,
+      "errors": 830,
+      "fit_seconds": 24.483705380931497,
+      "predict_seconds": 1.1513744920957834,
+      "confusion_matrix": [
+        [
+          160495,
+          404,
+          19
+        ],
+        [
+          399,
+          2363,
+          0
+        ],
+        [
+          8,
+          0,
+          46028
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 7,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.996099486925175,
+      "balanced_accuracy": 0.9530412343222213,
+      "f1_macro": 0.9518605927848552,
+      "errors": 818,
+      "fit_seconds": 19.57019925187342,
+      "predict_seconds": 1.2296277028508484,
+      "confusion_matrix": [
+        [
+          160495,
+          404,
+          19
+        ],
+        [
+          381,
+          2381,
+          0
+        ],
+        [
+          14,
+          0,
+          46022
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 13,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.996099486925175,
+      "balanced_accuracy": 0.9528967739681621,
+      "f1_macro": 0.9516971407206936,
+      "errors": 818,
+      "fit_seconds": 19.497060406953096,
+      "predict_seconds": 1.1834448950830847,
+      "confusion_matrix": [
+        [
+          160501,
+          405,
+          12
+        ],
+        [
+          382,
+          2380,
+          0
+        ],
+        [
+          18,
+          1,
+          46017
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 29,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.9958896793759179,
+      "balanced_accuracy": 0.9526766776698966,
+      "f1_macro": 0.9494803353714714,
+      "errors": 862,
+      "fit_seconds": 19.713569518877193,
+      "predict_seconds": 1.3197936590295285,
+      "confusion_matrix": [
+        [
+          160460,
+          447,
+          11
+        ],
+        [
+          383,
+          2379,
+          0
+        ],
+        [
+          21,
+          0,
+          46015
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 101,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port",
+      "feature_count": 7,
+      "accuracy": 0.9962234641133724,
+      "balanced_accuracy": 0.9502535241574113,
+      "f1_macro": 0.952833423717899,
+      "errors": 792,
+      "fit_seconds": 19.4709098150488,
+      "predict_seconds": 1.2155574990902096,
+      "confusion_matrix": [
+        [
+          160544,
+          354,
+          20
+        ],
+        [
+          405,
+          2357,
+          0
+        ],
+        [
+          13,
+          0,
+          46023
+        ]
+      ],
+      "feature_view": "strict_zone_interface_transport_ports"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 42,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.99256613706155,
+      "balanced_accuracy": 0.99153091691116,
+      "f1_macro": 0.9244858987536019,
+      "errors": 1559,
+      "fit_seconds": 18.041024783160537,
+      "predict_seconds": 4.910795024828985,
+      "confusion_matrix": [
+        [
+          159407,
+          1502,
+          9
+        ],
+        [
+          44,
+          2718,
+          0
+        ],
+        [
+          3,
+          1,
+          46032
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 7,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.8335606248450285,
+      "balanced_accuracy": 0.8140729300262338,
+      "f1_macro": 0.6156390978746819,
+      "errors": 34905,
+      "fit_seconds": 17.880794767057523,
+      "predict_seconds": 4.8744163028895855,
+      "confusion_matrix": [
+        [
+          141300,
+          10574,
+          9044
+        ],
+        [
+          120,
+          2457,
+          185
+        ],
+        [
+          8154,
+          6828,
+          31054
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 13,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9920654599553682,
+      "balanced_accuracy": 0.9917878710101765,
+      "f1_macro": 0.9205574088023681,
+      "errors": 1664,
+      "fit_seconds": 17.907398842973635,
+      "predict_seconds": 4.965051983017474,
+      "confusion_matrix": [
+        [
+          159298,
+          1614,
+          6
+        ],
+        [
+          40,
+          2722,
+          0
+        ],
+        [
+          4,
+          0,
+          46032
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 29,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9916076980297164,
+      "balanced_accuracy": 0.9914600593952073,
+      "f1_macro": 0.9171486757701933,
+      "errors": 1760,
+      "fit_seconds": 17.912234124960378,
+      "predict_seconds": 4.941619577119127,
+      "confusion_matrix": [
+        [
+          159205,
+          1705,
+          8
+        ],
+        [
+          41,
+          2721,
+          0
+        ],
+        [
+          6,
+          0,
+          46030
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "LightGBM",
+      "seed": 101,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9916029296763241,
+      "balanced_accuracy": 0.9913290353780622,
+      "f1_macro": 0.9173737902338249,
+      "errors": 1761,
+      "fit_seconds": 18.058063932927325,
+      "predict_seconds": 4.894126357045025,
+      "confusion_matrix": [
+        [
+          159207,
+          1696,
+          15
+        ],
+        [
+          42,
+          2720,
+          0
+        ],
+        [
+          8,
+          0,
+          46028
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 42,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9969482538289878,
+      "balanced_accuracy": 0.9635490078590386,
+      "f1_macro": 0.9617428885607486,
+      "errors": 640,
+      "fit_seconds": 21.302471676142886,
+      "predict_seconds": 1.3959597731009126,
+      "confusion_matrix": [
+        [
+          160577,
+          330,
+          11
+        ],
+        [
+          296,
+          2466,
+          0
+        ],
+        [
+          3,
+          0,
+          46033
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 7,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9970340841900475,
+      "balanced_accuracy": 0.9629777159188656,
+      "f1_macro": 0.9626564961798977,
+      "errors": 622,
+      "fit_seconds": 21.542603397974744,
+      "predict_seconds": 1.2858743199612945,
+      "confusion_matrix": [
+        [
+          160603,
+          307,
+          8
+        ],
+        [
+          301,
+          2461,
+          0
+        ],
+        [
+          6,
+          0,
+          46030
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 13,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9971819031452059,
+      "balanced_accuracy": 0.9661310652563225,
+      "f1_macro": 0.9643879569986472,
+      "errors": 591,
+      "fit_seconds": 21.293022993020713,
+      "predict_seconds": 1.330302553018555,
+      "confusion_matrix": [
+        [
+          160607,
+          308,
+          3
+        ],
+        [
+          275,
+          2487,
+          0
+        ],
+        [
+          5,
+          0,
+          46031
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 29,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9968910335882814,
+      "balanced_accuracy": 0.9649268419736443,
+      "f1_macro": 0.9613061343573964,
+      "errors": 652,
+      "fit_seconds": 21.31428910093382,
+      "predict_seconds": 1.292058733990416,
+      "confusion_matrix": [
+        [
+          160557,
+          353,
+          8
+        ],
+        [
+          284,
+          2478,
+          0
+        ],
+        [
+          7,
+          0,
+          46029
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    },
+    {
+      "model": "XGBoost",
+      "seed": 101,
+      "features": "Source Zone|Destination Zone|Inbound Interface|Outbound Interface|IP Protocol|Source Port|Destination Port|Source Country|Destination Country",
+      "feature_count": 9,
+      "accuracy": 0.9970817677239696,
+      "balanced_accuracy": 0.9625239742220252,
+      "f1_macro": 0.9634540656387761,
+      "errors": 612,
+      "fit_seconds": 21.274645669851452,
+      "predict_seconds": 1.321883318014443,
+      "confusion_matrix": [
+        [
+          160617,
+          287,
+          14
+        ],
+        [
+          305,
+          2457,
+          0
+        ],
+        [
+          6,
+          0,
+          46030
+        ]
+      ],
+      "feature_view": "strict_plus_country_context"
+    }
+  ],
+  "summary": [
+    {
+      "feature_view": "strict_plus_country_context",
+      "model": "LightGBM",
+      "runs": 5,
+      "f1_macro_mean": 0.859040974286934,
+      "f1_macro_sd": 0.1360983152751222,
+      "f1_macro_min": 0.6156390978746819,
+      "f1_macro_max": 0.9244858987536019,
+      "errors_mean": 8329.8,
+      "errors_min": 1559,
+      "errors_max": 34905
+    },
+    {
+      "feature_view": "strict_plus_country_context",
+      "model": "XGBoost",
+      "runs": 5,
+      "f1_macro_mean": 0.9627095083470932,
+      "f1_macro_sd": 0.0012528146403880645,
+      "f1_macro_min": 0.9613061343573964,
+      "f1_macro_max": 0.9643879569986472,
+      "errors_mean": 623.4,
+      "errors_min": 591,
+      "errors_max": 652
+    },
+    {
+      "feature_view": "strict_zone_interface_transport_ports",
+      "model": "LightGBM",
+      "runs": 5,
+      "f1_macro_mean": 0.8046346943231006,
+      "f1_macro_sd": 0.21244517530065077,
+      "f1_macro_min": 0.4246428358933397,
+      "f1_macro_max": 0.9030217938262534,
+      "errors_mean": 20941.6,
+      "errors_min": 2172,
+      "errors_max": 95577
+    },
+    {
+      "feature_view": "strict_zone_interface_transport_ports",
+      "model": "XGBoost",
+      "runs": 5,
+      "f1_macro_mean": 0.9513005308673339,
+      "f1_macro_sd": 0.001282760294053036,
+      "f1_macro_min": 0.9494803353714714,
+      "f1_macro_max": 0.952833423717899,
+      "errors_mean": 824.0,
+      "errors_min": 792,
+      "errors_max": 862
+    }
+  ]
+}

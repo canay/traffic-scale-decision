@@ -1,0 +1,17 @@
+{
+  "rows": 1048576,
+  "zero_session_id_rows": 230181,
+  "nonzero_unique_session_ids": 816849,
+  "nonzero_repeated_session_ids": 1521,
+  "rows_in_nonzero_repeated_sessions": 3067,
+  "max_rows_per_nonzero_session": 3,
+  "raw_processed_action_mismatches": 0,
+  "splitter": "GroupShuffleSplit(n_splits=1, test_size=0.2) per seed",
+  "seeds": [42, 52, 62, 72, 82],
+  "macro_f1_mean": 0.999775,
+  "macro_f1_sd": 0.000033,
+  "macro_f1_min": 0.999749,
+  "macro_f1_max": 0.999812,
+  "errors_mean": 3.6,
+  "privacy_note": "Aggregate output only; no Session IDs or record-level rows are included."
+}

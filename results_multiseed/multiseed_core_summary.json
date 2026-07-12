@@ -1,0 +1,9 @@
+{
+  "n_seeds": 10,
+  "macro_f1_mean": 0.999853,
+  "macro_f1_std": 0.000105,
+  "macro_f1_min": 0.999693,
+  "macro_f1_max": 1.0,
+  "accuracy_mean": 0.999989,
+  "errors_mean": 2.4
+}

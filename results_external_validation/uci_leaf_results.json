@@ -1,0 +1,181 @@
+{
+  "dataset": "UCI Internet Firewall",
+  "rows": 65532,
+  "features": [
+    "Source Port",
+    "Destination Port",
+    "NAT Source Port",
+    "NAT Destination Port",
+    "Bytes",
+    "Bytes Sent",
+    "Bytes Received",
+    "Packets",
+    "Elapsed Time (sec)",
+    "pkts_sent",
+    "pkts_received"
+  ],
+  "labels": [
+    "allow",
+    "deny",
+    "drop",
+    "reset-both"
+  ],
+  "class_counts": {
+    "allow": 37640,
+    "deny": 14987,
+    "drop": 12851,
+    "reset-both": 54
+  },
+  "seed": 42,
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Linux-6.17.0-1016-oracle-aarch64-with-glibc2.39"
+  },
+  "holdout": [
+    {
+      "model": "Decision Tree",
+      "acc": 0.9978637369344625,
+      "bacc": 0.8620751100333511,
+      "macro_f1": 0.8672711176011428,
+      "w_f1": 0.9978440650594017,
+      "errors": 28
+    },
+    {
+      "model": "Random Forest",
+      "acc": 0.997787441824979,
+      "bacc": 0.81647009075032,
+      "macro_f1": 0.8550424149730792,
+      "w_f1": 0.997614816912268,
+      "errors": 29
+    },
+    {
+      "model": "Extra Trees",
+      "acc": 0.9977111467154955,
+      "bacc": 0.8164005891630102,
+      "macro_f1": 0.847889480204753,
+      "w_f1": 0.9975522957636068,
+      "errors": 30
+    },
+    {
+      "model": "XGBoost",
+      "acc": 0.9981689173723964,
+      "bacc": 0.8170483136633968,
+      "macro_f1": 0.8422293149090051,
+      "w_f1": 0.9980264261360662,
+      "errors": 24
+    },
+    {
+      "model": "LightGBM",
+      "acc": 0.998092622262913,
+      "bacc": 0.8849969352898067,
+      "macro_f1": 0.8912610100951304,
+      "w_f1": 0.9980763073073214,
+      "errors": 25
+    },
+    {
+      "model": "CatBoost",
+      "acc": 0.9962615396353094,
+      "bacc": 0.9284339073922272,
+      "macro_f1": 0.8402481710316063,
+      "w_f1": 0.9967574515517285,
+      "errors": 49
+    }
+  ],
+  "xgb_per_class": {
+    "allow": {
+      "precision": 0.9998671096345515,
+      "recall": 0.9994686503719448,
+      "f1-score": 0.9996678402976151,
+      "support": 7528.0
+    },
+    "deny": {
+      "precision": 0.9959973315543695,
+      "recall": 0.9959973315543695,
+      "f1-score": 0.9959973315543695,
+      "support": 2998.0
+    },
+    "drop": {
+      "precision": 0.9965102753005041,
+      "recall": 1.0,
+      "f1-score": 0.9982520877840357,
+      "support": 2570.0
+    },
+    "reset-both": {
+      "precision": 0.6,
+      "recall": 0.2727272727272727,
+      "f1-score": 0.375,
+      "support": 11.0
+    },
+    "accuracy": 0.9981689173723964,
+    "macro avg": {
+      "precision": 0.8980936791223563,
+      "recall": 0.8170483136633968,
+      "f1-score": 0.8422293149090051,
+      "support": 13107.0
+    },
+    "weighted avg": {
+      "precision": 0.9979881749333334,
+      "recall": 0.9981689173723964,
+      "f1-score": 0.9980264261360662,
+      "support": 13107.0
+    }
+  },
+  "xgb_confusion": [
+    [
+      7524,
+      4,
+      0,
+      0
+    ],
+    [
+      1,
+      2986,
+      9,
+      2
+    ],
+    [
+      0,
+      0,
+      2570,
+      0
+    ],
+    [
+      0,
+      8,
+      0,
+      3
+    ]
+  ],
+  "cv_macro_f1": {
+    "LightGBM": {
+      "mean": 0.9027195069278374,
+      "std": 0.035549007250872754
+    },
+    "XGBoost": {
+      "mean": 0.8525709208906193,
+      "std": 0.02906241873069283
+    },
+    "CatBoost": {
+      "mean": 0.812071263233672,
+      "std": 0.02741129642917413
+    },
+    "Extra Trees": {
+      "mean": 0.8408022063546463,
+      "std": 0.024156465272011936
+    }
+  },
+  "duplicate_row_fraction": 0.20290850271623023,
+  "grouped_macro_f1": [
+    0.8850018286683499,
+    0.8642724826063714,
+    0.9069034730436798,
+    0.8396819445649522,
+    0.8389625235319267
+  ],
+  "grouped_median": 0.8642724826063714,
+  "majority_baseline": {
+    "bacc": 0.25,
+    "macro_f1": 0.18240852919796463,
+    "errors": 5579
+  }
+}

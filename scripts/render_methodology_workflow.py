@@ -39,7 +39,7 @@ tikz_code = r"""\documentclass[border=2mm]{standalone}
 ]
 
 % Phase 1 Nodes
-\node [block] (logs) {\textbf{1. Traffic-Log Export} \\ \vspace{1mm} \footnotesize 1,048,576 records \\ \footnotesize Palo Alto TRAFFIC};
+\node [block] (logs) {\textbf{1. Traffic-Log Export} \\ \vspace{1mm} \footnotesize 1,048,576 records \\ \footnotesize Enterprise NGFW logs};
 \node [block, right=0.45cm of logs] (target) {\textbf{2. Target Semantics} \\ \vspace{1mm} \footnotesize Allow, Drop, Deny \\ \footnotesize Operational decision};
 \node [block, fill=gray!15, right=0.45cm of target] (leakage) {\textbf{3. Proxy Control} \\ \vspace{1mm} \footnotesize Blocked direct fields \\ \footnotesize Policy fields excluded};
 

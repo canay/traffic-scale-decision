@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Near-Deterministic Reconstruction of Enterprise Firewall Decisions: Proxy Structure, Determinism Audit, and Uncertainty-Aware Review for Network Security Management"
+title: "Near-Deterministic Reconstruction of Enterprise Firewall Decisions: Proxy Structure, Context Shift, and Residual Uncertainty"
 message: "If you use this reproducibility package, please cite the associated paper and this repository."
 type: software
 authors:
@@ -13,6 +13,6 @@ authors:
     given-names: "Fatmir"
     orcid: "https://orcid.org/0009-0005-6762-6846"
 repository-code: "https://github.com/canay/traffic-scale-decision"
-version: "1.1.0"
-date-released: "2026-07-05"
+version: "1.2.0"
+date-released: "2026-07-13"
 license: "MIT"

@@ -1,0 +1,54 @@
+{
+  "description": "Runnable census-mechanics demo on a fictional published rule; does NOT reproduce the enterprise export's determinism, keys, or scores.",
+  "seed": 42,
+  "rows": 20000,
+  "core_fields": 24,
+  "class_counts": {
+    "Allow": 18972,
+    "Drop": 944,
+    "Deny": 84
+  },
+  "published_rule": "sum(b1..b4)==4->Deny; ==3->Drop; else Allow; b1={Source Port,Destination Port}, b2={Source Zone,Destination Zone}, b3={Application,Category}, b4={IP Protocol,Inbound Interface}",
+  "views": [
+    {
+      "view": "core_all_24",
+      "fields": 24,
+      "contexts": 20000,
+      "conflict_free": true,
+      "H_Y_given_V_bits": 0.0
+    },
+    {
+      "view": "eight_signal_fields",
+      "fields": 8,
+      "contexts": 11491,
+      "conflict_free": true,
+      "H_Y_given_V_bits": 0.0
+    },
+    {
+      "view": "signal_without_application_group",
+      "fields": 6,
+      "contexts": 2433,
+      "conflict_free": false,
+      "H_Y_given_V_bits": 0.078217
+    },
+    {
+      "view": "one_field_per_group",
+      "fields": 4,
+      "contexts": 848,
+      "conflict_free": true,
+      "H_Y_given_V_bits": 0.0
+    },
+    {
+      "view": "three_groups_only",
+      "fields": 3,
+      "contexts": 216,
+      "conflict_free": false,
+      "H_Y_given_V_bits": 0.122589
+    }
+  ],
+  "subsets_size_le3_checked": 2324,
+  "determining_size_le3": 0,
+  "four_field_subsets_checked": 10626,
+  "n_determining_four_field_keys": 16,
+  "pandas_reverification": "OK"
+}

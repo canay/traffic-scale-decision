@@ -20,6 +20,7 @@ JOURNAL_TARGETS*.md
 *.synctex.gz
 # Record-level data must never enter the public repository
 data/processed/*.csv
+data/synthetic_census_demo/synthetic_census_demo.csv
 *.pkl
 *.parquet
 .git_broken/

@@ -2,7 +2,7 @@
 
 Public reproducibility artifact for the manuscript:
 
-**Near-Deterministic Reconstruction of Enterprise Firewall Decisions: Proxy Structure, Determinism Audit, and Uncertainty-Aware Review for Network Security Management**
+**Near-Deterministic Reconstruction of Enterprise Firewall Decisions: Proxy Structure, Context Shift, and Residual Uncertainty**
 
 Repository short name:
 
@@ -14,7 +14,7 @@ GitHub URL:
 
 ## Related Study
 
-This repository supports a paper on three-class firewall traffic decision reconstruction from real enterprise Palo Alto firewall traffic logs. The study focuses on uncertainty-aware reconstruction, proxy and policy structure, class imbalance, runtime behavior, and the risk that operational firewall labels can be nearly deterministic from structured log context.
+This repository supports a paper on three-class firewall traffic decision reconstruction from real enterprise next-generation-firewall traffic logs. The study focuses on uncertainty-aware reconstruction, proxy and policy structure, class imbalance, runtime behavior, and the risk that operational firewall labels can be nearly deterministic from structured log context.
 
 Target classes:
 
@@ -57,24 +57,33 @@ GitHub:
 
 https://github.com/canay
 
-Status note (2026-07-05): affiliations, ORCIDs, and the final article title are current; the article DOI will be added after acceptance.
+Package status (2026-07-13): affiliations, ORCIDs, the final article title, and reproducibility metadata are current for version 1.2.0; the article DOI will be added after acceptance.
 
 ## Repository Contents
 
 - `code/`: Python benchmark code adapted for this standalone reproducibility package
 - `scripts/`: original paper-level helper scripts from the research workspace
 - `data/processed/`: data-withheld notice and schema-level documentation
+- `data/synthetic_demo/`: 8,000-row schema/code-path demo with label-independent non-source fields
+- `data/synthetic_census_demo/`: generator, documentation, and aggregate outputs for a 20,000-row fictional-policy determinism census
 - `results/`: CSV/JSON benchmark outputs and timing logs from the Oracle Cloud VPS runs
 - `results_q1/`: additional LightGBM temporal and feature-family diagnostic outputs
 - `results_uncertainty/`: uncertainty, calibration, entropy, class-wise, and confidence-band diagnostics
 - `results_conformal_selective/`: conformal prediction-set and selective-classification diagnostics
 - `results_reviewer_diagnostics/`: derived class-wise, review-queue, and error-pocket summaries
-- `figures_diagnostics/`: generated diagnostic figures and figure manifest
+- `figures_diagnostics/`: generated uncertainty and context-held-out diagnostic figures plus the figure manifest
 - `results_robustness_checks/`: duplicate-structure, exact-match lookup, raw-field crosstab, multi-seed, and Deny-labeling sensitivity robustness diagnostics
+- `results_external_validation/`: aggregate results for the public UCI Internet Firewall validation
+- `results_multiseed/`: aggregate ten-seed stability results for the restricted enterprise dataset
+- `results_submission_strengthening/`: aggregate feature-family, strict-proxy, and hard-context diagnostics
+- `results_reviewer_response/`: aggregate partition-variance and redirect-exclusion sensitivity checks
+- `results_session_group/`: aggregate Session-ID-disjoint robustness results
 - `requirements.txt`: Python dependencies used in the experiments
 - `CITATION.cff`: citation metadata for this artifact
 
 Raw and record-level processed enterprise firewall exports are **not** redistributed in this repository. The public package provides code, aggregate outputs, diagnostic summaries, figures, and schema-level documentation.
+
+Both datasets under `data/synthetic_*/` are generated from explicitly documented fictional rules or generic random vocabularies. They contain no rows, identifiers, addresses, rule names, zone/interface values, or dependency structure copied from the enterprise export and must not be interpreted as surrogates for it.
 
 ## Data
 
@@ -119,6 +128,16 @@ No-application-context ablation:
 - XGBoost balanced accuracy: 0.999987
 - XGBoost macro-F1: 0.999981
 
+Submission-strengthening and boundary evidence:
+
+- Ten-seed LightGBM core check: macro-F1 0.99985 +/- 0.00011.
+- Five Session-ID-disjoint splits: zero group overlap; macro-F1 0.999775 +/- 0.000033 with 3--4 errors per split.
+- Strict proxy-minimal XGBoost: macro-F1 0.951301 +/- 0.001283 without country context and 0.962710 +/- 0.001253 with country context.
+- Application/category held-out over five group partitions: macro-F1 mean 0.5561 (SD 0.2654), range 0.2532--0.9441; destination-service mean 0.7920.
+- Public UCI instantiation: accuracy 0.996--0.998; duplicate-aware median macro-F1 0.864; rare `Reset-both` XGBoost F1 0.375.
+
+These checks establish within-export stability and locate context-shift and rare-class failure boundaries. They do not establish attack detection, cross-organization transfer, or policy-layer transfer.
+
 Interpretation:
 
 These near-perfect results should be interpreted carefully. The task appears to be highly deterministic from operational traffic fields and proxy variables. The associated paper should not frame these results as independent attack detection.
@@ -144,8 +163,13 @@ Packaged output files:
 - `results_uncertainty/`: uncertainty, calibration, entropy, confidence-band, class-wise, and error-pair diagnostics used by the manuscript framing
 - `results_conformal_selective/`: conformal prediction-set and selective-classification diagnostics used by the manuscript framing
 - `results_reviewer_diagnostics/`: derived summaries for operational review queues, class-wise conformal behavior, and residual error pockets
-- `figures_diagnostics/`: Entropy, calibration, conformal-set, and selective-risk figures
+- `figures_diagnostics/`: Entropy, calibration, conformal-set, selective-risk, and context-held-out per-class figures
 - `results/reports_diagnostics_timing.csv`: timing for the diagnostic pass and figure generation
+- `results_external_validation/`: public UCI holdout, cross-validation, and duplicate-aware grouped-split results
+- `results_multiseed/`: ten-seed enterprise core-reconstruction summary
+- `results_submission_strengthening/`: strict-proxy, family-stability, hard-context, and conformal summaries
+- `results_reviewer_response/`: partition-variance and redirect-exclusion sensitivity summaries
+- `results_session_group/`: five Session-ID-disjoint split summaries with no record-level identifiers
 
 ## Reproducing With Authorized Local Data
 
@@ -161,6 +185,14 @@ Place authorized local copies of the processed files in `data/processed/` using 
 - `traffic_three_class_capped_sample.csv`
 
 The commands below rerun the experiments only when those non-public files are available locally. Without authorized record-level data, use the packaged `results*/` folders and `figures_diagnostics/` to inspect the reported outputs.
+
+Run the privacy-safe synthetic census demonstration without restricted data:
+
+```bash
+python scripts/run_synthetic_census_demo.py
+```
+
+This command generates a local fictional 20,000-row CSV (ignored by Git), the 16 recovered four-field keys, and the aggregate JSON report under `data/synthetic_census_demo/`. The separate `data/synthetic_demo/` dataset exercises schema and pipeline code paths without reproducing the manuscript's determinism or scores.
 
 Run the full core benchmark:
 
@@ -202,13 +234,68 @@ Regenerate the diagnostic figures from the packaged outputs:
 
 ```bash
 python scripts/build_uncertainty_figures.py --uncertainty-dir results_uncertainty --conformal-dir results_conformal_selective --output-dir figures_diagnostics
+python scripts/build_context_heldout_per_class_figure.py
 ```
+
+The second command reads the released aggregate per-class metrics in
+`results_submission_strengthening/context_heldout_per_class.csv` and rebuilds
+the three-panel context-held-out precision/recall/F1 figure used in the paper.
 
 Build derived diagnostic summaries from the packaged outputs:
 
 ```bash
 python scripts/build_reviewer_diagnostics.py --uncertainty-dir results_uncertainty --conformal-dir results_conformal_selective --output-dir results_reviewer_diagnostics
 ```
+
+Run the external validation after downloading the public UCI Internet Firewall
+`log2.csv` file to a local path:
+
+- Official dataset page: <https://archive.ics.uci.edu/dataset/542/internet+firewall+data>
+- Dataset DOI: <https://doi.org/10.24432/C5131M>
+- License: CC BY 4.0
+
+```bash
+python scripts/run_external_validation_uci.py --csv path/to/log2.csv --output results_external_validation/uci_leaf_results.json
+```
+
+The packaged UCI aggregate output was generated in the declared Linux aarch64
+environment. An independent Windows rerun reproduced the reported qualitative
+conclusions and the non-XGBoost model outputs, but XGBoost showed small
+platform/thread-level numerical variation: 24--25 holdout errors and a grouped
+split median macro-F1 of approximately 0.856--0.864. Exact byte-for-byte or
+last-decimal reproduction therefore requires the recorded package versions and
+Linux-like execution environment; the scientific interpretation does not rely
+on these last-decimal differences.
+
+Run the ten-seed enterprise stability check with authorized local data:
+
+```bash
+python scripts/run_multiseed_enterprise_10seed.py --data data/processed/traffic_three_class.csv --output-dir results_multiseed
+```
+
+Run the Session-ID-disjoint robustness check with an authorized raw export and
+its row-aligned processed table:
+
+```bash
+python scripts/run_session_group_check.py --raw-csv path/to/authorized_raw.csv --processed-csv data/processed/traffic_three_class.csv --output-dir results_session_group
+```
+
+The raw input must contain `Session ID` and `Action`. The script verifies row
+alignment through `raw_action`, assigns row-unique groups to zero-valued sentinel
+IDs, and writes aggregate metrics only. Packaged results show zero group overlap
+in all five splits and do not contain Session IDs or record-level rows.
+
+Run the additional submission-strengthening and reviewer-response checks with
+the authorized enterprise input in `data/processed/`:
+
+```bash
+python scripts/run_submission_strengthening_experiments.py
+python scripts/run_strict_proxy_multiseed_check.py
+python scripts/run_reviewer_response_experiments.py
+```
+
+These enterprise-data commands write aggregate outputs only. They do not make
+the restricted record-level input redistributable.
 
 ## Submission And Public Release Checklist
 
@@ -224,5 +311,3 @@ Current public-release status:
 ## License
 
 Code and public reproducibility materials are released under the MIT License. The withheld raw and record-level processed firewall logs are not redistributed and are not covered by this repository license.
-
-
