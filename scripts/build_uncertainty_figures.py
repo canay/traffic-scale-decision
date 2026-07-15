@@ -92,7 +92,7 @@ def plot_entropy(summary: pd.DataFrame, output_dir: Path) -> Path:
     fig, ax = plt.subplots(figsize=(9.2, 4.8))
     # Horizontal Lollipop chart
     y = np.arange(len(rows))
-    ax.hlines(y=y, xmin=0, xmax=rows["mean_entropy_bits"], color=COLORS["secondary"], alpha=0.7, linewidth=2.5)
+    ax.hlines(y=y, xmin=0, xmax=rows["mean_entropy_bits"], color=COLORS["secondary"], alpha=0.7, linewidth=1.0)
     ax.plot(rows["mean_entropy_bits"], y, "o", markersize=8, color=COLORS["primary"])
     ax.set_yticks(y)
     ax.set_yticklabels([short_label(v) for v in rows["experiment"]])
@@ -114,21 +114,33 @@ def plot_conformal_sets(
             conformal = method_rows
     rows = conformal[np.isclose(conformal["alpha"], alpha)].copy()
     rows = selected_rows(rows)
-    fig, ax = plt.subplots(figsize=(9.4, 4.8))
-    # Keep stacked bars but make them horizontal and with IEEE colors
-    y = np.arange(len(rows))
-    height = 0.65
-    ax.barh(y, rows["singleton_rate"], color=COLORS["primary"], label="Singleton", height=height)
-    ax.barh(y, rows["ambiguous_set_rate"], left=rows["singleton_rate"], color=COLORS["tertiary"], label="Ambiguous", height=height)
-    if method != "aps_cumulative" and float(rows["empty_rate"].max()) > 0:
-        ax.barh(y, rows["empty_rate"], left=rows["singleton_rate"] + rows["ambiguous_set_rate"], color=COLORS["accent"], label="Empty", height=height)
-    ax.set_xlim(0, 1.02)
-    ax.set_yticks(y)
-    ax.set_yticklabels([short_label(v) for v in rows["experiment"]])
-    ax.set_xlabel("Share of test cases")
+    fig, ax = plt.subplots(figsize=(7.0, 3.5))
+    fig.subplots_adjust(right=0.75, bottom=0.25)
+    # Modern Multi-Line Profile Plot with shaded areas
+    x = np.arange(len(rows))
+
+    ax.plot(x, rows["singleton_rate"], "o-", color=COLORS["primary"], label="Singleton", linewidth=1.0, markersize=8, zorder=4)
+    ax.fill_between(x, rows["singleton_rate"], alpha=0.08, color=COLORS["primary"], zorder=3)
+
+    ax.plot(x, rows["ambiguous_set_rate"], "s-", color=COLORS["tertiary"], label="Ambiguous", linewidth=1.0, markersize=8, zorder=4)
+    ax.fill_between(x, rows["ambiguous_set_rate"], alpha=0.15, color=COLORS["tertiary"], zorder=3)
+
+    has_empty = method != "aps_cumulative" and float(rows["empty_rate"].max()) > 0
+    if has_empty:
+        ax.plot(x, rows["empty_rate"], "^-", color=COLORS["accent"], label="Empty", linewidth=1.0, markersize=8, zorder=4)
+        ax.fill_between(x, rows["empty_rate"], alpha=0.15, color=COLORS["accent"], zorder=3)
+
+    ax.set_ylim(-0.02, 1.05)
+    ax.set_xticks(x)
+
+    # Replace newlines with spaces for horizontal layout, or keep them if they fit.
+    labels = [short_label(v).replace("\n", " ") for v in rows["experiment"]]
+    ax.set_xticklabels(labels, rotation=20, ha="right", fontsize=8)
+    ax.set_ylabel("Share of test cases")
+
     method_label = method.replace("_", " ")
-    ax.legend(frameon=False, ncol=len(ax.get_legend_handles_labels()[0]), loc="lower left", bbox_to_anchor=(0, 1.02))
-    ax.grid(axis="x", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
+    ax.legend(frameon=False, ncol=1, loc="upper left", bbox_to_anchor=(1.02, 1.0), fontsize=9)
+    ax.grid(axis="y", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
     prepare_axis(ax)
     path = output_dir / f"fig_conformal_set_structure_{method}.png"
     save(fig, path)
@@ -158,7 +170,7 @@ def plot_selective_risk(selective: pd.DataFrame, output_dir: Path) -> Path:
         ax.grid(axis="y", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
         prepare_axis(ax)
     axes[0].legend(frameon=False, fontsize=8)
-    fig.subplots_adjust(bottom=0.22)
+    fig.subplots_adjust(bottom=0.22, right=0.75)
     path = output_dir / "fig_selective_risk_tradeoff.png"
     save(fig, path)
     return path

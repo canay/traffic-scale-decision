@@ -235,11 +235,15 @@ Regenerate the diagnostic figures from the packaged outputs:
 ```bash
 python scripts/build_uncertainty_figures.py --uncertainty-dir results_uncertainty --conformal-dir results_conformal_selective --output-dir figures_diagnostics
 python scripts/build_context_heldout_per_class_figure.py
+python scripts/render_methodology_workflow.py
 ```
 
 The second command reads the released aggregate per-class metrics in
 `results_submission_strengthening/context_heldout_per_class.csv` and rebuilds
 the three-panel context-held-out precision/recall/F1 figure used in the paper.
+The methodology-workflow command requires XeLaTeX plus the open Lato and
+Liberation Sans font families and writes a 600-DPI PNG to
+`figures_diagnostics/`.
 
 Build derived diagnostic summaries from the packaged outputs:
 
