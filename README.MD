@@ -2,7 +2,7 @@
 
 Public reproducibility artifact for the manuscript:
 
-**Near-Deterministic Reconstruction of Enterprise Firewall Decisions: Proxy Structure, Context Shift, and Residual Uncertainty**
+**Near-Deterministic Reconstruction of Enterprise Firewall Decisions for Policy Audit: Proxy Structure, Context Shift, and Residual Uncertainty**
 
 Repository short name:
 
@@ -57,7 +57,7 @@ GitHub:
 
 https://github.com/canay
 
-Package status (2026-07-13): affiliations, ORCIDs, the final article title, and reproducibility metadata are current for version 1.2.0; the article DOI will be added after acceptance.
+Package status (2026-07-19): affiliations, ORCIDs, the final article title, conformal tie handling, and reproducibility metadata are current for version 1.2.1; the article DOI will be added after acceptance.
 
 ## Repository Contents
 
@@ -237,6 +237,11 @@ python scripts/build_uncertainty_figures.py --uncertainty-dir results_uncertaint
 python scripts/build_context_heldout_per_class_figure.py
 python scripts/render_methodology_workflow.py
 ```
+
+The uncertainty-figure command writes the two method-specific conformal panels
+and the source-generated two-panel `fig_conformal_set_structure.png` used in
+the manuscript. The composite uses the same ten random, temporal, and
+context-held-out settings at alpha 0.05 with a shared 0--1 axis and legend.
 
 The second command reads the released aggregate per-class metrics in
 `results_submission_strengthening/context_heldout_per_class.csv` and rebuilds

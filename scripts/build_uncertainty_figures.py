@@ -145,6 +145,56 @@ def plot_conformal_sets(
     path = output_dir / f"fig_conformal_set_structure_{method}.png"
     save(fig, path)
     return path
+def plot_conformal_composite(
+    conformal: pd.DataFrame,
+    output_dir: Path,
+    alpha: float = 0.05,
+) -> Path:
+    fig, axes = plt.subplots(1, 2, figsize=(12.4, 5.7), sharex=True, sharey=True)
+    panel_specs = [
+        ("probability_threshold", "(a) Probability-threshold"),
+        ("aps_cumulative", "(b) APS cumulative"),
+    ]
+    for ax, (method, title) in zip(axes, panel_specs):
+        rows = conformal[
+            (conformal["conformal_method"] == method)
+            & np.isclose(conformal["alpha"], alpha)
+        ].copy()
+        rows = selected_rows(rows)
+        y = np.arange(len(rows))
+        height = 0.66
+        ax.barh(y, rows["singleton_rate"], color=COLORS["primary"], label="Singleton", height=height)
+        ax.barh(
+            y,
+            rows["ambiguous_set_rate"],
+            left=rows["singleton_rate"],
+            color=COLORS["tertiary"],
+            label="Multi-class",
+            height=height,
+        )
+        ax.barh(
+            y,
+            rows["empty_rate"],
+            left=rows["singleton_rate"] + rows["ambiguous_set_rate"],
+            color=COLORS["accent"],
+            label="Empty",
+            height=height,
+        )
+        ax.set_xlim(0, 1.0)
+        ax.set_yticks(y)
+        ax.set_yticklabels([short_label(v) for v in rows["experiment"]], fontsize=8.5)
+        ax.set_xlabel("Share of test cases")
+        ax.set_title(title, fontweight="bold", fontsize=11)
+        ax.grid(axis="x", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
+        prepare_axis(ax)
+    axes[0].invert_yaxis()
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 0.995))
+    fig.tight_layout(rect=(0, 0, 1, 0.91), w_pad=1.2)
+    path = output_dir / "fig_conformal_set_structure.png"
+    fig.savefig(path, dpi=600, bbox_inches="tight", pad_inches=0.01)
+    plt.close(fig)
+    return path
 def plot_selective_risk(selective: pd.DataFrame, output_dir: Path) -> Path:
     experiments = [
         "random_core_all",
@@ -233,16 +283,27 @@ def main() -> None:
         plot_entropy(summary, output_dir),
         plot_conformal_sets(conformal, output_dir, method="probability_threshold"),
         plot_conformal_sets(conformal, output_dir, method="aps_cumulative"),
+        plot_conformal_composite(conformal, output_dir),
         plot_selective_risk(selective, output_dir),
         plot_reliability(reliability, summary, output_dir),
     ]
     manifest = pd.DataFrame(
         {
             "figure": [path.name for path in generated],
-            "path": [str(path) for path in generated],
+            "path": [
+                path.resolve().relative_to(ROOT.resolve()).as_posix()
+                if path.resolve().is_relative_to(ROOT.resolve())
+                else path.name
+                for path in generated
+            ],
         }
     )
-    manifest.to_csv(output_dir / "figures_manifest.csv", index=False)
+    manifest_path = output_dir / "figures_manifest.csv"
+    if manifest_path.exists():
+        existing = pd.read_csv(manifest_path)
+        existing = existing[~existing["figure"].isin(manifest["figure"])].copy()
+        manifest = pd.concat([manifest, existing], ignore_index=True)
+    manifest.to_csv(manifest_path, index=False)
     for path in generated:
         print(path)
 if __name__ == "__main__":

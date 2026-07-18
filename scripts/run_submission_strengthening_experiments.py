@@ -258,28 +258,28 @@ def group_holdout_indices(df: pd.DataFrame, cols: list[str], test_size: float, s
 
 
 def conformal_quantile(nonconformity: np.ndarray, alpha: float) -> float:
-    n = len(nonconformity)
-    level = min(1.0, np.ceil((n + 1) * (1.0 - alpha)) / n)
-    return float(np.quantile(nonconformity, level, method="higher"))
+    scores = np.asarray(nonconformity, dtype=float).reshape(-1)
+    n = len(scores)
+    if n == 0:
+        raise ValueError("Cannot calibrate a conformal quantile from an empty score array.")
+    k = min(n, int(np.ceil((n + 1) * (1.0 - alpha))))
+    return float(np.partition(scores, k - 1)[k - 1])
 
 
 def aps_scores(proba: np.ndarray, y: np.ndarray) -> np.ndarray:
-    order = np.argsort(-proba, axis=1)
-    sorted_proba = np.take_along_axis(proba, order, axis=1)
-    cumulative = np.cumsum(sorted_proba, axis=1)
-    true_pos = np.argmax(order == y[:, None], axis=1)
-    return cumulative[np.arange(len(y)), true_pos]
+    true_probability = proba[np.arange(len(y)), y]
+    higher_or_equal = proba >= true_probability[:, None]
+    return np.sum(proba * higher_or_equal, axis=1)
 
 
 def aps_sets(proba: np.ndarray, qhat: float) -> np.ndarray:
-    order = np.argsort(-proba, axis=1)
-    sorted_proba = np.take_along_axis(proba, order, axis=1)
-    cumulative = np.cumsum(sorted_proba, axis=1)
-    include_sorted = cumulative <= qhat
-    empty = ~np.any(include_sorted, axis=1)
-    include_sorted[empty, 0] = True
-    pred_sets = np.zeros_like(include_sorted, dtype=bool)
-    pred_sets[np.arange(len(proba))[:, None], order] = include_sorted
+    higher_or_equal = proba[:, None, :] >= proba[:, :, None]
+    cumulative_mass = np.sum(proba[:, None, :] * higher_or_equal, axis=2)
+    pred_sets = cumulative_mass <= qhat
+    empty_rows = np.flatnonzero(~np.any(pred_sets, axis=1))
+    if len(empty_rows):
+        top_class = np.argmax(proba[empty_rows], axis=1)
+        pred_sets[empty_rows, top_class] = True
     return pred_sets
 
 

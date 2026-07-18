@@ -72,9 +72,12 @@ if gate_errors != 3:
           "The comparison below remains internally consistent for this run.")
 
 def qhat(scores: np.ndarray, alpha: float) -> float:
+    scores = np.asarray(scores, dtype=float).reshape(-1)
     n = len(scores)
-    level = min(1.0, np.ceil((n + 1) * (1.0 - alpha)) / n)
-    return float(np.quantile(scores, level, method="higher"))
+    if n == 0:
+        raise ValueError("Cannot calibrate a conformal quantile from an empty score array.")
+    k = min(n, int(np.ceil((n + 1) * (1.0 - alpha))))
+    return float(np.partition(scores, k - 1)[k - 1])
 
 res = {"marginal": [], "mondrian": []}
 s_ca = 1.0 - pca[np.arange(len(y_ca)), y_ca]

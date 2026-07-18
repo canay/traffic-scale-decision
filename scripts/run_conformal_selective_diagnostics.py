@@ -203,33 +203,31 @@ def temporal_train_cal_test_indices(df: pd.DataFrame, calibration_size: float, t
 
 
 def conformal_quantile(nonconformity: np.ndarray, alpha: float) -> float:
-    n = len(nonconformity)
-    level = min(1.0, np.ceil((n + 1) * (1.0 - alpha)) / n)
-    return float(np.quantile(nonconformity, level, method="higher"))
+    scores = np.asarray(nonconformity, dtype=float).reshape(-1)
+    n = len(scores)
+    if n == 0:
+        raise ValueError("Cannot calibrate a conformal quantile from an empty score array.")
+    k = min(n, int(np.ceil((n + 1) * (1.0 - alpha))))
+    return float(np.partition(scores, k - 1)[k - 1])
 
 
 def aps_scores(proba: np.ndarray, y: np.ndarray) -> np.ndarray:
-    sorted_idx = np.argsort(-proba, axis=1)
-    sorted_proba = np.take_along_axis(proba, sorted_idx, axis=1)
-    cumulative = np.cumsum(sorted_proba, axis=1)
-    true_positions = np.argmax(sorted_idx == y[:, None], axis=1)
-    return cumulative[np.arange(len(y)), true_positions]
+    true_probability = proba[np.arange(len(y)), y]
+    higher_or_equal = proba >= true_probability[:, None]
+    return np.sum(proba * higher_or_equal, axis=1)
 
 
 def aps_prediction_sets(proba: np.ndarray, qhat: float) -> np.ndarray:
-    sorted_idx = np.argsort(-proba, axis=1)
-    sorted_proba = np.take_along_axis(proba, sorted_idx, axis=1)
-    cumulative = np.cumsum(sorted_proba, axis=1)
-    include_sorted = cumulative <= qhat
+    higher_or_equal = proba[:, None, :] >= proba[:, :, None]
+    cumulative_mass = np.sum(proba[:, None, :] * higher_or_equal, axis=2)
+    prediction_sets = cumulative_mass <= qhat
 
-    # Keep operational decision sets non-empty without forcing an extra class
-    # into already confident singleton regions.
-    empty = ~np.any(include_sorted, axis=1)
-    include_sorted[empty, 0] = True
-
-    prediction_sets = np.zeros_like(include_sorted, dtype=bool)
-    rows = np.arange(len(proba))[:, None]
-    prediction_sets[rows, sorted_idx] = include_sorted
+    # Keep the operational set non-empty. np.argmax resolves a top-probability
+    # tie by the fixed encoded-class order and therefore selects one c_(1).
+    empty_rows = np.flatnonzero(~np.any(prediction_sets, axis=1))
+    if len(empty_rows):
+        top_class = np.argmax(proba[empty_rows], axis=1)
+        prediction_sets[empty_rows, top_class] = True
     return prediction_sets
 
 
