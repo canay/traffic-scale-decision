@@ -54,6 +54,11 @@ COLORS = {
     "light_gray": "#e2e2e2",
     "ink": "#1a1a1a",
 }
+CONFORMAL_COLORS = {
+    "singleton": "#17365D",   # Deep navy
+    "multi_class": "#A6B8C7", # Cool slate
+    "empty": "#B5653C",       # Muted copper
+}
 def read_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
         raise SystemExit(f"Missing required input: {path}")
@@ -119,16 +124,16 @@ def plot_conformal_sets(
     # Modern Multi-Line Profile Plot with shaded areas
     x = np.arange(len(rows))
 
-    ax.plot(x, rows["singleton_rate"], "o-", color=COLORS["primary"], label="Singleton", linewidth=1.0, markersize=8, zorder=4)
-    ax.fill_between(x, rows["singleton_rate"], alpha=0.08, color=COLORS["primary"], zorder=3)
+    ax.plot(x, rows["singleton_rate"], "o-", color=CONFORMAL_COLORS["singleton"], label="Singleton", linewidth=1.0, markersize=8, zorder=4)
+    ax.fill_between(x, rows["singleton_rate"], alpha=0.08, color=CONFORMAL_COLORS["singleton"], zorder=3)
 
-    ax.plot(x, rows["ambiguous_set_rate"], "s-", color=COLORS["tertiary"], label="Ambiguous", linewidth=1.0, markersize=8, zorder=4)
-    ax.fill_between(x, rows["ambiguous_set_rate"], alpha=0.15, color=COLORS["tertiary"], zorder=3)
+    ax.plot(x, rows["ambiguous_set_rate"], "s-", color=CONFORMAL_COLORS["multi_class"], label="Ambiguous", linewidth=1.0, markersize=8, zorder=4)
+    ax.fill_between(x, rows["ambiguous_set_rate"], alpha=0.15, color=CONFORMAL_COLORS["multi_class"], zorder=3)
 
     has_empty = method != "aps_cumulative" and float(rows["empty_rate"].max()) > 0
     if has_empty:
-        ax.plot(x, rows["empty_rate"], "^-", color=COLORS["accent"], label="Empty", linewidth=1.0, markersize=8, zorder=4)
-        ax.fill_between(x, rows["empty_rate"], alpha=0.15, color=COLORS["accent"], zorder=3)
+        ax.plot(x, rows["empty_rate"], "^-", color=CONFORMAL_COLORS["empty"], label="Empty", linewidth=1.0, markersize=8, zorder=4)
+        ax.fill_between(x, rows["empty_rate"], alpha=0.15, color=CONFORMAL_COLORS["empty"], zorder=3)
 
     ax.set_ylim(-0.02, 1.05)
     ax.set_xticks(x)
@@ -163,28 +168,32 @@ def plot_conformal_composite(
         rows = selected_rows(rows)
         y = np.arange(len(rows))
         height = 0.66
-        ax.barh(y, rows["singleton_rate"], color=COLORS["primary"], label="Singleton", height=height)
+        ax.barh(y, rows["singleton_rate"], color=CONFORMAL_COLORS["singleton"], label="Singleton", height=height, edgecolor="white", linewidth=0.35)
         ax.barh(
             y,
             rows["ambiguous_set_rate"],
             left=rows["singleton_rate"],
-            color=COLORS["tertiary"],
+            color=CONFORMAL_COLORS["multi_class"],
             label="Multi-class",
             height=height,
+            edgecolor="white",
+            linewidth=0.35,
         )
         ax.barh(
             y,
             rows["empty_rate"],
             left=rows["singleton_rate"] + rows["ambiguous_set_rate"],
-            color=COLORS["accent"],
+            color=CONFORMAL_COLORS["empty"],
             label="Empty",
             height=height,
+            edgecolor="white",
+            linewidth=0.35,
         )
         ax.set_xlim(0, 1.0)
         ax.set_yticks(y)
         ax.set_yticklabels([short_label(v) for v in rows["experiment"]], fontsize=8.5)
         ax.set_xlabel("Share of test cases")
-        ax.set_title(title, fontweight="bold", fontsize=11)
+        ax.set_title(title, fontweight="normal", fontsize=10.5)
         ax.grid(axis="x", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
         prepare_axis(ax)
     axes[0].invert_yaxis()
