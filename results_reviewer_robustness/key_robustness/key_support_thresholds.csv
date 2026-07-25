@@ -1,0 +1,29 @@
+key_id,fields,minimum_context_size,contexts,context_share,rows,row_share
+K1,Application | Bytes | Outbound Interface | Source Port,1,756126,1.0,1048576,1.0
+K1,Application | Bytes | Outbound Interface | Source Port,2,77471,0.10245779142629667,369921,0.3527841567993164
+K1,Application | Bytes | Outbound Interface | Source Port,5,13751,0.018186122418750315,215071,0.2051076889038086
+K1,Application | Bytes | Outbound Interface | Source Port,10,1758,0.0023250093238428517,142211,0.13562297821044922
+K2,Application | Bytes | Destination Country | Source Port,1,758146,1.0,1048576,1.0
+K2,Application | Bytes | Destination Country | Source Port,2,76426,0.10080644097574873,366856,0.34986114501953125
+K2,Application | Bytes | Destination Country | Source Port,5,13650,0.018004447692133177,213813,0.20390796661376953
+K2,Application | Bytes | Destination Country | Source Port,10,1767,0.002330685646300317,141807,0.1352376937866211
+K3,Bytes | Destination Port | Outbound Interface | Source Port,1,816871,1.0,1048576,1.0
+K3,Bytes | Destination Port | Outbound Interface | Source Port,2,68671,0.0840659051429173,300376,0.28646087646484375
+K3,Bytes | Destination Port | Outbound Interface | Source Port,5,6802,0.008326896168428063,155638,0.14842796325683594
+K3,Bytes | Destination Port | Outbound Interface | Source Port,10,1513,0.0018521896358176504,125358,0.11955070495605469
+K4,Bytes | Outbound Interface | Source Port | Subcategory of app,1,756079,1.0,1048576,1.0
+K4,Bytes | Outbound Interface | Source Port | Subcategory of app,2,77497,0.10249854843210829,369994,0.35285377502441406
+K4,Bytes | Outbound Interface | Source Port | Subcategory of app,5,13751,0.018187252919337794,215090,0.2051258087158203
+K4,Bytes | Outbound Interface | Source Port | Subcategory of app,10,1759,0.0023264764660835707,142237,0.13564777374267578
+K5,Bytes | Category of app | Outbound Interface | Source Port,1,756068,1.0,1048576,1.0
+K5,Bytes | Category of app | Outbound Interface | Source Port,2,77506,0.10251194337017305,370014,0.3528728485107422
+K5,Bytes | Category of app | Outbound Interface | Source Port,5,13751,0.018187517524878714,215090,0.2051258087158203
+K5,Bytes | Category of app | Outbound Interface | Source Port,10,1759,0.0023265103138871107,142237,0.13564777374267578
+K6,Bytes | Outbound Interface | Source Port | Technology of app,1,755980,1.0,1048576,1.0
+K6,Bytes | Outbound Interface | Source Port | Technology of app,2,77587,0.1026310219847086,370183,0.35303401947021484
+K6,Bytes | Outbound Interface | Source Port | Technology of app,5,13750,0.01818831186010212,215092,0.20512771606445312
+K6,Bytes | Outbound Interface | Source Port | Technology of app,10,1758,0.0023254583454588745,142239,0.1356496810913086
+K7,Bytes | Outbound Interface | Risk of app | Source Port,1,756104,1.0,1048576,1.0
+K7,Bytes | Outbound Interface | Risk of app | Source Port,2,77485,0.10247928856347804,369957,0.35281848907470703
+K7,Bytes | Outbound Interface | Risk of app | Source Port,5,13751,0.018186651571741454,215077,0.20511341094970703
+K7,Bytes | Outbound Interface | Risk of app | Source Port,10,1759,0.0023263995429200217,142224,0.1356353759765625

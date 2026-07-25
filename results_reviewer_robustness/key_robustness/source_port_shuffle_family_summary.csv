@@ -1,0 +1,2 @@
+key_family,repeats,repeats_with_any_exact_key,empirical_lower_tail_p_add_one,minimum_key_bayes_error_per_repeat_mean,minimum_key_bayes_error_per_repeat_min,minimum_key_bayes_error_per_repeat_max
+seven_full_export_determining_keys,20,0,0.047619047619047616,11.6,7,19

@@ -1,0 +1,61 @@
+{
+  "context": "application_category",
+  "grouping_columns": [
+    "Application",
+    "Category"
+  ],
+  "row_order": "timestamp ascending, missing timestamps last",
+  "seed": 42,
+  "test_size": 0.2,
+  "calibration_size": 0.2,
+  "calibration_subsplit": "The retained 20% calibration partition is divided 1:1 with a seed-42 stratified split. The first half fits one scalar temperature; the second half alone estimates conformal quantiles.",
+  "split_counts": {
+    "train": 638486,
+    "calibration": 212829,
+    "probability_calibration": 106414,
+    "conformal_calibration": 106415,
+    "test": 197261
+  },
+  "class_counts": {
+    "train": {
+      "Allow": 463482,
+      "Deny": 7854,
+      "Drop": 167150
+    },
+    "probability_calibration": {
+      "Allow": 77247,
+      "Deny": 1309,
+      "Drop": 27858
+    },
+    "conformal_calibration": {
+      "Allow": 77247,
+      "Deny": 1309,
+      "Drop": 27859
+    },
+    "test": {
+      "Allow": 186610,
+      "Deny": 3337,
+      "Drop": 7314
+    }
+  },
+  "train_cal_groups": 273,
+  "test_groups": 69,
+  "group_overlap": 0,
+  "partition_exhaustive": true,
+  "independent_recomputation_match": true,
+  "hash_definition": "SHA-256 of little-endian int64 positions after canonical timestamp ordering; membership hashes sort positions before hashing",
+  "split_hashes": {
+    "train_order_sha256": "7B7DAF0877FD3546D100D138C4FD8022034F54BF85710D44D3FE3EEFE1AD118C",
+    "train_membership_sha256": "CC587C53BFFA3FE3AED3C7EDE4238A536E1E8F710BF52E8E81C0CA1D0C031070",
+    "calibration_order_sha256": "DA4F20BDC3EBFFC9E97ABEF8BF0B95176159D0501D33CF12ADC510839DD212D1",
+    "calibration_membership_sha256": "C7FE5A140F9350D2D1AC013D3B91BF8479D6F18BF1818CF87CE4C63CA659855A",
+    "probability_calibration_order_sha256": "A81DF36DC4E5106459AD810335DFD7F0B5795DB428474233BA1A0D21C4F676D3",
+    "probability_calibration_membership_sha256": "3363E0244BD834757710CA0FA17E6BB18207F5E5F1CF81406AF96E2A2F178F46",
+    "conformal_calibration_order_sha256": "D407FBEA35BF2A942DF0A37487B275D5E6B9C8D7F6735E8A1C8DB81373D1A1F7",
+    "conformal_calibration_membership_sha256": "5D75553808BBB0335A2D1207AD3A12EC7619CEBD816329CDD1482AFAEE4C7537",
+    "test_order_sha256": "CDF1C74A972877885F08B3A1F088252442060B9F84DBF802E4D955FBAFD5A3A1",
+    "test_membership_sha256": "CDF1C74A972877885F08B3A1F088252442060B9F84DBF802E4D955FBAFD5A3A1"
+  },
+  "privacy": "Only hashes and aggregate counts are exported; row positions and group values are not written.",
+  "data_sha256": "BC17D2ADE692B0F628F1738D22179ADBB9B00DDE0D456A6096CB9F0C9D61074F"
+}

@@ -1,0 +1,159 @@
+{
+  "class_and_purity_summary": [
+    {
+      "distinct_source_ports": 51473,
+      "rows": 804586,
+      "singleton_source_port_share": 0.2259242709770171,
+      "singleton_source_ports": 11629,
+      "target": "Allow",
+      "top_100_port_row_share": 0.07227070816544161,
+      "top_10_port_row_share": 0.06166773968227138,
+      "top_1_port_row_share": 0.05370588103695565,
+      "top_5_port_row_share": 0.06070451138846562
+    },
+    {
+      "distinct_source_ports": 10617,
+      "rows": 13809,
+      "singleton_source_port_share": 0.7900536874823396,
+      "singleton_source_ports": 8388,
+      "target": "Deny",
+      "top_100_port_row_share": 0.05648490115142298,
+      "top_10_port_row_share": 0.021362879281627924,
+      "top_1_port_row_share": 0.002606995437757984,
+      "top_5_port_row_share": 0.012093562169599536
+    },
+    {
+      "distinct_source_ports": 46244,
+      "rows": 230181,
+      "singleton_source_port_share": 0.31173773894991785,
+      "singleton_source_ports": 14416,
+      "target": "Drop",
+      "top_100_port_row_share": 0.24937766366468128,
+      "top_10_port_row_share": 0.12146093726241523,
+      "top_1_port_row_share": 0.03399933096128699,
+      "top_5_port_row_share": 0.09385222933256872
+    },
+    {
+      "distinct_target_labels_per_port": 1,
+      "row_share": 0.05677986145019531,
+      "rows": 59538,
+      "source_port_share": 0.2993408630574342,
+      "source_ports": 17439
+    },
+    {
+      "distinct_target_labels_per_port": 2,
+      "row_share": 0.6501407623291016,
+      "rows": 681722,
+      "source_port_share": 0.5417625047203818,
+      "source_ports": 31562
+    },
+    {
+      "distinct_target_labels_per_port": 3,
+      "row_share": 0.2930793762207031,
+      "rows": 307316,
+      "source_port_share": 0.1588966322221841,
+      "source_ports": 9257
+    }
+  ],
+  "semantic_ranges": [
+    {
+      "rows": 548538,
+      "semantic_range": "dynamic_private_49152_65535",
+      "target": "Allow",
+      "within_range_target_share": 0.8088288203271069,
+      "within_target_share": 0.6817642862291912
+    },
+    {
+      "rows": 209917,
+      "semantic_range": "registered_1024_49151",
+      "target": "Allow",
+      "within_range_target_share": 0.6677386519069886,
+      "within_target_share": 0.2609006370978367
+    },
+    {
+      "rows": 46131,
+      "semantic_range": "well_known_0_1023",
+      "target": "Allow",
+      "within_range_target_share": 0.8235031596986683,
+      "within_target_share": 0.057335076672972184
+    },
+    {
+      "rows": 9697,
+      "semantic_range": "dynamic_private_49152_65535",
+      "target": "Deny",
+      "within_range_target_share": 0.014298395135272226,
+      "within_target_share": 0.702223187776088
+    },
+    {
+      "rows": 4112,
+      "semantic_range": "registered_1024_49151",
+      "target": "Deny",
+      "within_range_target_share": 0.013080128510990234,
+      "within_target_share": 0.29777681222391195
+    },
+    {
+      "rows": 119953,
+      "semantic_range": "dynamic_private_49152_65535",
+      "target": "Drop",
+      "within_range_target_share": 0.17687278453762084,
+      "within_target_share": 0.5211246801430179
+    },
+    {
+      "rows": 100341,
+      "semantic_range": "registered_1024_49151",
+      "target": "Drop",
+      "within_range_target_share": 0.31918121958202117,
+      "within_target_share": 0.4359221656001147
+    },
+    {
+      "rows": 9887,
+      "semantic_range": "well_known_0_1023",
+      "target": "Drop",
+      "within_range_target_share": 0.17649684030133173,
+      "within_target_share": 0.042953154256867423
+    }
+  ],
+  "summary": {
+    "conditional_target_entropy_given_source_port_bits": 0.6160904214373126,
+    "distinct_source_ports": 58258,
+    "mutual_information_target_source_port_bits": 0.23958899619574725,
+    "privacy": "No record or non-sentinel Source Port value is exported; only standard range bins, the prespecified zero/sentinel aggregate, and aggregate concentration/purity statistics are retained.",
+    "rows": 1048576,
+    "source_port_only_agreement_rate": 0.8309268951416016,
+    "source_port_only_bayes_error": 177286,
+    "source_port_only_bayes_error_rate": 0.16907310485839844,
+    "source_port_zero_row_share": 0.04867267608642578,
+    "source_port_zero_rows": 51037,
+    "target_entropy_bits": 0.8556794176330599
+  },
+  "zero_sentinel_summary": [
+    {
+      "rows": 804586,
+      "source_port_zero_rows": 43211,
+      "source_port_zero_within_target_share": 0.05370588103695565,
+      "target": "Allow",
+      "target_share_within_source_port_zero": 0.8466602660814703
+    },
+    {
+      "rows": 13809,
+      "source_port_zero_rows": 0,
+      "source_port_zero_within_target_share": 0.0,
+      "target": "Deny",
+      "target_share_within_source_port_zero": 0.0
+    },
+    {
+      "rows": 230181,
+      "source_port_zero_rows": 7826,
+      "source_port_zero_within_target_share": 0.03399933096128699,
+      "target": "Drop",
+      "target_share_within_source_port_zero": 0.1533397339185297
+    },
+    {
+      "rows": 1048576,
+      "source_port_zero_rows": 51037,
+      "source_port_zero_within_target_share": 0.04867267608642578,
+      "target": "ALL",
+      "target_share_within_source_port_zero": 1.0
+    }
+  ]
+}

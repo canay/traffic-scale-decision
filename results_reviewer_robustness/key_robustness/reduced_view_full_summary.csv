@@ -1,0 +1,2 @@
+rows,distinct_contexts,ucc_distinctness_ratio,duplicate_excess_rows,singleton_contexts,singleton_context_share,singleton_rows,singleton_row_share,conflicted_contexts,conflicted_rows,bayes_error,bayes_error_rate,agreement_rate,context_size_median,context_size_p90,context_size_p95,context_size_max
+1048576,504992,0.481597900390625,543584,357582,0.7080943856536341,357582,0.3410167694091797,16,38,16,1.52587890625e-05,0.9999847412109375,1.0,4.0,6.0,28511

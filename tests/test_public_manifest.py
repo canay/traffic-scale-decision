@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import runpy
 import unittest
 from pathlib import Path, PurePosixPath
 
@@ -21,6 +22,26 @@ class PublicManifestTests(unittest.TestCase):
             self.assertFalse(PurePosixPath(value).is_absolute())
             self.assertNotIn(":", value)
             self.assertTrue((ROOT / value).is_file(), value)
+
+    def test_reviewer_robustness_scripts_use_public_repo_paths(self) -> None:
+        expected = {
+            "run_key_robustness.py": (
+                ROOT / "results_reviewer_robustness" / "key_robustness"
+            ),
+            "run_native_categorical_uncertainty.py": (
+                ROOT
+                / "results_reviewer_robustness"
+                / "native_categorical_uncertainty"
+            ),
+        }
+        for script_name, output_path in expected.items():
+            namespace = runpy.run_path(str(ROOT / "scripts" / script_name))
+            self.assertEqual(namespace["PROJECT_ROOT"], ROOT)
+            self.assertEqual(
+                namespace["DATA_PATH"],
+                ROOT / "data" / "processed" / "traffic_three_class.csv",
+            )
+            self.assertEqual(namespace["EXPERIMENT_ROOT"], output_path)
 
 
 if __name__ == "__main__":

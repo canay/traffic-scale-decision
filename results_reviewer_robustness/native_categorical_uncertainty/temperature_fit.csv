@@ -1,0 +1,3 @@
+temperature,optimizer_success,optimizer_message,optimizer_iterations,probability_calibration_rows,probability_calibration_pre_nll,probability_calibration_post_nll,temperature_at_lower_bound,temperature_at_upper_bound,context,model,conformal_calibration_rows
+1.5869854029683634,True,Solution found.,25,106414,8.199481916062235e-05,5.8764385076251724e-05,False,False,application_category,lightgbm_ordinal,106415
+0.6109598708382099,True,Solution found.,18,106414,0.0002510548214141497,0.00012225968400685322,False,False,application_category,catboost_native,106415

@@ -1,0 +1,5 @@
+target,rows,source_port_zero_rows,source_port_zero_within_target_share,target_share_within_source_port_zero
+Allow,804586,43211,0.05370588103695565,0.8466602660814703
+Deny,13809,0,0.0,0.0
+Drop,230181,7826,0.03399933096128699,0.1533397339185297
+ALL,1048576,51037,0.04867267608642578,1.0

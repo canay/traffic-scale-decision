@@ -2,7 +2,7 @@
 
 Public reproducibility artifact for the manuscript:
 
-**Near-Deterministic Reconstruction of Enterprise Firewall Decisions: Proxy Structure, Context Shift, and Uncertainty-Aware Review**
+**Near-Deterministic Reconstruction of Enterprise Firewall Decisions for Policy Audit: Proxy Structure, Context Shift, and Residual Uncertainty**
 
 Repository short name:
 
@@ -57,7 +57,7 @@ GitHub:
 
 https://github.com/canay
 
-Package status (2026-07-25): affiliations, ORCIDs, the final article title, conformal tie handling, model/encoding sensitivity, and reproducibility metadata are current for version 1.2.2.
+Package status (2026-07-26): affiliations, ORCIDs, the policy-audit article title, key-robustness controls, native-categorical uncertainty, and reproducibility metadata are current for version 1.2.3.
 
 ## Repository Contents
 
@@ -79,6 +79,7 @@ Package status (2026-07-25): affiliations, ORCIDs, the final article title, conf
 - `results_reviewer_response/`: aggregate partition-variance and redirect-exclusion sensitivity checks
 - `results_session_group/`: aggregate Session-ID-disjoint robustness results
 - `results_review_sensitivity/`: aggregate determining-key support, OOV, paired model/encoding, and fixed-depth tree checks
+- `results_reviewer_robustness/`: aggregate training-only key validation, matched-cardinality controls, reduced-view approximate dependencies, and paired calibrated uncertainty checks
 - `requirements.txt`: Python dependencies used in the experiments
 - `CITATION.cff`: citation metadata for this artifact
 
@@ -136,6 +137,9 @@ Submission-strengthening and boundary evidence:
 - Strict proxy-minimal XGBoost: macro-F1 0.951301 +/- 0.001283 without country context and 0.962710 +/- 0.001253 with country context.
 - Application/category held-out over five group partitions: macro-F1 mean 0.5561 (SD 0.2654), range 0.2532--0.9441; destination-service mean 0.7920.
 - Paired application/category hold-out on identical seed-42 rows: macro-F1 0.6725 for ordinal LightGBM and 0.9923 for native-categorical CatBoost.
+- Training-only key discovery recovers the seven full-export keys with zero seen-context mapping errors; one split-spurious candidate is rejected by a test error.
+- Cardinality-preserving Source Port controls break exactness in all 140 runs, while the reduced 17-field view reaches 99.9713% empirical agreement without exact determination.
+- On identical application/category rows, temperature-scaled adaptive ECE is 0.02538 for ordinal LightGBM and 0.000144 for native CatBoost; fixed-threshold queue capture remains representation- and calibration-dependent.
 - Fixed-depth core trees: macro-F1 rises from 0.9409 at depth 4 to 0.9967 at depth 12; all four prespecified depths are retained.
 - Public UCI instantiation: accuracy 0.996--0.998; duplicate-aware median macro-F1 0.864; rare `Reset-both` XGBoost F1 0.375.
 
@@ -174,6 +178,7 @@ Packaged output files:
 - `results_reviewer_response/`: partition-variance and redirect-exclusion sensitivity summaries
 - `results_session_group/`: five Session-ID-disjoint split summaries with no record-level identifiers
 - `results_review_sensitivity/`: determining-key support, OOV, paired model/encoding, and fixed-depth tree summaries
+- `results_reviewer_robustness/`: final aggregate key-validation, cardinality-control, reduced-view, calibrated conformal, and selective-classification summaries
 
 ## Reproducing With Authorized Local Data
 
@@ -227,6 +232,8 @@ Run the paired context/model/encoding and fixed-depth tree checks:
 ```bash
 python scripts/run_review_sensitivity_checks.py
 python scripts/run_shallow_tree_baseline.py
+python scripts/run_key_robustness.py
+python scripts/run_native_categorical_uncertainty.py
 ```
 
 Run the uncertainty diagnostics:
