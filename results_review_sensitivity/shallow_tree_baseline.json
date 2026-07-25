@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "operation": "fixed-depth decision-tree sensitivity",
+    "created_at": "2026-07-24T10:07:39+03:00",
+    "data_path": "data/processed/traffic_three_class.csv",
+    "data_sha256": "BC17D2ADE692B0F628F1738D22179ADBB9B00DDE0D456A6096CB9F0C9D61074F",
+    "rows": 1048576,
+    "train_rows": 838860,
+    "test_rows": 209716,
+    "seed": 42,
+    "depths_fixed_in_advance": [
+      4,
+      6,
+      8,
+      12
+    ],
+    "feature_count": 24,
+    "preprocessing": "train-fitted ordinal encoding with reserved OOV value",
+    "privacy": "aggregate-only; no record-level predictions exported",
+    "elapsed_seconds": 26.911346599983517
+  },
+  "results": [
+    {
+      "max_depth": 4,
+      "actual_depth": 4,
+      "leaves": 13,
+      "accuracy": 0.9935055026798146,
+      "balanced_accuracy": 0.9943319501967887,
+      "macro_f1": 0.9408798820315426,
+      "errors": 1362,
+      "fit_seconds": 2.9960313999908976
+    },
+    {
+      "max_depth": 6,
+      "actual_depth": 6,
+      "leaves": 30,
+      "accuracy": 0.9992466001640313,
+      "balanced_accuracy": 0.9995540971078869,
+      "macro_f1": 0.9905639757470462,
+      "errors": 158,
+      "fit_seconds": 3.7880179999920074
+    },
+    {
+      "max_depth": 8,
+      "actual_depth": 8,
+      "leaves": 45,
+      "accuracy": 0.99967575196933,
+      "balanced_accuracy": 0.9997405274637203,
+      "macro_f1": 0.9958746964395228,
+      "errors": 68,
+      "fit_seconds": 5.161309999995865
+    },
+    {
+      "max_depth": 12,
+      "actual_depth": 12,
+      "leaves": 58,
+      "accuracy": 0.9997377405634287,
+      "balanced_accuracy": 0.9996488422476908,
+      "macro_f1": 0.9966545358566367,
+      "errors": 55,
+      "fit_seconds": 3.917135999974562
+    }
+  ]
+}

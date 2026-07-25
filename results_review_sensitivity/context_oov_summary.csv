@@ -1,0 +1,6 @@
+context,grouping_columns,train_rows,calibration_rows,test_rows,train_groups,test_groups,group_overlap,any_group_field_oov_rows,any_group_field_oov_share,field,train_unique,test_unique,oov_rows,oov_share
+application_category,Application|Category,638486,212829,197261,260,69,0,188875,0.9574877953574199,Application,154,52,185548,0.940621815766928
+application_category,Application|Category,638486,212829,197261,260,69,0,188875,0.9574877953574199,Category,51,27,3378,0.017124520305584985
+destination_service,IP Protocol|Destination Port,377076,125693,545807,12081,3511,0,288018,0.5276920230044686,IP Protocol,5,2,0,0.0
+destination_service,IP Protocol|Destination Port,377076,125693,545807,12081,3511,0,288018,0.5276920230044686,Destination Port,11615,3483,288018,0.5276920230044686
+rule,Rule,284214,94739,669623,53,14,0,669623,1.0,Rule,53,14,669623,1.0
