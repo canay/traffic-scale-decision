@@ -59,6 +59,11 @@ CONFORMAL_COLORS = {
     "multi_class": "#A6B8C7", # Cool slate
     "empty": "#B5653C",       # Muted copper
 }
+CONFORMAL_HATCHES = {
+    "singleton": "///",
+    "multi_class": "...",
+    "empty": "xxx",
+}
 def read_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
         raise SystemExit(f"Missing required input: {path}")
@@ -157,10 +162,10 @@ def plot_conformal_composite(
 ) -> Path:
     fig, axes = plt.subplots(1, 2, figsize=(12.4, 5.7), sharex=True, sharey=True)
     panel_specs = [
-        ("probability_threshold", "(a) Probability-threshold"),
-        ("aps_cumulative", "(b) APS cumulative"),
+        ("probability_threshold", "(a)"),
+        ("aps_cumulative", "(b)"),
     ]
-    for ax, (method, title) in zip(axes, panel_specs):
+    for ax, (method, panel_label) in zip(axes, panel_specs):
         rows = conformal[
             (conformal["conformal_method"] == method)
             & np.isclose(conformal["alpha"], alpha)
@@ -168,15 +173,16 @@ def plot_conformal_composite(
         rows = selected_rows(rows)
         y = np.arange(len(rows))
         height = 0.66
-        ax.barh(y, rows["singleton_rate"], color=CONFORMAL_COLORS["singleton"], label="Singleton", height=height, edgecolor="white", linewidth=0.35)
+        ax.barh(y, rows["singleton_rate"], color=CONFORMAL_COLORS["singleton"], hatch=CONFORMAL_HATCHES["singleton"], label="Singleton", height=height, edgecolor=COLORS["ink"], linewidth=0.35)
         ax.barh(
             y,
             rows["ambiguous_set_rate"],
             left=rows["singleton_rate"],
             color=CONFORMAL_COLORS["multi_class"],
+            hatch=CONFORMAL_HATCHES["multi_class"],
             label="Multi-class",
             height=height,
-            edgecolor="white",
+            edgecolor=COLORS["ink"],
             linewidth=0.35,
         )
         ax.barh(
@@ -184,22 +190,23 @@ def plot_conformal_composite(
             rows["empty_rate"],
             left=rows["singleton_rate"] + rows["ambiguous_set_rate"],
             color=CONFORMAL_COLORS["empty"],
+            hatch=CONFORMAL_HATCHES["empty"],
             label="Empty",
             height=height,
-            edgecolor="white",
+            edgecolor=COLORS["ink"],
             linewidth=0.35,
         )
         ax.set_xlim(0, 1.0)
         ax.set_yticks(y)
         ax.set_yticklabels([short_label(v) for v in rows["experiment"]], fontsize=8.5)
         ax.set_xlabel("Share of test cases")
-        ax.set_title(title, fontweight="normal", fontsize=10.5)
+        ax.text(0.5, -0.18, panel_label, transform=ax.transAxes, ha="center", fontweight="normal", fontsize=10.5)
         ax.grid(axis="x", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
         prepare_axis(ax)
     axes[0].invert_yaxis()
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 0.995))
-    fig.tight_layout(rect=(0, 0, 1, 0.91), w_pad=1.2)
+    fig.tight_layout(rect=(0, 0.04, 1, 0.91), w_pad=1.2)
     path = output_dir / "fig_conformal_set_structure.png"
     fig.savefig(path, dpi=600, bbox_inches="tight", pad_inches=0.01)
     plt.close(fig)
@@ -222,8 +229,8 @@ def plot_selective_risk(selective: pd.DataFrame, output_dir: Path) -> Path:
         axes[1].plot(part["threshold"], part["selective_risk"], marker="s", markersize=6, linewidth=1.8, color=color, label=short_label(experiment))
     axes[0].set_ylabel("Retained coverage")
     axes[1].set_ylabel("Selective risk")
-    axes[0].text(0.5, -0.22, "(a)", transform=axes[0].transAxes, ha="center", weight="bold", fontsize=11)
-    axes[1].text(0.5, -0.22, "(b)", transform=axes[1].transAxes, ha="center", weight="bold", fontsize=11)
+    axes[0].text(0.5, -0.22, "(a)", transform=axes[0].transAxes, ha="center", weight="normal", fontsize=11)
+    axes[1].text(0.5, -0.22, "(b)", transform=axes[1].transAxes, ha="center", weight="normal", fontsize=11)
     for ax in axes:
         ax.set_xlabel("Confidence threshold")
         ax.grid(axis="y", color=COLORS["light_gray"], alpha=0.6, linewidth=0.7)
