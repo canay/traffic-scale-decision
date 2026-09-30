@@ -57,7 +57,7 @@ GitHub:
 
 https://github.com/canay
 
-Package status (2026-07-26): affiliations, ORCIDs, the policy-audit article title, key-robustness controls, native-categorical uncertainty, and reproducibility metadata are current for version 1.2.3.
+Package status (2026-09-30): version 1.3.0 adds the four revision diagnostics (header-only census, banded Source Port census, one-factor LightGBM diagnosis, and conformal-selective overlap) with their scripts and aggregate outputs. Affiliations, ORCIDs, the article title, and reproducibility metadata are unchanged from version 1.2.3.
 
 ## Repository Contents
 
@@ -80,6 +80,7 @@ Package status (2026-07-26): affiliations, ORCIDs, the policy-audit article titl
 - `results_session_group/`: aggregate Session-ID-disjoint robustness results
 - `results_review_sensitivity/`: aggregate determining-key support, OOV, paired model/encoding, and fixed-depth tree checks
 - `results_reviewer_robustness/`: aggregate training-only key validation, matched-cardinality controls, reduced-view approximate dependencies, and paired calibrated uncertainty checks
+- `results_revision_diagnostics/`: aggregate header-only and banded Source Port key censuses, the one-factor LightGBM diagnosis of the strict proxy-minimal views, and the conformal-selective overlap check
 - `requirements.txt`: Python dependencies used in the experiments
 - `CITATION.cff`: citation metadata for this artifact
 
@@ -143,6 +144,13 @@ Submission-strengthening and boundary evidence:
 - Fixed-depth core trees: macro-F1 rises from 0.9409 at depth 4 to 0.9967 at depth 12; all four prespecified depths are retained.
 - Public UCI instantiation: accuracy 0.996--0.998; duplicate-aware median macro-F1 0.864; rare `Reset-both` XGBoost F1 0.375.
 
+Revision diagnostics:
+
+- Header-only census: none of the 511 subsets of the nine zone, interface, protocol, port, and country fields is exact; the nine-field view leaves 1,838 conflicted records and an in-sample floor of 785 errors (99.9251% agreement).
+- Banded Source Port census: with the port replaced by its IANA range, none of the seven keys stays exact (103--805 majority-label errors), no exact set of up to four fields exists, and the full 24-field view has one conflicted context of 2,558 records.
+- One-factor LightGBM diagnosis: balanced-weight LightGBM diverges late in training in one of five seeds per strict view; each of five prespecified one-factor changes removes the divergence in all ten cells, and without class weights LightGBM reaches macro-F1 0.955--0.959 and 0.964--0.967.
+- Conformal-selective overlap: marginal empty sets coincide with the confidence rule at the calibrated threshold on all 209,716 test records; Mondrian abstention overlaps the matched lowest-confidence set with a Jaccard index of 0.84--0.94.
+
 These checks establish within-export stability and locate context-shift, representation, and rare-class failure boundaries. They do not establish attack detection, cross-organization transfer, or policy-layer transfer.
 
 Interpretation:
@@ -179,6 +187,9 @@ Packaged output files:
 - `results_session_group/`: five Session-ID-disjoint split summaries with no record-level identifiers
 - `results_review_sensitivity/`: determining-key support, OOV, paired model/encoding, and fixed-depth tree summaries
 - `results_reviewer_robustness/`: final aggregate key-validation, cardinality-control, reduced-view, calibrated conformal, and selective-classification summaries
+- `results_revision_diagnostics/`: header-only and banded Source Port key censuses, one-factor LightGBM diagnosis, and conformal-selective overlap
+
+The revision diagnostics in `results_revision_diagnostics/` were run on the same cloud machine class, in an environment rebuilt with the Python, XGBoost, LightGBM, scikit-learn, NumPy, pandas, and SciPy versions of `requirements.txt`. That environment reproduced the published census counts, the published conformal reference values, and nine of the ten published strict-view LightGBM cells exactly.
 
 ## Reproducing With Authorized Local Data
 
@@ -253,7 +264,6 @@ Regenerate the diagnostic figures from the packaged outputs:
 ```bash
 python scripts/build_uncertainty_figures.py --uncertainty-dir results_uncertainty --conformal-dir results_conformal_selective --output-dir figures_diagnostics
 python scripts/build_context_heldout_per_class_figure.py
-python scripts/render_methodology_workflow.py
 ```
 
 The uncertainty-figure command writes the two method-specific conformal panels
@@ -264,9 +274,6 @@ context-held-out settings at alpha 0.05 with a shared 0--1 axis and legend.
 The second command reads the released aggregate per-class metrics in
 `results_submission_strengthening/context_heldout_per_class.csv` and rebuilds
 the three-panel context-held-out precision/recall/F1 figure used in the paper.
-The methodology-workflow command requires XeLaTeX plus the open Lato and
-Liberation Sans font families and writes a 600-DPI PNG to
-`figures_diagnostics/`.
 
 Build derived diagnostic summaries from the packaged outputs:
 
@@ -320,6 +327,28 @@ python scripts/run_submission_strengthening_experiments.py
 python scripts/run_strict_proxy_multiseed_check.py
 python scripts/run_reviewer_response_experiments.py
 ```
+
+Run the four revision diagnostics with the authorized enterprise input in
+`data/processed/`:
+
+```bash
+python scripts/run_header_only_census.py
+python scripts/run_banded_port_census.py
+python scripts/run_lgbm_one_factor_diagnosis.py
+python scripts/run_conformal_selective_overlap.py
+```
+
+Rebuild the one-factor aggregate and its table from the packaged per-run files,
+without restricted data:
+
+```bash
+python scripts/run_lgbm_one_factor_diagnosis.py --aggregate-only
+python scripts/build_lgbm_one_factor_table.py
+```
+
+Each of the four scripts re-derives published counts or values as a positive
+control before it reports a new number. `results_revision_diagnostics/README.md`
+describes the outputs.
 
 These enterprise-data commands write aggregate outputs only. They do not make
 the restricted record-level input redistributable.

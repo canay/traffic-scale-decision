@@ -1,0 +1,114 @@
+{
+  "accuracy": 0.9920559232485838,
+  "balanced_accuracy": 0.992866762305542,
+  "categorical_feature_count": 7,
+  "collapse": false,
+  "config": "C2_depth_limited",
+  "confusion_matrix": [
+    [
+      159284,
+      1619,
+      15
+    ],
+    [
+      31,
+      2731,
+      0
+    ],
+    [
+      1,
+      0,
+      46035
+    ]
+  ],
+  "divergence": false,
+  "errors": 1666,
+  "features": [
+    "Source Zone",
+    "Destination Zone",
+    "Inbound Interface",
+    "Outbound Interface",
+    "IP Protocol",
+    "Source Port",
+    "Destination Port",
+    "Source Country",
+    "Destination Country"
+  ],
+  "fit_seconds": 32.939,
+  "macro_f1": 0.920873851315075,
+  "params": {
+    "class_weight": "balanced",
+    "learning_rate": 0.08,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "num_leaves": 63,
+    "random_state": 101,
+    "verbosity": -1
+  },
+  "per_class": {
+    "Allow": {
+      "f1": 0.9947975542884265,
+      "precision": 0.9997991413291822,
+      "recall": 0.9898457599522739,
+      "support": 160918
+    },
+    "Deny": {
+      "f1": 0.7679977502812149,
+      "precision": 0.627816091954023,
+      "recall": 0.9887762490948588,
+      "support": 2762
+    },
+    "Drop": {
+      "f1": 0.9998262493755837,
+      "precision": 0.9996742671009772,
+      "recall": 0.9999782778694934,
+      "support": 46036
+    }
+  },
+  "predicted_distribution": {
+    "Allow": 159316,
+    "Deny": 4350,
+    "Drop": 46050
+  },
+  "seed": 101,
+  "trace_all_finite": true,
+  "trace_argmin_iteration": 300,
+  "trace_every": 10,
+  "trace_final": 0.024568213650040638,
+  "trace_min": 0.024568213650040638,
+  "trace_train_subsample_logloss": [
+    0.3462869840440889,
+    0.15483149630938312,
+    0.08788221771308428,
+    0.062282504690374316,
+    0.05027019243308728,
+    0.045027573448706025,
+    0.04120183173198404,
+    0.03843818195622531,
+    0.036334842168582154,
+    0.03475935344185913,
+    0.03322209695480372,
+    0.03192679543774939,
+    0.030656378529157983,
+    0.029796705520539122,
+    0.02907701576092511,
+    0.02858928056231179,
+    0.02813065267303402,
+    0.027725090693955807,
+    0.027285596348590083,
+    0.02683012898417149,
+    0.026559706997470147,
+    0.026128362457318872,
+    0.025747083633322187,
+    0.02553608795484091,
+    0.02530834198760149,
+    0.0251637702220412,
+    0.025071493003357447,
+    0.024910182011028584,
+    0.02472960163094925,
+    0.024568213650040638
+  ],
+  "trees_built": 300,
+  "unit_id": "strict_plus_country_context__C2_depth_limited__seed101",
+  "view": "strict_plus_country_context"
+}

@@ -1,0 +1,145 @@
+{
+  "all_non_c0_configs_zero_divergence": true,
+  "balanced_weight_stable_balanced_accuracy_range": [
+    0.9882260559574668,
+    0.992866762305542
+  ],
+  "balanced_weight_stable_deny_precision_range": [
+    0.5304889927917398,
+    0.6498324557204403
+  ],
+  "balanced_weight_stable_deny_recall_range": [
+    0.9779145546705286,
+    0.9887762490948588
+  ],
+  "balanced_weight_stable_runs": 48,
+  "c0_stable_balanced_accuracy_range": [
+    0.9883126472382228,
+    0.9917878710101765
+  ],
+  "c0_stable_deny_precision_range": [
+    0.5342250196695515,
+    0.6439232409381663
+  ],
+  "c0_stable_deny_recall_range": [
+    0.9790007241129616,
+    0.9855177407675597
+  ],
+  "c0_stable_runs": 8,
+  "c1_at_or_above_xgboost": {
+    "strict_plus_country_context": {
+      "c1_max_ge_xgb_max": true,
+      "c1_min": 0.964232159490714,
+      "c1_min_ge_xgb_min": true,
+      "xgb_range": [
+        0.961306,
+        0.964388
+      ]
+    },
+    "strict_zone_interface_transport_ports": {
+      "c1_max_ge_xgb_max": true,
+      "c1_min": 0.9547442687523774,
+      "c1_min_ge_xgb_min": true,
+      "xgb_range": [
+        0.94948,
+        0.952833
+      ]
+    }
+  },
+  "c1_balanced_accuracy_range": [
+    0.9549706156499451,
+    0.9700795170058987
+  ],
+  "c1_macro_f1_range_by_view": {
+    "strict_plus_country_context": [
+      0.964232159490714,
+      0.9665588813807906
+    ],
+    "strict_zone_interface_transport_ports": [
+      0.9547442687523774,
+      0.9587983494678429
+    ]
+  },
+  "collapsed_runs": {
+    "strict_plus_country_context__C0_published__seed7": {
+      "argmin_iteration": 192,
+      "loss_at_next_recorded": 0.31571394084988885,
+      "macro_f1": 0.6494085195444834,
+      "next_recorded_iteration": 200,
+      "rerun_matches_published_cell": false,
+      "trace_final": 4.351747045683005,
+      "trace_min": 0.025833271426176748,
+      "trees_built": 300
+    },
+    "strict_zone_interface_transport_ports__C0_published__seed13": {
+      "argmin_iteration": 230,
+      "loss_at_next_recorded": 1.8093480075239208,
+      "macro_f1": 0.4246428358933397,
+      "next_recorded_iteration": 240,
+      "rerun_matches_published_cell": true,
+      "trace_final": 15.687512239837647,
+      "trace_min": 0.03184963905173236,
+      "trees_built": 278
+    }
+  },
+  "diverged_macro_f1_by_config_view": {
+    "C0_published|strict_plus_country_context": [
+      0.6494085195444834
+    ],
+    "C0_published|strict_zone_interface_transport_ports": [
+      0.4246428358933397
+    ]
+  },
+  "reproduction_gate_cells": 10,
+  "reproduction_gate_matches": 9,
+  "stable_macro_f1_range_by_config_view": {
+    "C0_published|strict_plus_country_context": [
+      0.9171486757701933,
+      0.9244858987536019
+    ],
+    "C0_published|strict_zone_interface_transport_ports": [
+      0.8947746957454646,
+      0.9030217938262534
+    ],
+    "C1_no_class_weight|strict_plus_country_context": [
+      0.964232159490714,
+      0.9665588813807906
+    ],
+    "C1_no_class_weight|strict_zone_interface_transport_ports": [
+      0.9547442687523774,
+      0.9587983494678429
+    ],
+    "C2_depth_limited|strict_plus_country_context": [
+      0.9166351699165564,
+      0.9258369490935675
+    ],
+    "C2_depth_limited|strict_zone_interface_transport_ports": [
+      0.895831176001365,
+      0.9054435458776947
+    ],
+    "C3_lr_0.03|strict_plus_country_context": [
+      0.9164807415732105,
+      0.9251021821837968
+    ],
+    "C3_lr_0.03|strict_zone_interface_transport_ports": [
+      0.8974359264610734,
+      0.9045055385839146
+    ],
+    "C4_leaf_hessian_reg|strict_plus_country_context": [
+      0.9161516064561411,
+      0.9238268799654551
+    ],
+    "C4_leaf_hessian_reg|strict_zone_interface_transport_ports": [
+      0.8938778809568726,
+      0.9011539185356998
+    ],
+    "C5_native_categorical|strict_plus_country_context": [
+      0.915220077600365,
+      0.9234318386726681
+    ],
+    "C5_native_categorical|strict_zone_interface_transport_ports": [
+      0.8943437763074708,
+      0.9027960838109746
+    ]
+  }
+}

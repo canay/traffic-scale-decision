@@ -1,0 +1,1519 @@
+{
+  "seconds": 11.943,
+  "size": 6,
+  "subsets": [
+    {
+      "agreement_rate": 0.9904794692993164,
+      "conflicted_contexts": 8156,
+      "conflicted_rows": 41751,
+      "distinct_contexts": 311009,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port"
+      ],
+      "h_y_given_v_bits": 0.029269413125272224,
+      "h_y_given_v_nats": 0.020288011184426698,
+      "in_sample_errors": 9983,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9945402145385742,
+      "conflicted_contexts": 24,
+      "conflicted_rows": 155718,
+      "distinct_contexts": 26450,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port"
+      ],
+      "h_y_given_v_bits": 0.01668833845558623,
+      "h_y_given_v_nats": 0.011567474748719707,
+      "in_sample_errors": 5725,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9868373870849609,
+      "conflicted_contexts": 22,
+      "conflicted_rows": 158553,
+      "distinct_contexts": 785,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.05859850099273998,
+      "h_y_given_v_nats": 0.04061738574815687,
+      "in_sample_errors": 13802,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9905815124511719,
+      "conflicted_contexts": 41,
+      "conflicted_rows": 164855,
+      "distinct_contexts": 263,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.04452912051784784,
+      "h_y_given_v_nats": 0.030865234339760243,
+      "in_sample_errors": 9876,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9987735748291016,
+      "conflicted_contexts": 1270,
+      "conflicted_rows": 3821,
+      "distinct_contexts": 406597,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port"
+      ],
+      "h_y_given_v_bits": 0.0030404017894981135,
+      "h_y_given_v_nats": 0.0021074459281600296,
+      "in_sample_errors": 1286,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9896612167358398,
+      "conflicted_contexts": 8532,
+      "conflicted_rows": 56322,
+      "distinct_contexts": 299004,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.03513436298720643,
+      "h_y_given_v_nats": 0.024353284645351834,
+      "in_sample_errors": 10841,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946432113647461,
+      "conflicted_contexts": 5102,
+      "conflicted_rows": 22732,
+      "distinct_contexts": 296606,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.016248461025108695,
+      "h_y_given_v_nats": 0.011262574947992252,
+      "in_sample_errors": 5617,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946107864379883,
+      "conflicted_contexts": 33,
+      "conflicted_rows": 141262,
+      "distinct_contexts": 40013,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.016095839766240665,
+      "h_y_given_v_nats": 0.011156785952714366,
+      "in_sample_errors": 5651,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946966171264648,
+      "conflicted_contexts": 43,
+      "conflicted_rows": 129034,
+      "distinct_contexts": 25977,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.015103050435098157,
+      "h_y_given_v_nats": 0.010468636826942943,
+      "in_sample_errors": 5561,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9897842407226562,
+      "conflicted_contexts": 51,
+      "conflicted_rows": 177750,
+      "distinct_contexts": 636,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.04875241251074366,
+      "h_y_given_v_nats": 0.03379259727731737,
+      "in_sample_errors": 10712,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9880819320678711,
+      "conflicted_contexts": 8377,
+      "conflicted_rows": 50639,
+      "distinct_contexts": 420627,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port"
+      ],
+      "h_y_given_v_bits": 0.0316021113665994,
+      "h_y_given_v_nats": 0.021904914393499772,
+      "in_sample_errors": 12497,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9823751449584961,
+      "conflicted_contexts": 11103,
+      "conflicted_rows": 98212,
+      "distinct_contexts": 348882,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.05450521910143434,
+      "h_y_given_v_nats": 0.037780138945961286,
+      "in_sample_errors": 18481,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9780778884887695,
+      "conflicted_contexts": 18508,
+      "conflicted_rows": 105217,
+      "distinct_contexts": 347233,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.060438444129411316,
+      "h_y_given_v_nats": 0.04189273714573123,
+      "in_sample_errors": 22987,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9843111038208008,
+      "conflicted_contexts": 600,
+      "conflicted_rows": 353949,
+      "distinct_contexts": 39886,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.06461121019003786,
+      "h_y_given_v_nats": 0.04478507817579075,
+      "in_sample_errors": 16451,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9645853042602539,
+      "conflicted_contexts": 644,
+      "conflicted_rows": 264971,
+      "distinct_contexts": 26159,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.10979075953807746,
+      "h_y_given_v_nats": 0.07610115542535331,
+      "in_sample_errors": 37135,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9621257781982422,
+      "conflicted_contexts": 198,
+      "conflicted_rows": 539436,
+      "distinct_contexts": 848,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.18139528277829814,
+      "h_y_given_v_nats": 0.12573362882465136,
+      "in_sample_errors": 39714,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9932279586791992,
+      "conflicted_contexts": 2457,
+      "conflicted_rows": 35613,
+      "distinct_contexts": 416862,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.01984994671184566,
+      "h_y_given_v_nats": 0.013758934597580976,
+      "in_sample_errors": 7101,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9898490905761719,
+      "conflicted_contexts": 7622,
+      "conflicted_rows": 44242,
+      "distinct_contexts": 438654,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.02701881218392122,
+      "h_y_given_v_nats": 0.018728013487363693,
+      "in_sample_errors": 10644,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9851493835449219,
+      "conflicted_contexts": 10294,
+      "conflicted_rows": 87081,
+      "distinct_contexts": 345530,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.04598583491656498,
+      "h_y_given_v_nats": 0.031874951818112104,
+      "in_sample_errors": 15572,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9847412109375,
+      "conflicted_contexts": 639,
+      "conflicted_rows": 220379,
+      "distinct_contexts": 39721,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.06072725178841766,
+      "h_y_given_v_nats": 0.042092923360295596,
+      "in_sample_errors": 16000,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9987897872924805,
+      "conflicted_contexts": 1253,
+      "conflicted_rows": 3341,
+      "distinct_contexts": 427771,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port"
+      ],
+      "h_y_given_v_bits": 0.002861709722294916,
+      "h_y_given_v_nats": 0.001983586025589705,
+      "in_sample_errors": 1269,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9907426834106445,
+      "conflicted_contexts": 7913,
+      "conflicted_rows": 40926,
+      "distinct_contexts": 352497,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.028603291839760042,
+      "h_y_given_v_nats": 0.019826291093462962,
+      "in_sample_errors": 9707,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9952859878540039,
+      "conflicted_contexts": 4568,
+      "conflicted_rows": 15714,
+      "distinct_contexts": 361278,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.012651649902813169,
+      "h_y_given_v_nats": 0.008769455459566453,
+      "in_sample_errors": 4943,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946107864379883,
+      "conflicted_contexts": 34,
+      "conflicted_rows": 141247,
+      "distinct_contexts": 40468,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.015967916398843863,
+      "h_y_given_v_nats": 0.011068116231275538,
+      "in_sample_errors": 5651,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946966171264648,
+      "conflicted_contexts": 44,
+      "conflicted_rows": 128476,
+      "distinct_contexts": 26777,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014990513581849885,
+      "h_y_given_v_nats": 0.010390632224404815,
+      "in_sample_errors": 5561,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9905862808227539,
+      "conflicted_contexts": 58,
+      "conflicted_rows": 150385,
+      "distinct_contexts": 1018,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.04322256310974355,
+      "h_y_given_v_nats": 0.029959597756093043,
+      "in_sample_errors": 9871,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9988040924072266,
+      "conflicted_contexts": 1239,
+      "conflicted_rows": 3743,
+      "distinct_contexts": 418102,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.002973124355603805,
+      "h_y_given_v_nats": 0.0020608127645408815,
+      "in_sample_errors": 1254,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9991989135742188,
+      "conflicted_contexts": 833,
+      "conflicted_rows": 2176,
+      "distinct_contexts": 445446,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0018645342264895098,
+      "h_y_given_v_nats": 0.0012923966421487221,
+      "in_sample_errors": 840,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9949073791503906,
+      "conflicted_contexts": 4840,
+      "conflicted_rows": 21797,
+      "distinct_contexts": 351091,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.015539011281300138,
+      "h_y_given_v_nats": 0.010770821858322373,
+      "in_sample_errors": 5340,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9947671890258789,
+      "conflicted_contexts": 53,
+      "conflicted_rows": 114520,
+      "distinct_contexts": 40328,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Outbound Interface",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014413740992848319,
+      "h_y_given_v_nats": 0.009990843930514118,
+      "in_sample_errors": 5487,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9940509796142578,
+      "conflicted_contexts": 2412,
+      "conflicted_rows": 33380,
+      "distinct_contexts": 437903,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.01792099300664326,
+      "h_y_given_v_nats": 0.01242188577538927,
+      "in_sample_errors": 6238,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9904727935791016,
+      "conflicted_contexts": 7434,
+      "conflicted_rows": 42371,
+      "distinct_contexts": 458506,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.025564874510399703,
+      "h_y_given_v_nats": 0.017720220688252367,
+      "in_sample_errors": 9990,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9895105361938477,
+      "conflicted_contexts": 7342,
+      "conflicted_rows": 66280,
+      "distinct_contexts": 399442,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "IP Protocol",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.03194887249947599,
+      "h_y_given_v_nats": 0.022145270895080955,
+      "in_sample_errors": 10999,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9847879409790039,
+      "conflicted_contexts": 635,
+      "conflicted_rows": 209607,
+      "distinct_contexts": 40217,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.05786042886944168,
+      "h_y_given_v_nats": 0.04010579313684276,
+      "in_sample_errors": 15951,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9958896636962891,
+      "conflicted_contexts": 1592,
+      "conflicted_rows": 26473,
+      "distinct_contexts": 456082,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.013120990259299126,
+      "h_y_given_v_nats": 0.009094777404387695,
+      "in_sample_errors": 4310,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9987897872924805,
+      "conflicted_contexts": 1253,
+      "conflicted_rows": 3341,
+      "distinct_contexts": 422093,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port"
+      ],
+      "h_y_given_v_bits": 0.0028617097222949166,
+      "h_y_given_v_nats": 0.0019835860255897056,
+      "in_sample_errors": 1269,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9907426834106445,
+      "conflicted_contexts": 7913,
+      "conflicted_rows": 40926,
+      "distinct_contexts": 339641,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.028603291839760046,
+      "h_y_given_v_nats": 0.019826291093462966,
+      "in_sample_errors": 9707,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9952859878540039,
+      "conflicted_contexts": 4568,
+      "conflicted_rows": 15714,
+      "distinct_contexts": 339901,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.01265164990281317,
+      "h_y_given_v_nats": 0.008769455459566455,
+      "in_sample_errors": 4943,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946107864379883,
+      "conflicted_contexts": 34,
+      "conflicted_rows": 141247,
+      "distinct_contexts": 29818,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.015967916398843863,
+      "h_y_given_v_nats": 0.011068116231275538,
+      "in_sample_errors": 5651,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946966171264648,
+      "conflicted_contexts": 44,
+      "conflicted_rows": 128476,
+      "distinct_contexts": 18935,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014990513581849883,
+      "h_y_given_v_nats": 0.010390632224404813,
+      "in_sample_errors": 5561,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9905862808227539,
+      "conflicted_contexts": 58,
+      "conflicted_rows": 150385,
+      "distinct_contexts": 722,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.043222563109743546,
+      "h_y_given_v_nats": 0.02995959775609304,
+      "in_sample_errors": 9871,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9988040924072266,
+      "conflicted_contexts": 1239,
+      "conflicted_rows": 3743,
+      "distinct_contexts": 412560,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.0029731243556038057,
+      "h_y_given_v_nats": 0.002060812764540882,
+      "in_sample_errors": 1254,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9991989135742188,
+      "conflicted_contexts": 833,
+      "conflicted_rows": 2176,
+      "distinct_contexts": 439750,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0018645342264895098,
+      "h_y_given_v_nats": 0.0012923966421487221,
+      "in_sample_errors": 840,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9949073791503906,
+      "conflicted_contexts": 4840,
+      "conflicted_rows": 21797,
+      "distinct_contexts": 337516,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.015539011281300134,
+      "h_y_given_v_nats": 0.010770821858322371,
+      "in_sample_errors": 5340,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9947671890258789,
+      "conflicted_contexts": 53,
+      "conflicted_rows": 114520,
+      "distinct_contexts": 29740,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014413740992848315,
+      "h_y_given_v_nats": 0.009990843930514116,
+      "in_sample_errors": 5487,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9917774200439453,
+      "conflicted_contexts": 3829,
+      "conflicted_rows": 45542,
+      "distinct_contexts": 419464,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.024557050547108734,
+      "h_y_given_v_nats": 0.01702165034959648,
+      "in_sample_errors": 8622,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9895858764648438,
+      "conflicted_contexts": 8256,
+      "conflicted_rows": 50731,
+      "distinct_contexts": 447879,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.02829785079378917,
+      "h_y_given_v_nats": 0.019614575493620973,
+      "in_sample_errors": 10920,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9853296279907227,
+      "conflicted_contexts": 11329,
+      "conflicted_rows": 85142,
+      "distinct_contexts": 379685,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.04383845903672748,
+      "h_y_given_v_nats": 0.030386504281400308,
+      "in_sample_errors": 15383,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9832172393798828,
+      "conflicted_contexts": 794,
+      "conflicted_rows": 367205,
+      "distinct_contexts": 29293,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.06821371653915825,
+      "h_y_given_v_nats": 0.04728214529463285,
+      "in_sample_errors": 17598,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9956130981445312,
+      "conflicted_contexts": 1821,
+      "conflicted_rows": 32407,
+      "distinct_contexts": 449358,
+      "fields": [
+        "Source Zone",
+        "Inbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014409345083777404,
+      "h_y_given_v_nats": 0.009987796918535616,
+      "in_sample_errors": 4600,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9988203048706055,
+      "conflicted_contexts": 1222,
+      "conflicted_rows": 3267,
+      "distinct_contexts": 433564,
+      "fields": [
+        "Source Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.002795349430884972,
+      "h_y_given_v_nats": 0.001937588576697766,
+      "in_sample_errors": 1237,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9992303848266602,
+      "conflicted_contexts": 800,
+      "conflicted_rows": 1886,
+      "distinct_contexts": 459466,
+      "fields": [
+        "Source Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0017091287495729964,
+      "h_y_given_v_nats": 0.0011846777739804673,
+      "in_sample_errors": 807,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9955205917358398,
+      "conflicted_contexts": 4328,
+      "conflicted_rows": 15047,
+      "distinct_contexts": 389744,
+      "fields": [
+        "Source Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.012083481932522698,
+      "h_y_given_v_nats": 0.008375631432875147,
+      "in_sample_errors": 4697,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9947671890258789,
+      "conflicted_contexts": 54,
+      "conflicted_rows": 114042,
+      "distinct_contexts": 30173,
+      "fields": [
+        "Source Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014302622662590782,
+      "h_y_given_v_nats": 0.009913822573187578,
+      "in_sample_errors": 5487,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9992198944091797,
+      "conflicted_contexts": 811,
+      "conflicted_rows": 2125,
+      "distinct_contexts": 451325,
+      "fields": [
+        "Source Zone",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0018194184694042355,
+      "h_y_given_v_nats": 0.001261124782326237,
+      "in_sample_errors": 818,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9961519241333008,
+      "conflicted_contexts": 1705,
+      "conflicted_rows": 31085,
+      "distinct_contexts": 468951,
+      "fields": [
+        "Source Zone",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.013201201043065882,
+      "h_y_given_v_nats": 0.009150375283006124,
+      "in_sample_errors": 4035,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9987897872924805,
+      "conflicted_contexts": 1253,
+      "conflicted_rows": 3341,
+      "distinct_contexts": 427771,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port"
+      ],
+      "h_y_given_v_bits": 0.002861709722294916,
+      "h_y_given_v_nats": 0.001983586025589705,
+      "in_sample_errors": 1269,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9907426834106445,
+      "conflicted_contexts": 7913,
+      "conflicted_rows": 40926,
+      "distinct_contexts": 352497,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.028603291839760042,
+      "h_y_given_v_nats": 0.019826291093462962,
+      "in_sample_errors": 9707,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9952859878540039,
+      "conflicted_contexts": 4568,
+      "conflicted_rows": 15714,
+      "distinct_contexts": 361278,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.012651649902813169,
+      "h_y_given_v_nats": 0.008769455459566453,
+      "in_sample_errors": 4943,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946107864379883,
+      "conflicted_contexts": 34,
+      "conflicted_rows": 141247,
+      "distinct_contexts": 40468,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.015967916398843863,
+      "h_y_given_v_nats": 0.011068116231275538,
+      "in_sample_errors": 5651,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9946966171264648,
+      "conflicted_contexts": 44,
+      "conflicted_rows": 128476,
+      "distinct_contexts": 26777,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014990513581849885,
+      "h_y_given_v_nats": 0.010390632224404815,
+      "in_sample_errors": 5561,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9905862808227539,
+      "conflicted_contexts": 58,
+      "conflicted_rows": 150385,
+      "distinct_contexts": 1018,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.04322256310974355,
+      "h_y_given_v_nats": 0.029959597756093043,
+      "in_sample_errors": 9871,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9988040924072266,
+      "conflicted_contexts": 1239,
+      "conflicted_rows": 3743,
+      "distinct_contexts": 418102,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.002973124355603805,
+      "h_y_given_v_nats": 0.0020608127645408815,
+      "in_sample_errors": 1254,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9991989135742188,
+      "conflicted_contexts": 833,
+      "conflicted_rows": 2176,
+      "distinct_contexts": 445446,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0018645342264895098,
+      "h_y_given_v_nats": 0.0012923966421487221,
+      "in_sample_errors": 840,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9949073791503906,
+      "conflicted_contexts": 4840,
+      "conflicted_rows": 21797,
+      "distinct_contexts": 351091,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.015539011281300138,
+      "h_y_given_v_nats": 0.010770821858322373,
+      "in_sample_errors": 5340,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9947671890258789,
+      "conflicted_contexts": 53,
+      "conflicted_rows": 114520,
+      "distinct_contexts": 40328,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014413740992848319,
+      "h_y_given_v_nats": 0.009990843930514118,
+      "in_sample_errors": 5487,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9940509796142578,
+      "conflicted_contexts": 2412,
+      "conflicted_rows": 33380,
+      "distinct_contexts": 437903,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.01792099300664326,
+      "h_y_given_v_nats": 0.01242188577538927,
+      "in_sample_errors": 6238,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9904727935791016,
+      "conflicted_contexts": 7434,
+      "conflicted_rows": 42371,
+      "distinct_contexts": 458506,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.025564874510399703,
+      "h_y_given_v_nats": 0.017720220688252367,
+      "in_sample_errors": 9990,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9895105361938477,
+      "conflicted_contexts": 7342,
+      "conflicted_rows": 66280,
+      "distinct_contexts": 399442,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.03194887249947599,
+      "h_y_given_v_nats": 0.022145270895080955,
+      "in_sample_errors": 10999,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9847879409790039,
+      "conflicted_contexts": 635,
+      "conflicted_rows": 209607,
+      "distinct_contexts": 40217,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.05786042886944168,
+      "h_y_given_v_nats": 0.04010579313684276,
+      "in_sample_errors": 15951,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9958896636962891,
+      "conflicted_contexts": 1592,
+      "conflicted_rows": 26473,
+      "distinct_contexts": 456082,
+      "fields": [
+        "Destination Zone",
+        "Inbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.013120990259299126,
+      "h_y_given_v_nats": 0.009094777404387695,
+      "in_sample_errors": 4310,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9988203048706055,
+      "conflicted_contexts": 1222,
+      "conflicted_rows": 3267,
+      "distinct_contexts": 439092,
+      "fields": [
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.002795349430884972,
+      "h_y_given_v_nats": 0.001937588576697766,
+      "in_sample_errors": 1237,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9991531372070312,
+      "conflicted_contexts": 845,
+      "conflicted_rows": 2279,
+      "distinct_contexts": 463287,
+      "fields": [
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.001946146571014805,
+      "h_y_given_v_nats": 0.0013489660086553174,
+      "in_sample_errors": 888,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9955205917358398,
+      "conflicted_contexts": 4328,
+      "conflicted_rows": 15047,
+      "distinct_contexts": 402455,
+      "fields": [
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.012083481932522695,
+      "h_y_given_v_nats": 0.008375631432875145,
+      "in_sample_errors": 4697,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9947614669799805,
+      "conflicted_contexts": 55,
+      "conflicted_rows": 167790,
+      "distinct_contexts": 40805,
+      "fields": [
+        "Destination Zone",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014386001886203974,
+      "h_y_given_v_nats": 0.00997161664695234,
+      "in_sample_errors": 5493,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9992198944091797,
+      "conflicted_contexts": 811,
+      "conflicted_rows": 2125,
+      "distinct_contexts": 456838,
+      "fields": [
+        "Destination Zone",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0018194184694042355,
+      "h_y_given_v_nats": 0.001261124782326237,
+      "in_sample_errors": 818,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9958419799804688,
+      "conflicted_contexts": 1631,
+      "conflicted_rows": 26670,
+      "distinct_contexts": 475513,
+      "fields": [
+        "Destination Zone",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.013285764859185277,
+      "h_y_given_v_nats": 0.009208990453726673,
+      "in_sample_errors": 4360,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9988203048706055,
+      "conflicted_contexts": 1222,
+      "conflicted_rows": 3267,
+      "distinct_contexts": 433564,
+      "fields": [
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.002795349430884972,
+      "h_y_given_v_nats": 0.001937588576697766,
+      "in_sample_errors": 1237,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9992303848266602,
+      "conflicted_contexts": 800,
+      "conflicted_rows": 1886,
+      "distinct_contexts": 459466,
+      "fields": [
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0017091287495729964,
+      "h_y_given_v_nats": 0.0011846777739804673,
+      "in_sample_errors": 807,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9955205917358398,
+      "conflicted_contexts": 4328,
+      "conflicted_rows": 15047,
+      "distinct_contexts": 389744,
+      "fields": [
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.012083481932522698,
+      "h_y_given_v_nats": 0.008375631432875147,
+      "in_sample_errors": 4697,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9947671890258789,
+      "conflicted_contexts": 54,
+      "conflicted_rows": 114042,
+      "distinct_contexts": 30173,
+      "fields": [
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.014302622662590782,
+      "h_y_given_v_nats": 0.009913822573187578,
+      "in_sample_errors": 5487,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9992198944091797,
+      "conflicted_contexts": 811,
+      "conflicted_rows": 2125,
+      "distinct_contexts": 451325,
+      "fields": [
+        "Inbound Interface",
+        "Outbound Interface",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0018194184694042355,
+      "h_y_given_v_nats": 0.001261124782326237,
+      "in_sample_errors": 818,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9961519241333008,
+      "conflicted_contexts": 1705,
+      "conflicted_rows": 31085,
+      "distinct_contexts": 468951,
+      "fields": [
+        "Inbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.013201201043065882,
+      "h_y_given_v_nats": 0.009150375283006124,
+      "in_sample_errors": 4035,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9992513656616211,
+      "conflicted_contexts": 778,
+      "conflicted_rows": 1838,
+      "distinct_contexts": 470821,
+      "fields": [
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0016646596882144585,
+      "h_y_given_v_nats": 0.0011538541694776495,
+      "in_sample_errors": 785,
+      "rows": 1048576
+    }
+  ],
+  "unit_id": "size_6"
+}

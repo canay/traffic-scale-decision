@@ -1,0 +1,28 @@
+{
+  "seconds": 0.25,
+  "size": 9,
+  "subsets": [
+    {
+      "agreement_rate": 0.9992513656616211,
+      "conflicted_contexts": 778,
+      "conflicted_rows": 1838,
+      "distinct_contexts": 476383,
+      "fields": [
+        "Source Zone",
+        "Destination Zone",
+        "Inbound Interface",
+        "Outbound Interface",
+        "IP Protocol",
+        "Source Port",
+        "Destination Port",
+        "Source Country",
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.0016646596882144583,
+      "h_y_given_v_nats": 0.0011538541694776493,
+      "in_sample_errors": 785,
+      "rows": 1048576
+    }
+  ],
+  "unit_id": "size_9"
+}

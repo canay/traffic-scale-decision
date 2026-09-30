@@ -1,0 +1,13 @@
+config,change_from_published_configuration,view,runs,stable_macro_f1_min,stable_macro_f1_max,diverged_runs,diverged_seeds,diverged_macro_f1
+C0_published,None (published configuration),strict_zone_interface_transport_ports,5,0.894775,0.903022,1,13,0.424643
+C0_published,None (published configuration),strict_plus_country_context,5,0.917149,0.924486,1,7,0.649409
+C1_no_class_weight,No class weighting,strict_zone_interface_transport_ports,5,0.954744,0.958798,0,,
+C1_no_class_weight,No class weighting,strict_plus_country_context,5,0.964232,0.966559,0,,
+C2_depth_limited,Maximum depth 6 with 63 leaves,strict_zone_interface_transport_ports,5,0.895831,0.905444,0,,
+C2_depth_limited,Maximum depth 6 with 63 leaves,strict_plus_country_context,5,0.916635,0.925837,0,,
+C3_lr_0.03,Learning rate 0.03,strict_zone_interface_transport_ports,5,0.897436,0.904506,0,,
+C3_lr_0.03,Learning rate 0.03,strict_plus_country_context,5,0.916481,0.925102,0,,
+C4_leaf_hessian_reg,Minimum leaf size 200 and hessian 1.0,strict_zone_interface_transport_ports,5,0.893878,0.901154,0,,
+C4_leaf_hessian_reg,Minimum leaf size 200 and hessian 1.0,strict_plus_country_context,5,0.916152,0.923827,0,,
+C5_native_categorical,Native categorical splits,strict_zone_interface_transport_ports,5,0.894344,0.902796,0,,
+C5_native_categorical,Native categorical splits,strict_plus_country_context,5,0.915220,0.923432,0,,

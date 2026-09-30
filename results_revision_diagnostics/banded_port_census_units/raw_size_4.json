@@ -1,0 +1,52 @@
+{
+  "candidates": 10626,
+  "exact_sets": [
+    [
+      "Application",
+      "Bytes",
+      "Destination Country",
+      "Source Port"
+    ],
+    [
+      "Application",
+      "Bytes",
+      "Outbound Interface",
+      "Source Port"
+    ],
+    [
+      "Bytes",
+      "Category of app",
+      "Outbound Interface",
+      "Source Port"
+    ],
+    [
+      "Bytes",
+      "Destination Port",
+      "Outbound Interface",
+      "Source Port"
+    ],
+    [
+      "Bytes",
+      "Outbound Interface",
+      "Risk of app",
+      "Source Port"
+    ],
+    [
+      "Bytes",
+      "Outbound Interface",
+      "Source Port",
+      "Subcategory of app"
+    ],
+    [
+      "Bytes",
+      "Outbound Interface",
+      "Source Port",
+      "Technology of app"
+    ]
+  ],
+  "full_checks": 33,
+  "seconds": 67.679,
+  "size": 4,
+  "unit_id": "raw_size_4",
+  "variant": "raw"
+}

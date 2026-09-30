@@ -1,0 +1,110 @@
+{
+  "accuracy": 0.9896431364321273,
+  "balanced_accuracy": 0.9887036286701109,
+  "categorical_feature_count": 5,
+  "collapse": false,
+  "config": "C0_published",
+  "confusion_matrix": [
+    [
+      158810,
+      2085,
+      23
+    ],
+    [
+      57,
+      2705,
+      0
+    ],
+    [
+      5,
+      2,
+      46029
+    ]
+  ],
+  "divergence": false,
+  "errors": 2172,
+  "features": [
+    "Source Zone",
+    "Destination Zone",
+    "Inbound Interface",
+    "Outbound Interface",
+    "IP Protocol",
+    "Source Port",
+    "Destination Port"
+  ],
+  "fit_seconds": 31.763,
+  "macro_f1": 0.9030217938262534,
+  "params": {
+    "class_weight": "balanced",
+    "learning_rate": 0.08,
+    "n_estimators": 300,
+    "random_state": 7,
+    "verbosity": -1
+  },
+  "per_class": {
+    "Allow": {
+      "f1": 0.993214296882329,
+      "precision": 0.9996097487285361,
+      "recall": 0.986900160330106,
+      "support": 160918
+    },
+    "Deny": {
+      "f1": 0.7161768599417527,
+      "precision": 0.5644824707846411,
+      "recall": 0.9793627805937726,
+      "support": 2762
+    },
+    "Drop": {
+      "f1": 0.9996742246546781,
+      "precision": 0.9995005645791714,
+      "recall": 0.999847945086454,
+      "support": 46036
+    }
+  },
+  "predicted_distribution": {
+    "Allow": 158872,
+    "Deny": 4792,
+    "Drop": 46052
+  },
+  "seed": 7,
+  "trace_all_finite": true,
+  "trace_argmin_iteration": 300,
+  "trace_every": 10,
+  "trace_final": 0.031674370925387864,
+  "trace_min": 0.031674370925387864,
+  "trace_train_subsample_logloss": [
+    0.3356093384775461,
+    0.137801986830232,
+    0.07444687389767347,
+    0.05253195933850098,
+    0.04399997566427017,
+    0.040442441990622566,
+    0.0384198903848814,
+    0.03716353443443603,
+    0.03632512982846371,
+    0.03567040539156022,
+    0.03515983459444579,
+    0.034734381212631844,
+    0.03446583348804352,
+    0.03417268801942127,
+    0.0338860448777886,
+    0.033623631137550826,
+    0.03327312641619011,
+    0.033085065118099784,
+    0.03286768280217828,
+    0.03267523017370635,
+    0.03253624558609386,
+    0.03246150294571887,
+    0.03233721123044144,
+    0.0322124993154765,
+    0.032056365847131986,
+    0.031969610807579374,
+    0.031899791789652174,
+    0.03180252662411072,
+    0.03173345359655506,
+    0.031674370925387864
+  ],
+  "trees_built": 300,
+  "unit_id": "strict_zone_interface_transport_ports__C0_published__seed7",
+  "view": "strict_zone_interface_transport_ports"
+}

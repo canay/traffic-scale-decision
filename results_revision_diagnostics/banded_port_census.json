@@ -1,0 +1,565 @@
+{
+  "analysis": "banded Source Port key census",
+  "positive_control": {
+    "raw_exact_size_1_3": 0,
+    "raw_exact_size_4": [
+      [
+        "Application",
+        "Bytes",
+        "Destination Country",
+        "Source Port"
+      ],
+      [
+        "Application",
+        "Bytes",
+        "Outbound Interface",
+        "Source Port"
+      ],
+      [
+        "Bytes",
+        "Category of app",
+        "Outbound Interface",
+        "Source Port"
+      ],
+      [
+        "Bytes",
+        "Destination Port",
+        "Outbound Interface",
+        "Source Port"
+      ],
+      [
+        "Bytes",
+        "Outbound Interface",
+        "Risk of app",
+        "Source Port"
+      ],
+      [
+        "Bytes",
+        "Outbound Interface",
+        "Source Port",
+        "Subcategory of app"
+      ],
+      [
+        "Bytes",
+        "Outbound Interface",
+        "Source Port",
+        "Technology of app"
+      ]
+    ],
+    "raw_size_4_equals_K1_K7": true
+  },
+  "prefilter_rows": 100000,
+  "prefilter_seed": 42,
+  "runtime": {
+    "lightgbm": "4.6.0",
+    "machine": "aarch64",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "platform": "Linux-6.17.0-1018-oracle-aarch64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0"
+  },
+  "variants": {
+    "B3": {
+      "exact_counts_by_size": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "exact_sets_by_size": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "full_24_field_view": {
+        "agreement_rate": 0.9999971389770508,
+        "conflicted_contexts": 1,
+        "conflicted_rows": 2558,
+        "distinct_contexts": 227094,
+        "h_y_given_v_bits": 3.1979618362646725e-05,
+        "h_y_given_v_nats": 2.2166582303451633e-05,
+        "in_sample_errors": 3,
+        "rows": 1048576
+      },
+      "full_checks_by_size": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "keys": [
+        {
+          "agreement_rate": 0.9995965957641602,
+          "conflicted_contexts": 34,
+          "conflicted_rows": 6506,
+          "distinct_contexts": 107890,
+          "fields": [
+            "Application",
+            "Bytes",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.0013136023884062777,
+          "h_y_given_v_nats": 0.0009105197919006216,
+          "in_sample_errors": 423,
+          "key_id": "K1",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9999017715454102,
+          "conflicted_contexts": 23,
+          "conflicted_rows": 5581,
+          "distinct_contexts": 115280,
+          "fields": [
+            "Application",
+            "Bytes",
+            "Destination Country",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.00042325972778726735,
+          "h_y_given_v_nats": 0.0002933812869603143,
+          "in_sample_errors": 103,
+          "key_id": "K2",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9997262954711914,
+          "conflicted_contexts": 44,
+          "conflicted_rows": 6035,
+          "distinct_contexts": 117049,
+          "fields": [
+            "Bytes",
+            "Destination Port",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.001037669797084383,
+          "h_y_given_v_nats": 0.0007192578942012506,
+          "in_sample_errors": 287,
+          "key_id": "K3",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9995536804199219,
+          "conflicted_contexts": 50,
+          "conflicted_rows": 6822,
+          "distinct_contexts": 106398,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Subcategory of app"
+          ],
+          "h_y_given_v_bits": 0.0014541785530683717,
+          "h_y_given_v_nats": 0.0010079597640900826,
+          "in_sample_errors": 468,
+          "key_id": "K4",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.999232292175293,
+          "conflicted_contexts": 114,
+          "conflicted_rows": 9433,
+          "distinct_contexts": 99646,
+          "fields": [
+            "Bytes",
+            "Category of app",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.002475335874078093,
+          "h_y_given_v_nats": 0.001715772082056118,
+          "in_sample_errors": 805,
+          "key_id": "K5",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9995498657226562,
+          "conflicted_contexts": 65,
+          "conflicted_rows": 6884,
+          "distinct_contexts": 91091,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Technology of app"
+          ],
+          "h_y_given_v_bits": 0.0014817260514080196,
+          "h_y_given_v_nats": 0.0010270542348956894,
+          "in_sample_errors": 472,
+          "key_id": "K6",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9995288848876953,
+          "conflicted_contexts": 69,
+          "conflicted_rows": 7990,
+          "distinct_contexts": 100373,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Risk of app",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.0015561838659009098,
+          "h_y_given_v_nats": 0.0010786644590820916,
+          "in_sample_errors": 494,
+          "key_id": "K7",
+          "rows": 1048576
+        }
+      ],
+      "source_port_cardinality": 3
+    },
+    "B4": {
+      "exact_counts_by_size": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "exact_sets_by_size": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "full_24_field_view": {
+        "agreement_rate": 0.9999971389770508,
+        "conflicted_contexts": 1,
+        "conflicted_rows": 2558,
+        "distinct_contexts": 227094,
+        "h_y_given_v_bits": 3.1979618362646725e-05,
+        "h_y_given_v_nats": 2.2166582303451633e-05,
+        "in_sample_errors": 3,
+        "rows": 1048576
+      },
+      "full_checks_by_size": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "keys": [
+        {
+          "agreement_rate": 0.9995965957641602,
+          "conflicted_contexts": 34,
+          "conflicted_rows": 6506,
+          "distinct_contexts": 107891,
+          "fields": [
+            "Application",
+            "Bytes",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.0013136023884062777,
+          "h_y_given_v_nats": 0.0009105197919006216,
+          "in_sample_errors": 423,
+          "key_id": "K1",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9999017715454102,
+          "conflicted_contexts": 23,
+          "conflicted_rows": 5581,
+          "distinct_contexts": 115281,
+          "fields": [
+            "Application",
+            "Bytes",
+            "Destination Country",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.00042325972778726735,
+          "h_y_given_v_nats": 0.0002933812869603143,
+          "in_sample_errors": 103,
+          "key_id": "K2",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9997262954711914,
+          "conflicted_contexts": 44,
+          "conflicted_rows": 6035,
+          "distinct_contexts": 117049,
+          "fields": [
+            "Bytes",
+            "Destination Port",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.001037669797084383,
+          "h_y_given_v_nats": 0.0007192578942012506,
+          "in_sample_errors": 287,
+          "key_id": "K3",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9995536804199219,
+          "conflicted_contexts": 50,
+          "conflicted_rows": 6822,
+          "distinct_contexts": 106399,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Subcategory of app"
+          ],
+          "h_y_given_v_bits": 0.0014541785530683717,
+          "h_y_given_v_nats": 0.0010079597640900826,
+          "in_sample_errors": 468,
+          "key_id": "K4",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.999232292175293,
+          "conflicted_contexts": 114,
+          "conflicted_rows": 9433,
+          "distinct_contexts": 99647,
+          "fields": [
+            "Bytes",
+            "Category of app",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.002475335874078093,
+          "h_y_given_v_nats": 0.001715772082056118,
+          "in_sample_errors": 805,
+          "key_id": "K5",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9995498657226562,
+          "conflicted_contexts": 65,
+          "conflicted_rows": 6884,
+          "distinct_contexts": 91092,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Technology of app"
+          ],
+          "h_y_given_v_bits": 0.0014817260514080196,
+          "h_y_given_v_nats": 0.0010270542348956894,
+          "in_sample_errors": 472,
+          "key_id": "K6",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 0.9995288848876953,
+          "conflicted_contexts": 69,
+          "conflicted_rows": 7990,
+          "distinct_contexts": 100374,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Risk of app",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": 0.0015561838659009098,
+          "h_y_given_v_nats": 0.0010786644590820916,
+          "in_sample_errors": 494,
+          "key_id": "K7",
+          "rows": 1048576
+        }
+      ],
+      "source_port_cardinality": 4
+    },
+    "raw": {
+      "exact_counts_by_size": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 7
+      },
+      "exact_sets_by_size": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          [
+            "Application",
+            "Bytes",
+            "Destination Country",
+            "Source Port"
+          ],
+          [
+            "Application",
+            "Bytes",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          [
+            "Bytes",
+            "Category of app",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          [
+            "Bytes",
+            "Destination Port",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          [
+            "Bytes",
+            "Outbound Interface",
+            "Risk of app",
+            "Source Port"
+          ],
+          [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Subcategory of app"
+          ],
+          [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Technology of app"
+          ]
+        ]
+      },
+      "full_24_field_view": {
+        "agreement_rate": 1.0,
+        "conflicted_contexts": 0,
+        "conflicted_rows": 0,
+        "distinct_contexts": 838202,
+        "h_y_given_v_bits": -0.0,
+        "h_y_given_v_nats": -0.0,
+        "in_sample_errors": 0,
+        "rows": 1048576
+      },
+      "full_checks_by_size": {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 33
+      },
+      "keys": [
+        {
+          "agreement_rate": 1.0,
+          "conflicted_contexts": 0,
+          "conflicted_rows": 0,
+          "distinct_contexts": 756126,
+          "fields": [
+            "Application",
+            "Bytes",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": -0.0,
+          "h_y_given_v_nats": -0.0,
+          "in_sample_errors": 0,
+          "key_id": "K1",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 1.0,
+          "conflicted_contexts": 0,
+          "conflicted_rows": 0,
+          "distinct_contexts": 758146,
+          "fields": [
+            "Application",
+            "Bytes",
+            "Destination Country",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": -0.0,
+          "h_y_given_v_nats": -0.0,
+          "in_sample_errors": 0,
+          "key_id": "K2",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 1.0,
+          "conflicted_contexts": 0,
+          "conflicted_rows": 0,
+          "distinct_contexts": 816871,
+          "fields": [
+            "Bytes",
+            "Destination Port",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": -0.0,
+          "h_y_given_v_nats": -0.0,
+          "in_sample_errors": 0,
+          "key_id": "K3",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 1.0,
+          "conflicted_contexts": 0,
+          "conflicted_rows": 0,
+          "distinct_contexts": 756079,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Subcategory of app"
+          ],
+          "h_y_given_v_bits": -0.0,
+          "h_y_given_v_nats": -0.0,
+          "in_sample_errors": 0,
+          "key_id": "K4",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 1.0,
+          "conflicted_contexts": 0,
+          "conflicted_rows": 0,
+          "distinct_contexts": 756068,
+          "fields": [
+            "Bytes",
+            "Category of app",
+            "Outbound Interface",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": -0.0,
+          "h_y_given_v_nats": -0.0,
+          "in_sample_errors": 0,
+          "key_id": "K5",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 1.0,
+          "conflicted_contexts": 0,
+          "conflicted_rows": 0,
+          "distinct_contexts": 755980,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Source Port",
+            "Technology of app"
+          ],
+          "h_y_given_v_bits": -0.0,
+          "h_y_given_v_nats": -0.0,
+          "in_sample_errors": 0,
+          "key_id": "K6",
+          "rows": 1048576
+        },
+        {
+          "agreement_rate": 1.0,
+          "conflicted_contexts": 0,
+          "conflicted_rows": 0,
+          "distinct_contexts": 756104,
+          "fields": [
+            "Bytes",
+            "Outbound Interface",
+            "Risk of app",
+            "Source Port"
+          ],
+          "h_y_given_v_bits": -0.0,
+          "h_y_given_v_nats": -0.0,
+          "in_sample_errors": 0,
+          "key_id": "K7",
+          "rows": 1048576
+        }
+      ],
+      "source_port_cardinality": 58258
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "accuracy": 0.8641162333822884,
+  "balanced_accuracy": 0.8361983526392646,
+  "categorical_feature_count": 7,
+  "collapse": true,
+  "config": "C0_published",
+  "confusion_matrix": [
+    [
+      145447,
+      9600,
+      5871
+    ],
+    [
+      98,
+      2432,
+      232
+    ],
+    [
+      7314,
+      5382,
+      33340
+    ]
+  ],
+  "divergence": true,
+  "errors": 28497,
+  "features": [
+    "Source Zone",
+    "Destination Zone",
+    "Inbound Interface",
+    "Outbound Interface",
+    "IP Protocol",
+    "Source Port",
+    "Destination Port",
+    "Source Country",
+    "Destination Country"
+  ],
+  "fit_seconds": 35.567,
+  "macro_f1": 0.6494085195444834,
+  "params": {
+    "class_weight": "balanced",
+    "learning_rate": 0.08,
+    "n_estimators": 300,
+    "random_state": 7,
+    "verbosity": -1
+  },
+  "per_class": {
+    "Allow": {
+      "f1": 0.92707241129847,
+      "precision": 0.9515108694941089,
+      "recall": 0.9038578654967127,
+      "support": 160918
+    },
+    "Deny": {
+      "f1": 0.24107850911974624,
+      "precision": 0.13965774664063396,
+      "recall": 0.8805213613323678,
+      "support": 2762
+    },
+    "Drop": {
+      "f1": 0.7800746382152342,
+      "precision": 0.8452703901833025,
+      "recall": 0.7242158310887132,
+      "support": 46036
+    }
+  },
+  "predicted_distribution": {
+    "Allow": 152859,
+    "Deny": 17414,
+    "Drop": 39443
+  },
+  "seed": 7,
+  "trace_all_finite": true,
+  "trace_argmin_iteration": 192,
+  "trace_every": 10,
+  "trace_final": 4.351747045683005,
+  "trace_min": 0.025833271426176748,
+  "trace_train_subsample_logloss": [
+    0.33250597225275924,
+    0.13793640680536237,
+    0.0724633439635768,
+    0.04926504496027749,
+    0.03988841138984198,
+    0.03577986216780727,
+    0.03358386421438797,
+    0.0319266305732244,
+    0.03078645957369353,
+    0.02968847524922827,
+    0.029008251337153835,
+    0.028281517297728428,
+    0.027794461948544857,
+    0.02739049818594318,
+    0.027012469530856478,
+    0.02663680886729729,
+    0.026356608536224374,
+    0.02607444075411453,
+    0.025849019135768973,
+    0.31571394084988885,
+    2.1975365550487136,
+    0.9797456890513858,
+    8.881976114762162,
+    8.360283383841875,
+    8.291411922707555,
+    6.435322282785093,
+    6.0616466209294915,
+    5.549776325128562,
+    5.407003232082982,
+    4.351747045683005
+  ],
+  "trees_built": 300,
+  "unit_id": "strict_plus_country_context__C0_published__seed7",
+  "view": "strict_plus_country_context"
+}

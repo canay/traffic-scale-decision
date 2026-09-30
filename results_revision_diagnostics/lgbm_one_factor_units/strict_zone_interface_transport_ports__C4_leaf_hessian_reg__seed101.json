@@ -1,0 +1,112 @@
+{
+  "accuracy": 0.9881506418203666,
+  "balanced_accuracy": 0.9901851488734189,
+  "categorical_feature_count": 5,
+  "collapse": false,
+  "config": "C4_leaf_hessian_reg",
+  "confusion_matrix": [
+    [
+      158480,
+      2410,
+      28
+    ],
+    [
+      39,
+      2723,
+      0
+    ],
+    [
+      8,
+      0,
+      46028
+    ]
+  ],
+  "divergence": false,
+  "errors": 2485,
+  "features": [
+    "Source Zone",
+    "Destination Zone",
+    "Inbound Interface",
+    "Outbound Interface",
+    "IP Protocol",
+    "Source Port",
+    "Destination Port"
+  ],
+  "fit_seconds": 26.336,
+  "macro_f1": 0.8938778809568726,
+  "params": {
+    "class_weight": "balanced",
+    "learning_rate": 0.08,
+    "min_child_samples": 200,
+    "min_sum_hessian_in_leaf": 1.0,
+    "n_estimators": 300,
+    "random_state": 101,
+    "verbosity": -1
+  },
+  "per_class": {
+    "Allow": {
+      "f1": 0.9922208830941164,
+      "precision": 0.9997035205359339,
+      "recall": 0.9848494264159385,
+      "support": 160918
+    },
+    "Deny": {
+      "f1": 0.689803673210893,
+      "precision": 0.5304889927917398,
+      "recall": 0.9858797972483707,
+      "support": 2762
+    },
+    "Drop": {
+      "f1": 0.9996090865656083,
+      "precision": 0.9993920444676047,
+      "recall": 0.9998262229559475,
+      "support": 46036
+    }
+  },
+  "predicted_distribution": {
+    "Allow": 158527,
+    "Deny": 5133,
+    "Drop": 46056
+  },
+  "seed": 101,
+  "trace_all_finite": true,
+  "trace_argmin_iteration": 300,
+  "trace_every": 10,
+  "trace_final": 0.03274575160685217,
+  "trace_min": 0.03274575160685217,
+  "trace_train_subsample_logloss": [
+    0.3374352652612108,
+    0.14100624856265284,
+    0.07643052903298499,
+    0.05456299989580233,
+    0.046421491953668056,
+    0.04262376831154402,
+    0.040570453407205845,
+    0.03920735846556963,
+    0.038335058769211824,
+    0.03772014511306348,
+    0.036969918388900694,
+    0.0363928830207157,
+    0.036047180849804364,
+    0.03547795389535554,
+    0.03511981026725701,
+    0.03479157562765675,
+    0.0345493916838785,
+    0.03429471481630549,
+    0.03410056018490719,
+    0.03399495602158257,
+    0.03382666013882648,
+    0.03369582494071718,
+    0.03353205462976282,
+    0.03338634285294942,
+    0.033253699530197536,
+    0.03313095697271543,
+    0.033040360079091204,
+    0.03294783298252255,
+    0.03283606751200463,
+    0.03274575160685217
+  ],
+  "trees_built": 300,
+  "unit_id": "strict_zone_interface_transport_ports__C4_leaf_hessian_reg__seed101",
+  "view": "strict_zone_interface_transport_ports"
+}

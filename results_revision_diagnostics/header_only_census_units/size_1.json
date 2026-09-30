@@ -1,0 +1,124 @@
+{
+  "seconds": 0.137,
+  "size": 1,
+  "subsets": [
+    {
+      "agreement_rate": 0.8993968963623047,
+      "conflicted_contexts": 3,
+      "conflicted_rows": 1045603,
+      "distinct_contexts": 5,
+      "fields": [
+        "Source Zone"
+      ],
+      "h_y_given_v_bits": 0.4168904750826698,
+      "h_y_given_v_nats": 0.2889664574058487,
+      "in_sample_errors": 105490,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.7682275772094727,
+      "conflicted_contexts": 4,
+      "conflicted_rows": 1047617,
+      "distinct_contexts": 5,
+      "fields": [
+        "Destination Zone"
+      ],
+      "h_y_given_v_bits": 0.7002896160975368,
+      "h_y_given_v_nats": 0.48540377297341414,
+      "in_sample_errors": 243031,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.8993968963623047,
+      "conflicted_contexts": 3,
+      "conflicted_rows": 1045603,
+      "distinct_contexts": 5,
+      "fields": [
+        "Inbound Interface"
+      ],
+      "h_y_given_v_bits": 0.4168904750826698,
+      "h_y_given_v_nats": 0.2889664574058487,
+      "in_sample_errors": 105490,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9868307113647461,
+      "conflicted_contexts": 4,
+      "conflicted_rows": 818389,
+      "distinct_contexts": 6,
+      "fields": [
+        "Outbound Interface"
+      ],
+      "h_y_given_v_bits": 0.07279860407017526,
+      "h_y_given_v_nats": 0.05046014715994174,
+      "in_sample_errors": 13809,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.7676429748535156,
+      "conflicted_contexts": 3,
+      "conflicted_rows": 1048230,
+      "distinct_contexts": 5,
+      "fields": [
+        "IP Protocol"
+      ],
+      "h_y_given_v_bits": 0.7480158181737517,
+      "h_y_given_v_nats": 0.5184850553813767,
+      "in_sample_errors": 243644,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.8309268951416016,
+      "conflicted_contexts": 40819,
+      "conflicted_rows": 989038,
+      "distinct_contexts": 58258,
+      "fields": [
+        "Source Port"
+      ],
+      "h_y_given_v_bits": 0.6160904214373125,
+      "h_y_given_v_nats": 0.42704133858926163,
+      "in_sample_errors": 177286,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9432439804077148,
+      "conflicted_contexts": 1061,
+      "conflicted_rows": 932449,
+      "distinct_contexts": 16594,
+      "fields": [
+        "Destination Port"
+      ],
+      "h_y_given_v_bits": 0.2764017971097845,
+      "h_y_given_v_nats": 0.19158712636834918,
+      "in_sample_errors": 59513,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.9235696792602539,
+      "conflicted_contexts": 75,
+      "conflicted_rows": 1024578,
+      "distinct_contexts": 124,
+      "fields": [
+        "Source Country"
+      ],
+      "h_y_given_v_bits": 0.3574419393098415,
+      "h_y_given_v_nats": 0.24775987244649572,
+      "in_sample_errors": 80143,
+      "rows": 1048576
+    },
+    {
+      "agreement_rate": 0.8852310180664062,
+      "conflicted_contexts": 36,
+      "conflicted_rows": 1047475,
+      "distinct_contexts": 77,
+      "fields": [
+        "Destination Country"
+      ],
+      "h_y_given_v_bits": 0.4303614266603898,
+      "h_y_given_v_nats": 0.29830380951140484,
+      "in_sample_errors": 120344,
+      "rows": 1048576
+    }
+  ],
+  "unit_id": "size_1"
+}

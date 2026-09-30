@@ -1,0 +1,112 @@
+{
+  "accuracy": 0.9895334643041065,
+  "balanced_accuracy": 0.9888932134473646,
+  "categorical_feature_count": 5,
+  "collapse": false,
+  "config": "C2_depth_limited",
+  "confusion_matrix": [
+    [
+      158785,
+      2113,
+      20
+    ],
+    [
+      55,
+      2707,
+      0
+    ],
+    [
+      6,
+      1,
+      46029
+    ]
+  ],
+  "divergence": false,
+  "errors": 2195,
+  "features": [
+    "Source Zone",
+    "Destination Zone",
+    "Inbound Interface",
+    "Outbound Interface",
+    "IP Protocol",
+    "Source Port",
+    "Destination Port"
+  ],
+  "fit_seconds": 27.277,
+  "macro_f1": 0.9022703104838931,
+  "params": {
+    "class_weight": "balanced",
+    "learning_rate": 0.08,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "num_leaves": 63,
+    "random_state": 42,
+    "verbosity": -1
+  },
+  "per_class": {
+    "Allow": {
+      "f1": 0.9931386897837154,
+      "precision": 0.999615980257608,
+      "recall": 0.9867448017002448,
+      "support": 160918
+    },
+    "Deny": {
+      "f1": 0.7139654490307267,
+      "precision": 0.5615017631196847,
+      "recall": 0.9800868935553947,
+      "support": 2762
+    },
+    "Drop": {
+      "f1": 0.9997067926372374,
+      "precision": 0.9995656800364828,
+      "recall": 0.999847945086454,
+      "support": 46036
+    }
+  },
+  "predicted_distribution": {
+    "Allow": 158846,
+    "Deny": 4821,
+    "Drop": 46049
+  },
+  "seed": 42,
+  "trace_all_finite": true,
+  "trace_argmin_iteration": 300,
+  "trace_every": 10,
+  "trace_final": 0.03202861888102958,
+  "trace_min": 0.03202861888102958,
+  "trace_train_subsample_logloss": [
+    0.34227171732075395,
+    0.15077555273205343,
+    0.08840298347737947,
+    0.06325441297772025,
+    0.05368986561143902,
+    0.04907769221948312,
+    0.04613859931516773,
+    0.043805006402382544,
+    0.041472242486414346,
+    0.03954145890984755,
+    0.03831030213692864,
+    0.0374661142035983,
+    0.03676954680535758,
+    0.03621931460392256,
+    0.03572222394703549,
+    0.03540885238769607,
+    0.03508373131981907,
+    0.034780314232252495,
+    0.03448351978659777,
+    0.03419672314590288,
+    0.0339653366135448,
+    0.033677580629691686,
+    0.03338997802037627,
+    0.03319320417143832,
+    0.03301454723515776,
+    0.032886426534621954,
+    0.03274783575834453,
+    0.03253373248062078,
+    0.032276622801724116,
+    0.03202861888102958
+  ],
+  "trees_built": 300,
+  "unit_id": "strict_zone_interface_transport_ports__C2_depth_limited__seed42",
+  "view": "strict_zone_interface_transport_ports"
+}

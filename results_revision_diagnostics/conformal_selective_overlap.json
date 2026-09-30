@@ -1,0 +1,425 @@
+{
+  "analysis": "conformal-selective overlap",
+  "calibration_class_counts": {
+    "Allow": 160917,
+    "Deny": 2762,
+    "Drop": 46036
+  },
+  "calibration_rows": 209715,
+  "fit_seconds": 19.941,
+  "per_alpha": [
+    {
+      "alpha": 0.01,
+      "identity_disagreements": 0,
+      "identity_empty_equals_conf_below_t_share": 1.0,
+      "jaccard_marginal_empty_vs_selective_at_t": 1.0,
+      "jaccard_mondrian_empty_vs_selective_matched": 0.840666975451598,
+      "marginal_abstention": {
+        "class_counts": {
+          "Allow": 1799,
+          "Deny": 187,
+          "Drop": 158
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.010223349672890958,
+        "rows": 2144
+      },
+      "marginal_coverage": 0.9897718819737168,
+      "marginal_empty_rate": 0.010223349672890958,
+      "marginal_multiclass_sets": 0,
+      "marginal_threshold_t": 0.9999999280391002,
+      "mondrian_coverage": 0.9905205134562933,
+      "mondrian_coverage_by_class": {
+        "Allow": 0.9895350426925514,
+        "Deny": 0.99637943519189,
+        "Drop": 0.9936136936310713
+      },
+      "mondrian_empty": {
+        "class_counts": {
+          "Allow": 1683,
+          "Deny": 10,
+          "Drop": 294
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.009474718190314521,
+        "rows": 1987
+      },
+      "mondrian_empty_rate": 0.009474718190314521,
+      "mondrian_multiclass_rate": 0.0,
+      "mondrian_qhat": {
+        "Allow": 7.371275334566718e-08,
+        "Deny": 0.0003007258569668325,
+        "Drop": 1.9563456299387383e-08
+      },
+      "selective_matched_to_mondrian_empty_lambda": 0.9999999230306303,
+      "selective_matched_to_mondrian_empty_rate": {
+        "class_counts": {
+          "Allow": 1648,
+          "Deny": 182,
+          "Drop": 157
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.009474718190314521,
+        "rows": 1987
+      },
+      "supplementary_jaccard_mondrian_nonsingleton_vs_selective_matched": 0.840666975451598,
+      "supplementary_mondrian_nonsingleton": {
+        "class_counts": {
+          "Allow": 1683,
+          "Deny": 10,
+          "Drop": 294
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.009474718190314521,
+        "rows": 1987
+      },
+      "supplementary_selective_matched_nonsingleton_lambda": 0.9999999230306303,
+      "supplementary_selective_matched_to_mondrian_nonsingleton_rate": {
+        "class_counts": {
+          "Allow": 1648,
+          "Deny": 182,
+          "Drop": 157
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.009474718190314521,
+        "rows": 1987
+      },
+      "t_above_one_half": true
+    },
+    {
+      "alpha": 0.05,
+      "identity_disagreements": 0,
+      "identity_empty_equals_conf_below_t_share": 1.0,
+      "jaccard_marginal_empty_vs_selective_at_t": 1.0,
+      "jaccard_mondrian_empty_vs_selective_matched": 0.9404608294930875,
+      "marginal_abstention": {
+        "class_counts": {
+          "Allow": 7841,
+          "Deny": 457,
+          "Drop": 2260
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.05034427511491732,
+        "rows": 10558
+      },
+      "marginal_coverage": 0.9496509565316905,
+      "marginal_empty_rate": 0.05034427511491732,
+      "marginal_multiclass_sets": 0,
+      "marginal_threshold_t": 0.9999999952574155,
+      "mondrian_coverage": 0.9497987754868489,
+      "mondrian_coverage_by_class": {
+        "Allow": 0.9497445904125082,
+        "Deny": 0.9514844315713251,
+        "Drop": 0.9498870449213659
+      },
+      "mondrian_empty": {
+        "class_counts": {
+          "Allow": 8086,
+          "Deny": 134,
+          "Drop": 2307
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.050196456159758915,
+        "rows": 10527
+      },
+      "mondrian_empty_rate": 0.050196456159758915,
+      "mondrian_multiclass_rate": 0.0,
+      "mondrian_qhat": {
+        "Allow": 4.54784676584552e-09,
+        "Deny": 1.1893959872555371e-07,
+        "Drop": 4.5237038559520215e-09
+      },
+      "queue_0.999": {
+        "class_counts": {
+          "Allow": 3,
+          "Deny": 10,
+          "Drop": 0
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 6.198859409868585e-05,
+        "rows": 13
+      },
+      "queue_0.999_contains_all_marginal_empty": false,
+      "queue_0.999_vs_marginal_empty_jaccard": 0.0012312938056450084,
+      "queue_0.999_vs_mondrian_empty_jaccard": 0.0012349197302175359,
+      "selective_matched_to_mondrian_empty_lambda": 0.9999999952276586,
+      "selective_matched_to_mondrian_empty_rate": {
+        "class_counts": {
+          "Allow": 7811,
+          "Deny": 457,
+          "Drop": 2259
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.050196456159758915,
+        "rows": 10527
+      },
+      "supplementary_jaccard_mondrian_nonsingleton_vs_selective_matched": 0.9404608294930875,
+      "supplementary_mondrian_nonsingleton": {
+        "class_counts": {
+          "Allow": 8086,
+          "Deny": 134,
+          "Drop": 2307
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.050196456159758915,
+        "rows": 10527
+      },
+      "supplementary_queue_0.999_vs_mondrian_nonsingleton_jaccard": 0.0012349197302175359,
+      "supplementary_selective_matched_nonsingleton_lambda": 0.9999999952276586,
+      "supplementary_selective_matched_to_mondrian_nonsingleton_rate": {
+        "class_counts": {
+          "Allow": 7811,
+          "Deny": 457,
+          "Drop": 2259
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.050196456159758915,
+        "rows": 10527
+      },
+      "t_above_one_half": true
+    },
+    {
+      "alpha": 0.1,
+      "identity_disagreements": 0,
+      "identity_empty_equals_conf_below_t_share": 1.0,
+      "jaccard_marginal_empty_vs_selective_at_t": 1.0,
+      "jaccard_mondrian_empty_vs_selective_matched": 0.9158473510088067,
+      "marginal_abstention": {
+        "class_counts": {
+          "Allow": 15354,
+          "Deny": 1159,
+          "Drop": 4063
+        },
+        "error_capture_rate": 1.0,
+        "errors_captured": 3,
+        "rate": 0.09811363939804307,
+        "rows": 20576
+      },
+      "marginal_coverage": 0.9018863606019569,
+      "marginal_empty_rate": 0.09811363939804307,
+      "marginal_multiclass_sets": 0,
+      "marginal_threshold_t": 0.9999999980452601,
+      "mondrian_coverage": 0.9019674226096245,
+      "mondrian_coverage_by_class": {
+        "Allow": 0.9014218421804895,
+        "Deny": 0.9069514844315714,
+        "Drop": 0.9035754626813798
+      },
+      "mondrian_empty": {
+        "class_counts": {
+          "Allow": 15862,
+          "Deny": 257,
+          "Drop": 4439
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.09802780903698335,
+        "rows": 20558
+      },
+      "mondrian_empty_rate": 0.09802780903698335,
+      "mondrian_multiclass_rate": 0.0,
+      "mondrian_qhat": {
+        "Allow": 1.8246615329786664e-09,
+        "Deny": 2.009288868620729e-08,
+        "Drop": 1.9379629012661326e-09
+      },
+      "selective_matched_to_mondrian_empty_lambda": 0.9999999980383854,
+      "selective_matched_to_mondrian_empty_rate": {
+        "class_counts": {
+          "Allow": 15341,
+          "Deny": 1159,
+          "Drop": 4058
+        },
+        "error_capture_rate": 1.0,
+        "errors_captured": 3,
+        "rate": 0.09802780903698335,
+        "rows": 20558
+      },
+      "supplementary_jaccard_mondrian_nonsingleton_vs_selective_matched": 0.9158473510088067,
+      "supplementary_mondrian_nonsingleton": {
+        "class_counts": {
+          "Allow": 15862,
+          "Deny": 257,
+          "Drop": 4439
+        },
+        "error_capture_rate": 0.6666666666666666,
+        "errors_captured": 2,
+        "rate": 0.09802780903698335,
+        "rows": 20558
+      },
+      "supplementary_selective_matched_nonsingleton_lambda": 0.9999999980383854,
+      "supplementary_selective_matched_to_mondrian_nonsingleton_rate": {
+        "class_counts": {
+          "Allow": 15341,
+          "Deny": 1159,
+          "Drop": 4058
+        },
+        "error_capture_rate": 1.0,
+        "errors_captured": 3,
+        "rate": 0.09802780903698335,
+        "rows": 20558
+      },
+      "t_above_one_half": true
+    }
+  ],
+  "published_table_all_match": true,
+  "published_table_check": [
+    {
+      "alpha": 0.01,
+      "cells": {
+        "coverage": {
+          "match": true,
+          "published": 0.989772,
+          "rerun": 0.989772
+        }
+      },
+      "method": "marginal"
+    },
+    {
+      "alpha": 0.01,
+      "cells": {
+        "coverage": {
+          "match": true,
+          "published": 0.990521,
+          "rerun": 0.990521
+        },
+        "coverage_Allow": {
+          "match": true,
+          "published": 0.989535,
+          "rerun": 0.989535
+        },
+        "coverage_Deny": {
+          "match": true,
+          "published": 0.996379,
+          "rerun": 0.996379
+        },
+        "coverage_Drop": {
+          "match": true,
+          "published": 0.993614,
+          "rerun": 0.993614
+        }
+      },
+      "method": "mondrian"
+    },
+    {
+      "alpha": 0.05,
+      "cells": {
+        "coverage": {
+          "match": true,
+          "published": 0.949651,
+          "rerun": 0.949651
+        }
+      },
+      "method": "marginal"
+    },
+    {
+      "alpha": 0.05,
+      "cells": {
+        "coverage": {
+          "match": true,
+          "published": 0.949799,
+          "rerun": 0.949799
+        },
+        "coverage_Allow": {
+          "match": true,
+          "published": 0.949745,
+          "rerun": 0.949745
+        },
+        "coverage_Deny": {
+          "match": true,
+          "published": 0.951484,
+          "rerun": 0.951484
+        },
+        "coverage_Drop": {
+          "match": true,
+          "published": 0.949887,
+          "rerun": 0.949887
+        }
+      },
+      "method": "mondrian"
+    },
+    {
+      "alpha": 0.1,
+      "cells": {
+        "coverage": {
+          "match": true,
+          "published": 0.901886,
+          "rerun": 0.901886
+        }
+      },
+      "method": "marginal"
+    },
+    {
+      "alpha": 0.1,
+      "cells": {
+        "coverage": {
+          "match": true,
+          "published": 0.901967,
+          "rerun": 0.901967
+        },
+        "coverage_Allow": {
+          "match": true,
+          "published": 0.901422,
+          "rerun": 0.901422
+        },
+        "coverage_Deny": {
+          "match": true,
+          "published": 0.906951,
+          "rerun": 0.906951
+        },
+        "coverage_Drop": {
+          "match": true,
+          "published": 0.903575,
+          "rerun": 0.903575
+        }
+      },
+      "method": "mondrian"
+    }
+  ],
+  "reproduction_gate": {
+    "marginal_0.05_coverage": {
+      "expected": 0.949651,
+      "match": true,
+      "observed": 0.949651
+    },
+    "marginal_0.05_empty_rate": {
+      "expected": 0.050344,
+      "match": true,
+      "observed": 0.050344
+    },
+    "mondrian_0.05_coverage_Deny": {
+      "expected": 0.951484,
+      "match": true,
+      "observed": 0.951484
+    },
+    "test_errors": {
+      "expected": 3,
+      "match": true,
+      "observed": 3
+    }
+  },
+  "reproduction_gate_all_match": true,
+  "runtime": {
+    "lightgbm": "4.6.0",
+    "machine": "aarch64",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "platform": "Linux-6.17.0-1018-oracle-aarch64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0"
+  },
+  "test_rows": 209716
+}
