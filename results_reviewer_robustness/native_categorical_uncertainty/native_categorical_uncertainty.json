@@ -62,12 +62,55 @@
       "brier": "mean sum of squared multiclass probability errors",
       "nll": "mean negative log probability assigned to the true class",
       "entropy": "mean Shannon entropy in bits",
-      "probability_threshold_conformal": "score=1-p_true; finite-sample higher quantile; include classes with probability at least 1-qhat",
-      "aps_deterministic": "non-randomized cumulative probability score including the candidate class; top-class fallback prevents empty APS sets",
+      "probability_threshold_conformal": "score=1-p_true; qhat is the k-th smallest calibration score with k=min(n, ceil((n+1)(1-alpha))); include classes with probability at least 1-qhat",
+      "aps_deterministic": "non-randomized cumulative probability score over every class whose probability is at least that of the candidate class (ties as a block); same order statistic; top-class fallback prevents empty APS sets",
       "selective_queue": "retain confidence >= threshold; queue confidence < threshold",
       "temperature_scaling": "one positive scalar fit by bounded NLL minimization on the probability-calibration half; conformal quantiles use only the disjoint conformal-calibration half"
     },
-    "privacy": "Aggregate-only; no row-level values, positions, groups, predictions, probabilities, identifiers, hostnames, or absolute paths are exported."
+    "privacy": "Aggregate-only; no row-level values, positions, groups, predictions, probabilities, identifiers, hostnames, or absolute paths are exported.",
+    "conformal_rule_alignment": {
+      "aligned_on": "2026-09-30",
+      "reason": "The conformal primitives of this script selected the order statistic one position above k=min(n, ceil((n+1)(1-alpha))) and built adaptive prediction sets rank-wise. They now use the k-th order statistic and treat probability ties as a block, as the other conformal scripts of this package do.",
+      "regenerated": [
+        "conformal_prediction_sets",
+        "conformal_classwise",
+        "model_comparison (conformal rows)"
+      ],
+      "carried_over_unchanged": [
+        "model_summary",
+        "calibration_pre_post",
+        "temperature_fit",
+        "per_class_metrics",
+        "confusion_matrix",
+        "selective_classification",
+        "selective_classwise",
+        "prior_classification_reproduction",
+        "split_provenance"
+      ],
+      "method": "Both models were refitted on the same split with the same settings. The refit reproduced the published split hashes, error counts, macro-F1, temperatures and all 24 conformal rows of the earlier rule before the aligned functions were applied to the same probabilities.",
+      "effect": {
+        "quantile_values_changed_rows": 5,
+        "rows_with_any_rate_changed_beyond_1e-12": 1,
+        "changed_cell": {
+          "model": "catboost_native",
+          "probability_state": "temperature_scaled",
+          "method": "probability_threshold",
+          "alpha": 0.01
+        },
+        "alpha_0.05_rates_changed": 0
+      },
+      "refit_runtime": {
+        "python": "3.12.12",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "numpy": "2.5.2",
+        "pandas": "2.3.3",
+        "scikit-learn": "1.9.0",
+        "scipy": "1.18.0",
+        "lightgbm": "4.7.0",
+        "catboost": "1.2.10"
+      },
+      "evidence": "results_revision_diagnostics/paired_conformal_rule_check/"
+    }
   },
   "split_provenance": {
     "context": "application_category",
@@ -776,8 +819,8 @@
       "method": "probability_threshold",
       "alpha": 0.1,
       "target_coverage": 0.9,
-      "qhat": 3.789524361197394e-06,
-      "score_threshold": 0.9999962104756388,
+      "qhat": 3.789524288588808e-06,
+      "score_threshold": 0.9999962104757114,
       "test_rows": 197261,
       "empirical_coverage": 0.2694298416818327,
       "average_set_size": 0.2694298416818327,
@@ -824,8 +867,8 @@
       "method": "probability_threshold",
       "alpha": 0.01,
       "target_coverage": 0.99,
-      "qhat": 0.003114701273978171,
-      "score_threshold": 0.9968852987260218,
+      "qhat": 0.003107303229335945,
+      "score_threshold": 0.996892696770664,
       "test_rows": 197261,
       "empirical_coverage": 0.8966344082205808,
       "average_set_size": 0.8966344082205808,
@@ -920,8 +963,8 @@
       "method": "probability_threshold",
       "alpha": 0.1,
       "target_coverage": 0.9,
-      "qhat": 8.468039814613082e-05,
-      "score_threshold": 0.9999153196018539,
+      "qhat": 8.46525506572604e-05,
+      "score_threshold": 0.9999153474493427,
       "test_rows": 197261,
       "empirical_coverage": 0.06334754462362048,
       "average_set_size": 0.06334754462362048,
@@ -968,20 +1011,20 @@
       "method": "probability_threshold",
       "alpha": 0.01,
       "target_coverage": 0.99,
-      "qhat": 7.809086800192322e-05,
-      "score_threshold": 0.9999219091319981,
+      "qhat": 7.67340525210658e-05,
+      "score_threshold": 0.9999232659474789,
       "test_rows": 197261,
-      "empirical_coverage": 0.8990677325979286,
-      "average_set_size": 0.8990677325979286,
+      "empirical_coverage": 0.8989156498243444,
+      "average_set_size": 0.8989156498243444,
       "median_set_size": 1.0,
-      "singleton_rate": 0.8990677325979286,
+      "singleton_rate": 0.8989156498243444,
       "ambiguous_set_rate": 0.0,
-      "empty_rate": 0.10093226740207137,
+      "empty_rate": 0.1010843501756556,
       "full_set_rate": 0.0,
       "singleton_accuracy": 1.0,
       "singleton_macro_f1": 1.0,
-      "set_size_0_rate": 0.10093226740207137,
-      "set_size_1_rate": 0.8990677325979286,
+      "set_size_0_rate": 0.1010843501756556,
+      "set_size_1_rate": 0.8989156498243444,
       "set_size_2_rate": 0.0,
       "set_size_3_rate": 0.0
     },
@@ -1016,8 +1059,8 @@
       "method": "probability_threshold",
       "alpha": 0.05,
       "target_coverage": 0.95,
-      "qhat": 6.841512190103316e-07,
-      "score_threshold": 0.999999315848781,
+      "qhat": 6.82805996521374e-07,
+      "score_threshold": 0.9999993171940035,
       "test_rows": 197261,
       "empirical_coverage": 0.1285454296591825,
       "average_set_size": 0.1285454296591825,
@@ -1871,11 +1914,11 @@
       "alpha": 0.01,
       "class": "Allow",
       "support": 186610,
-      "empirical_coverage": 0.9374470821499383,
-      "average_set_size": 0.9374470821499383,
-      "singleton_rate": 0.9374470821499383,
+      "empirical_coverage": 0.93729167783077,
+      "average_set_size": 0.93729167783077,
+      "singleton_rate": 0.93729167783077,
       "ambiguous_set_rate": 0.0,
-      "empty_rate": 0.06255291785006163
+      "empty_rate": 0.06270832216922995
     },
     {
       "context": "application_category",
@@ -1899,11 +1942,11 @@
       "alpha": 0.01,
       "class": "Drop",
       "support": 7314,
-      "empirical_coverage": 0.31788351107465135,
-      "average_set_size": 0.31788351107465135,
-      "singleton_rate": 0.31788351107465135,
+      "empirical_coverage": 0.31774678698386655,
+      "average_set_size": 0.31774678698386655,
+      "singleton_rate": 0.31774678698386655,
       "ambiguous_set_rate": 0.0,
-      "empty_rate": 0.6821164889253486
+      "empty_rate": 0.6822532130161334
     },
     {
       "context": "application_category",
@@ -4529,8 +4572,8 @@
       "operating_point": "alpha=0.01",
       "metric": "empirical_coverage",
       "lightgbm_ordinal": 0.7217138714697786,
-      "catboost_native": 0.8990677325979286,
-      "native_minus_ordinal": 0.17735386112815
+      "catboost_native": 0.8989156498243444,
+      "native_minus_ordinal": 0.17720177835456574
     },
     {
       "comparison_scope": "conformal",
@@ -4538,8 +4581,8 @@
       "operating_point": "alpha=0.01",
       "metric": "average_set_size",
       "lightgbm_ordinal": 0.7217138714697786,
-      "catboost_native": 0.8990677325979286,
-      "native_minus_ordinal": 0.17735386112815
+      "catboost_native": 0.8989156498243444,
+      "native_minus_ordinal": 0.17720177835456574
     },
     {
       "comparison_scope": "conformal",
@@ -4547,8 +4590,8 @@
       "operating_point": "alpha=0.01",
       "metric": "singleton_rate",
       "lightgbm_ordinal": 0.7217138714697786,
-      "catboost_native": 0.8990677325979286,
-      "native_minus_ordinal": 0.17735386112815
+      "catboost_native": 0.8989156498243444,
+      "native_minus_ordinal": 0.17720177835456574
     },
     {
       "comparison_scope": "conformal",
@@ -4565,8 +4608,8 @@
       "operating_point": "alpha=0.01",
       "metric": "empty_rate",
       "lightgbm_ordinal": 0.2782861285302214,
-      "catboost_native": 0.10093226740207137,
-      "native_minus_ordinal": -0.17735386112815002
+      "catboost_native": 0.1010843501756556,
+      "native_minus_ordinal": -0.1772017783545658
     },
     {
       "comparison_scope": "conformal",

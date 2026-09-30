@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-09-30T14:18:06+03:00",
+  "aligned_script_sha256": "6CF2C00797D99C1409D01738A66D4D4071C2081CBF5A47D557C3C730BE479D46",
+  "max_abs_difference_from_as_stated_variant": 2.220446049250313e-16,
+  "conformal_prediction_sets": {
+    "rows": 24,
+    "rows_changed_beyond_1e-12": 1,
+    "changed_rows": [
+      {
+        "row": {
+          "model": "catboost_native",
+          "probability_state": "temperature_scaled",
+          "method": "probability_threshold",
+          "alpha": 0.01
+        },
+        "changed": {
+          "empirical_coverage": {
+            "published": 0.8990677325979286,
+            "aligned": 0.8989156498243444
+          },
+          "average_set_size": {
+            "published": 0.8990677325979286,
+            "aligned": 0.8989156498243444
+          },
+          "singleton_rate": {
+            "published": 0.8990677325979286,
+            "aligned": 0.8989156498243444
+          },
+          "empty_rate": {
+            "published": 0.10093226740207137,
+            "aligned": 0.1010843501756556
+          },
+          "set_size_0_rate": {
+            "published": 0.10093226740207137,
+            "aligned": 0.1010843501756556
+          },
+          "set_size_1_rate": {
+            "published": 0.8990677325979286,
+            "aligned": 0.8989156498243444
+          }
+        }
+      }
+    ],
+    "max_abs_difference_in_other_cells": 0.0,
+    "quantile_values_changed_rows": 5
+  },
+  "conformal_classwise": {
+    "rows": 72,
+    "rows_changed_beyond_1e-12": 2,
+    "changed_rows": [
+      {
+        "row": {
+          "model": "catboost_native",
+          "probability_state": "temperature_scaled",
+          "method": "probability_threshold",
+          "alpha": 0.01,
+          "class": "Allow"
+        },
+        "changed": {
+          "empirical_coverage": {
+            "published": 0.9374470821499383,
+            "aligned": 0.93729167783077
+          },
+          "average_set_size": {
+            "published": 0.9374470821499383,
+            "aligned": 0.93729167783077
+          },
+          "singleton_rate": {
+            "published": 0.9374470821499383,
+            "aligned": 0.93729167783077
+          },
+          "empty_rate": {
+            "published": 0.06255291785006163,
+            "aligned": 0.06270832216922995
+          }
+        }
+      },
+      {
+        "row": {
+          "model": "catboost_native",
+          "probability_state": "temperature_scaled",
+          "method": "probability_threshold",
+          "alpha": 0.01,
+          "class": "Drop"
+        },
+        "changed": {
+          "empirical_coverage": {
+            "published": 0.31788351107465135,
+            "aligned": 0.31774678698386655
+          },
+          "average_set_size": {
+            "published": 0.31788351107465135,
+            "aligned": 0.31774678698386655
+          },
+          "singleton_rate": {
+            "published": 0.31788351107465135,
+            "aligned": 0.31774678698386655
+          },
+          "empty_rate": {
+            "published": 0.6821164889253486,
+            "aligned": 0.6822532130161334
+          }
+        }
+      }
+    ],
+    "max_abs_difference_in_other_cells": 0.0
+  },
+  "model_comparison": {
+    "rows": 52,
+    "rows_changed_beyond_1e-12": 4,
+    "changed_rows": [
+      {
+        "row": {
+          "comparison_scope": "conformal",
+          "method": "probability_threshold",
+          "operating_point": "alpha=0.01",
+          "metric": "empirical_coverage"
+        },
+        "changed": {
+          "catboost_native": {
+            "published": 0.8990677325979286,
+            "aligned": 0.8989156498243444
+          },
+          "native_minus_ordinal": {
+            "published": 0.17735386112815,
+            "aligned": 0.17720177835456574
+          }
+        }
+      },
+      {
+        "row": {
+          "comparison_scope": "conformal",
+          "method": "probability_threshold",
+          "operating_point": "alpha=0.01",
+          "metric": "average_set_size"
+        },
+        "changed": {
+          "catboost_native": {
+            "published": 0.8990677325979286,
+            "aligned": 0.8989156498243444
+          },
+          "native_minus_ordinal": {
+            "published": 0.17735386112815,
+            "aligned": 0.17720177835456574
+          }
+        }
+      },
+      {
+        "row": {
+          "comparison_scope": "conformal",
+          "method": "probability_threshold",
+          "operating_point": "alpha=0.01",
+          "metric": "singleton_rate"
+        },
+        "changed": {
+          "catboost_native": {
+            "published": 0.8990677325979286,
+            "aligned": 0.8989156498243444
+          },
+          "native_minus_ordinal": {
+            "published": 0.17735386112815,
+            "aligned": 0.17720177835456574
+          }
+        }
+      },
+      {
+        "row": {
+          "comparison_scope": "conformal",
+          "method": "probability_threshold",
+          "operating_point": "alpha=0.01",
+          "metric": "empty_rate"
+        },
+        "changed": {
+          "catboost_native": {
+            "published": 0.10093226740207137,
+            "aligned": 0.1010843501756556
+          },
+          "native_minus_ordinal": {
+            "published": -0.17735386112815002,
+            "aligned": -0.1772017783545658
+          }
+        }
+      }
+    ]
+  },
+  "outputs_sha256": {
+    "conformal_classwise.csv": "5D679F93D3A1A535436CFA133584159F7FFCB5F0AE8648E21E0B26564E1867D7",
+    "conformal_prediction_sets.csv": "1B9C1D287BE7F9A21D82AF8907F5EB040CBDA4B1E5E3138DE7FD4C0BF29A1C24",
+    "model_comparison.csv": "3A8F847F7869DDCFB5D3F05740A61D86CCAE2B8C65826C3E9948250C272A5EA2",
+    "native_categorical_uncertainty.json": "058701499A2B85F5C42056943699023EA179E4B62B094B949A940A7CFC7A9F20"
+  }
+}

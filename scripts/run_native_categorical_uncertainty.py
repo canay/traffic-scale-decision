@@ -861,36 +861,36 @@ def classification_rows(
 
 
 def conformal_quantile(scores: np.ndarray, alpha: float) -> float:
-    n = len(scores)
-    level = min(1.0, np.ceil((n + 1) * (1.0 - alpha)) / n)
-    return float(np.quantile(scores, level, method="higher"))
+    values = np.asarray(scores, dtype=float).reshape(-1)
+    n = len(values)
+    if n == 0:
+        raise ValueError(
+            "Cannot calibrate a conformal quantile from an empty score array."
+        )
+    k = min(n, int(np.ceil((n + 1) * (1.0 - alpha))))
+    return float(np.partition(values, k - 1)[k - 1])
 
 
 def aps_scores(probability: np.ndarray, y_true: np.ndarray) -> np.ndarray:
-    sorted_index = np.argsort(-probability, axis=1, kind="mergesort")
-    sorted_probability = np.take_along_axis(
-        probability, sorted_index, axis=1
-    )
-    cumulative = np.cumsum(sorted_probability, axis=1)
-    true_positions = np.argmax(sorted_index == y_true[:, None], axis=1)
-    return cumulative[np.arange(len(y_true)), true_positions]
+    true_probability = probability[np.arange(len(y_true)), y_true]
+    higher_or_equal = probability >= true_probability[:, None]
+    return np.sum(probability * higher_or_equal, axis=1)
 
 
 def aps_prediction_sets(
     probability: np.ndarray,
     quantile: float,
 ) -> np.ndarray:
-    sorted_index = np.argsort(-probability, axis=1, kind="mergesort")
-    sorted_probability = np.take_along_axis(
-        probability, sorted_index, axis=1
-    )
-    cumulative = np.cumsum(sorted_probability, axis=1)
-    include_sorted = cumulative <= quantile
-    empty = ~np.any(include_sorted, axis=1)
-    include_sorted[empty, 0] = True
-    prediction_sets = np.zeros_like(include_sorted, dtype=bool)
-    rows = np.arange(len(probability))[:, None]
-    prediction_sets[rows, sorted_index] = include_sorted
+    higher_or_equal = probability[:, None, :] >= probability[:, :, None]
+    cumulative = np.sum(probability[:, None, :] * higher_or_equal, axis=2)
+    prediction_sets = cumulative <= quantile
+
+    # Keep the operational set non-empty. np.argmax resolves a top-probability
+    # tie by the fixed encoded-class order and therefore selects one class.
+    empty = np.flatnonzero(~np.any(prediction_sets, axis=1))
+    if len(empty):
+        top_class = np.argmax(probability[empty], axis=1)
+        prediction_sets[empty, top_class] = True
     return prediction_sets
 
 
@@ -1943,12 +1943,15 @@ def main() -> None:
             "nll": "mean negative log probability assigned to the true class",
             "entropy": "mean Shannon entropy in bits",
             "probability_threshold_conformal": (
-                "score=1-p_true; finite-sample higher quantile; include classes "
-                "with probability at least 1-qhat"
+                "score=1-p_true; qhat is the k-th smallest calibration score "
+                "with k=min(n, ceil((n+1)(1-alpha))); include classes with "
+                "probability at least 1-qhat"
             ),
             "aps_deterministic": (
-                "non-randomized cumulative probability score including the "
-                "candidate class; top-class fallback prevents empty APS sets"
+                "non-randomized cumulative probability score over every class "
+                "whose probability is at least that of the candidate class "
+                "(ties as a block); same order statistic; top-class fallback "
+                "prevents empty APS sets"
             ),
             "selective_queue": (
                 "retain confidence >= threshold; queue confidence < threshold"

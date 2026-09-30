@@ -30,10 +30,14 @@ class ConformalPrimitiveTests(unittest.TestCase):
             "public_submission_strengthening",
             "scripts/run_submission_strengthening_experiments.py",
         )
+        cls.paired = load_module(
+            "public_native_categorical_uncertainty",
+            "scripts/run_native_categorical_uncertainty.py",
+        )
 
     def test_exact_order_statistic(self) -> None:
         scores = np.array([0.0, 1.0, 2.0, 3.0])
-        for module in (self.diagnostics, self.strengthening):
+        for module in (self.diagnostics, self.strengthening, self.paired):
             self.assertEqual(module.conformal_quantile(scores, 0.40), 2.0)
             self.assertEqual(module.conformal_quantile(scores, 0.01), 3.0)
             with self.assertRaises(ValueError):
@@ -63,6 +67,10 @@ class ConformalPrimitiveTests(unittest.TestCase):
         )
         np.testing.assert_allclose(self.strengthening.aps_scores(proba, y), expected_scores)
         np.testing.assert_array_equal(self.strengthening.aps_sets(proba, 0.80), expected_sets)
+        np.testing.assert_allclose(self.paired.aps_scores(proba, y), expected_scores)
+        np.testing.assert_array_equal(
+            self.paired.aps_prediction_sets(proba, 0.80), expected_sets
+        )
 
 
 if __name__ == "__main__":

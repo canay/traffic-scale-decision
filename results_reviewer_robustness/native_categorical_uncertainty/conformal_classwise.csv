@@ -53,9 +53,9 @@ application_category,catboost_native,raw,probability_threshold,0.1,Drop,7314,0.0
 application_category,catboost_native,raw,aps_deterministic,0.1,Allow,186610,1.0,1.9453727024275227,0.05462729757247736,0.9453727024275227,0.0
 application_category,catboost_native,raw,aps_deterministic,0.1,Deny,3337,1.0,1.982918789331735,0.017081210668264908,0.982918789331735,0.0
 application_category,catboost_native,raw,aps_deterministic,0.1,Drop,7314,1.0,2.0,0.0,1.0,0.0
-application_category,catboost_native,temperature_scaled,probability_threshold,0.01,Allow,186610,0.9374470821499383,0.9374470821499383,0.9374470821499383,0.0,0.06255291785006163
+application_category,catboost_native,temperature_scaled,probability_threshold,0.01,Allow,186610,0.93729167783077,0.93729167783077,0.93729167783077,0.0,0.06270832216922995
 application_category,catboost_native,temperature_scaled,probability_threshold,0.01,Deny,3337,0.026670662271501347,0.026670662271501347,0.026670662271501347,0.0,0.9733293377284986
-application_category,catboost_native,temperature_scaled,probability_threshold,0.01,Drop,7314,0.31788351107465135,0.31788351107465135,0.31788351107465135,0.0,0.6821164889253486
+application_category,catboost_native,temperature_scaled,probability_threshold,0.01,Drop,7314,0.31774678698386655,0.31774678698386655,0.31774678698386655,0.0,0.6822532130161334
 application_category,catboost_native,temperature_scaled,aps_deterministic,0.01,Allow,186610,1.0,1.9659503777932588,0.034049622206741334,0.9659503777932587,0.0
 application_category,catboost_native,temperature_scaled,aps_deterministic,0.01,Deny,3337,1.0,1.9928079112975727,0.00719208870242733,0.9928079112975726,0.0
 application_category,catboost_native,temperature_scaled,aps_deterministic,0.01,Drop,7314,1.0,2.0,0.0,1.0,0.0

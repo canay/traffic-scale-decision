@@ -15,11 +15,11 @@ temperature_scaled_probability,scalar_temperature,,multiclass_brier,0.0542808100
 temperature_scaled_probability,scalar_temperature,,negative_log_likelihood,0.12645921736709972,0.003729479615508582,-0.12272973775159114
 temperature_scaled_probability,scalar_temperature,,ece_equal_width_15,0.023516752480857564,0.0005569856430174256,-0.022959766837840137
 temperature_scaled_probability,scalar_temperature,,adaptive_ece_equal_frequency_15,0.025383443972765218,0.00014433427732784938,-0.025239109695437367
-conformal,probability_threshold,alpha=0.01,empirical_coverage,0.7217138714697786,0.8990677325979286,0.17735386112815
-conformal,probability_threshold,alpha=0.01,average_set_size,0.7217138714697786,0.8990677325979286,0.17735386112815
-conformal,probability_threshold,alpha=0.01,singleton_rate,0.7217138714697786,0.8990677325979286,0.17735386112815
+conformal,probability_threshold,alpha=0.01,empirical_coverage,0.7217138714697786,0.8989156498243444,0.17720177835456574
+conformal,probability_threshold,alpha=0.01,average_set_size,0.7217138714697786,0.8989156498243444,0.17720177835456574
+conformal,probability_threshold,alpha=0.01,singleton_rate,0.7217138714697786,0.8989156498243444,0.17720177835456574
 conformal,probability_threshold,alpha=0.01,ambiguous_set_rate,0.0,0.0,0.0
-conformal,probability_threshold,alpha=0.01,empty_rate,0.2782861285302214,0.10093226740207137,-0.17735386112815002
+conformal,probability_threshold,alpha=0.01,empty_rate,0.2782861285302214,0.1010843501756556,-0.1772017783545658
 conformal,probability_threshold,alpha=0.05,empirical_coverage,0.30366367401564426,0.1285454296591825,-0.17511824435646176
 conformal,probability_threshold,alpha=0.05,average_set_size,0.30366367401564426,0.1285454296591825,-0.17511824435646176
 conformal,probability_threshold,alpha=0.05,singleton_rate,0.30366367401564426,0.1285454296591825,-0.17511824435646176

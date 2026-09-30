@@ -1,0 +1,263 @@
+{
+  "check": "paired application/category lineage: earlier versus aligned conformal rule",
+  "date": "2026-09-30",
+  "earlier_rule": "np.quantile(scores, ceil((n+1)(1-alpha))/n, method='higher') with rank-wise adaptive prediction sets",
+  "aligned_rule": "k-th smallest calibration score with k=min(n, ceil((n+1)(1-alpha))) with tie-block adaptive prediction sets",
+  "reproduction_of_earlier_outputs": [
+    {
+      "check": "G1_split_hashes_and_counts",
+      "pass": true,
+      "detail": {
+        "hashes_compared": 10,
+        "split_counts": {
+          "train": 638486,
+          "calibration": 212829,
+          "probability_calibration": 106414,
+          "conformal_calibration": 106415,
+          "test": 197261
+        }
+      }
+    },
+    {
+      "check": "G2_classification_lightgbm_ordinal",
+      "pass": true,
+      "detail": {
+        "errors": 5664,
+        "published_errors": 5664,
+        "macro_f1": 0.6725480129323816,
+        "published_macro_f1": 0.6725480129323816
+      }
+    },
+    {
+      "check": "G3_temperature_lightgbm_ordinal",
+      "pass": true,
+      "detail": {
+        "temperature": 1.5869854029683634,
+        "published_temperature": 1.5869854029683634
+      }
+    },
+    {
+      "check": "G4_as_run_conformal_lightgbm_ordinal",
+      "pass": true,
+      "detail": {
+        "rows_compared": 12,
+        "max_abs_difference": {
+          "empirical_coverage": 5.551115123125783e-17,
+          "average_set_size": 2.220446049250313e-16,
+          "singleton_rate": 5.551115123125783e-17,
+          "empty_rate": 0.0,
+          "qhat_relative": 1.1935688723238794e-16,
+          "deny_coverage": 1.5612511283791264e-17
+        }
+      }
+    },
+    {
+      "check": "G2_classification_catboost_native",
+      "pass": true,
+      "detail": {
+        "errors": 154,
+        "published_errors": 154,
+        "macro_f1": 0.9923443385912797,
+        "published_macro_f1": 0.9923443385912796
+      }
+    },
+    {
+      "check": "G3_temperature_catboost_native",
+      "pass": true,
+      "detail": {
+        "temperature": 0.6109598708382099,
+        "published_temperature": 0.6109598708382099
+      }
+    },
+    {
+      "check": "G4_as_run_conformal_catboost_native",
+      "pass": true,
+      "detail": {
+        "rows_compared": 12,
+        "max_abs_difference": {
+          "empirical_coverage": 8.326672684688674e-17,
+          "average_set_size": 2.220446049250313e-16,
+          "singleton_rate": 9.71445146547012e-17,
+          "empty_rate": 1.1102230246251565e-16,
+          "qhat_relative": 5.50275666972836e-13,
+          "deny_coverage": 4.85722573273506e-17
+        }
+      }
+    }
+  ],
+  "cells_compared": 24,
+  "aligned_versus_earlier": {
+    "cells": 24,
+    "cells_with_any_difference": 1,
+    "max_abs_coverage_difference": 0.00015208277358425004,
+    "max_abs_set_size_difference": 0.00015208277358425004
+  },
+  "attribution": {
+    "order_statistic_only": {
+      "cells": 24,
+      "cells_with_any_difference": 1,
+      "max_abs_coverage_difference": 0.00015208277358425004,
+      "max_abs_set_size_difference": 0.00015208277358425004
+    },
+    "tie_handling_only": {
+      "cells": 24,
+      "cells_with_any_difference": 0,
+      "max_abs_coverage_difference": 0.0,
+      "max_abs_set_size_difference": 0.0
+    }
+  },
+  "changed_cells": [
+    {
+      "row": {
+        "model": "catboost_native",
+        "probability_state": "temperature_scaled",
+        "method": "probability_threshold",
+        "alpha": 0.01
+      },
+      "changed": {
+        "empirical_coverage": {
+          "published": 0.8990677325979286,
+          "aligned": 0.8989156498243444
+        },
+        "average_set_size": {
+          "published": 0.8990677325979286,
+          "aligned": 0.8989156498243444
+        },
+        "singleton_rate": {
+          "published": 0.8990677325979286,
+          "aligned": 0.8989156498243444
+        },
+        "empty_rate": {
+          "published": 0.10093226740207137,
+          "aligned": 0.1010843501756556
+        },
+        "set_size_0_rate": {
+          "published": 0.10093226740207137,
+          "aligned": 0.1010843501756556
+        },
+        "set_size_1_rate": {
+          "published": 0.8990677325979286,
+          "aligned": 0.8989156498243444
+        }
+      }
+    }
+  ],
+  "quantile_values_changed_rows": 5,
+  "values_reported_at_alpha_0.05": {
+    "count": 16,
+    "changed_at_reported_precision": 0
+  },
+  "interpretation_statements_hold_identically": true,
+  "exact_probability_tie_counts": {
+    "lightgbm_ordinal/raw": {
+      "conformal_calibration": {
+        "rows": 106415,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      },
+      "test": {
+        "rows": 197261,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      }
+    },
+    "lightgbm_ordinal/temperature_scaled": {
+      "conformal_calibration": {
+        "rows": 106415,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      },
+      "test": {
+        "rows": 197261,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      }
+    },
+    "catboost_native/raw": {
+      "conformal_calibration": {
+        "rows": 106415,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      },
+      "test": {
+        "rows": 197261,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      }
+    },
+    "catboost_native/temperature_scaled": {
+      "conformal_calibration": {
+        "rows": 106415,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      },
+      "test": {
+        "rows": 197261,
+        "rows_with_any_exact_tie": 0,
+        "rows_with_all_three_tied": 0
+      }
+    }
+  },
+  "independent_second_computation": {
+    "verdict": "PASS",
+    "cells_compared": 48,
+    "worst_difference": {
+      "qhat_relative": 5.50275666972836e-13,
+      "empirical_coverage": 8.326672684688674e-17,
+      "average_set_size": 2.220446049250313e-16,
+      "coverage_Deny": 4.85722573273506e-17
+    },
+    "synthetic_controls": [
+      {
+        "check": "control_quantile_as_run_returns_20",
+        "pass": true
+      },
+      {
+        "check": "control_quantile_exact_returns_19",
+        "pass": true
+      },
+      {
+        "check": "control_own_k_matches",
+        "pass": true
+      },
+      {
+        "check": "control_rankwise_splits_a_tie",
+        "pass": true
+      },
+      {
+        "check": "control_tie_block_keeps_tie_together",
+        "pass": true
+      },
+      {
+        "check": "control_tie_block_scores",
+        "pass": true
+      },
+      {
+        "check": "control_own_tie_block_equals_canonical",
+        "pass": true
+      },
+      {
+        "check": "control_own_rankwise_equals_producer",
+        "pass": true
+      },
+      {
+        "check": "second_method_cells_compared",
+        "pass": true
+      },
+      {
+        "check": "second_method_agrees",
+        "pass": true
+      }
+    ]
+  },
+  "refit_runtime": {
+    "python": "3.12.12",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10"
+  }
+}

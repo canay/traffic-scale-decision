@@ -57,7 +57,7 @@ GitHub:
 
 https://github.com/canay
 
-Package status (2026-09-30): version 1.3.0 adds the four revision diagnostics (header-only census, banded Source Port census, one-factor LightGBM diagnosis, and conformal-selective overlap) with their scripts and aggregate outputs. Affiliations, ORCIDs, the article title, and reproducibility metadata are unchanged from version 1.2.3.
+Package status (2026-09-30): version 1.3.1 aligns the conformal primitives of `scripts/run_native_categorical_uncertainty.py` with the exact order statistic and the tie-block handling used by the other conformal scripts, and regenerates the conformal tables of `results_reviewer_robustness/native_categorical_uncertainty/`. One cell at alpha 0.01 changes (temperature-scaled native CatBoost, probability-threshold coverage 0.8991 to 0.8989) and no value at alpha 0.05 changes; the comparison is in `results_revision_diagnostics/paired_conformal_rule_check/`. Version 1.3.0 added the four revision diagnostics (header-only census, banded Source Port census, one-factor LightGBM diagnosis, and conformal-selective overlap) with their scripts and aggregate outputs. Affiliations, ORCIDs, the article title, and reproducibility metadata are unchanged from version 1.2.3.
 
 ## Repository Contents
 
@@ -187,7 +187,7 @@ Packaged output files:
 - `results_session_group/`: five Session-ID-disjoint split summaries with no record-level identifiers
 - `results_review_sensitivity/`: determining-key support, OOV, paired model/encoding, and fixed-depth tree summaries
 - `results_reviewer_robustness/`: final aggregate key-validation, cardinality-control, reduced-view, calibrated conformal, and selective-classification summaries
-- `results_revision_diagnostics/`: header-only and banded Source Port key censuses, one-factor LightGBM diagnosis, and conformal-selective overlap
+- `results_revision_diagnostics/`: header-only and banded Source Port key censuses, one-factor LightGBM diagnosis, conformal-selective overlap, and the paired conformal rule comparison
 
 The revision diagnostics in `results_revision_diagnostics/` were run on the same cloud machine class, in an environment rebuilt with the Python, XGBoost, LightGBM, scikit-learn, NumPy, pandas, and SciPy versions of `requirements.txt`. That environment reproduced the published census counts, the published conformal reference values, and nine of the ten published strict-view LightGBM cells exactly.
 
